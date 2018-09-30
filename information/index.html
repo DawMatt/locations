@@ -122,10 +122,10 @@ title: SEC Companies
                     {% assign field_label = field_name| replace: '_',' ' | capitalize %}
                     {% assign field_details = field[1] %}
                     <td style="width: 15%; border: 1px solid #000;"></td>
-                    <td style="width: 15%; text-align: right; border: 1px solid #000;"><strong>{{ field_label }}:</strong></td>
+                    <td style="width: 15%; text-align: left; border: 1px solid #000;"><strong>{{ field_label }}:</strong></td>
                     <td>
                       {% if field_details.first %}
-                    </td></tr><td style="width: 15%; border: 1px solid #000;"></td><td>
+                    </td></tr><td style="width: 15%; border: 1px solid #000;">11</td><td>
                         {% for details in field_details %}
                           <table width="100%">
                           {% for detail in details %}
