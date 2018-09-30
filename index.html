@@ -1,0 +1,884 @@
+---
+layout: default
+title: Location APIs
+---
+
+<script src="/js/ui/swagger-ui-bundle.js"> </script>
+<script src="/js/ui/swagger-ui-standalone-preset.js"> </script>
+<style>
+.topbar
+  {
+  display:none;
+  }
+.info
+  {
+  display:none;
+  }
+</style>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+          <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196-.387c.524-.167.953-.757.953-1.306V9.199C17 8.646 16.352 8 15.8 8z"></path>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="locked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196-.387c.524-.167.953-.757.953-1.306V9.199C17 8.646 16.352 8 15.8 8zM12 8H8V5.199C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="close">
+      <path d="M14.348 14.849c-.469.469-1.229.469-1.697 0L10 11.819l-2.651 3.029c-.469.469-1.229.469-1.697 0-.469-.469-.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-.469-.469-.469-1.228 0-1.697.469-.469 1.228-.469 1.697 0L10 8.183l2.651-3.031c.469-.469 1.228-.469 1.697 0 .469.469.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c.469.469.469 1.229 0 1.698z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="large-arrow">
+      <path d="M13.25 10L6.109 2.58c-.268-.27-.268-.707 0-.979.268-.27.701-.27.969 0l7.83 7.908c.268.271.268.709 0 .979l-7.83 7.908c-.268.271-.701.27-.969 0-.268-.269-.268-.707 0-.979L13.25 10z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="large-arrow-down">
+      <path d="M17.418 6.109c.272-.268.709-.268.979 0s.271.701 0 .969l-7.908 7.83c-.27.268-.707.268-.979 0l-7.908-7.83c-.27-.268-.27-.701 0-.969.271-.268.709-.268.979 0L10 13.25l7.418-7.141z"/>
+    </symbol>
+
+
+    <symbol viewBox="0 0 24 24" id="jump-to">
+      <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 24 24" id="expand">
+      <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/>
+    </symbol>
+
+  </defs>
+</svg>
+
+<!--Definitions-->
+{% assign service_name = "" %}
+{% assign service_description = "" %}
+
+<!--Documentation-->
+{% assign documentation_overview_title = "" %}
+{% assign documentation_overview_header = ""  %}
+{% assign documentation_overview_footer = ""  %}
+
+{% for stop in site.stops %}
+
+  <!--Begin Definition-->
+  {% if stop.name == 'Definition' %}
+
+    {% for item in stop.items %}
+
+      {% if item.name == 'Service Name' %}
+        {% assign service_name = item.fields | map: 'service_name' %}
+      {% endif %}
+
+      {% if item.name == 'Service Description' %}
+        {% assign service_description = item.fields | map: 'service_description' %}
+      {% endif %}
+
+    {% endfor %}
+
+  {% endif %}
+  <!--End Definition-->
+
+  <!--Begin Authentication-->
+  {% if stop.name == 'Authentication' %}
+    {% for item in stop.items %}
+
+      {% if item.name == 'Overview' %}
+
+        {% assign authentication_overview_title = item.fields | map: 'title' %}
+        {% assign authentication_overview_header = item.fields | map: 'header' %}
+        {% assign authentication_overview_footer = item.fields | map: 'footer' %}
+
+      {% endif %}
+
+      {% if item.name == 'Signup / Login' %}
+
+        {% assign authentication_signuplogin_title = item.fields | map: 'title' %}
+        {% assign authentication_signuplogin_header = item.fields | map: 'header' %}
+        {% assign authentication_signuplogin_footer = item.fields | map: 'footer' %}
+
+      {% endif %}
+
+    {% endfor %}
+
+  {% endif %}
+  <!--End Authentication-->
+
+  <!--Begin Getting Started-->
+  {% if stop.name == 'Getting Started' %}
+
+      {% assign getting_started_title = stop.name %}
+      {% assign getting_started_header = stop.header %}
+      {% assign getting_started_footer = stop.footer %}
+      {% assign getting_started_image = stop.image %}
+      {% assign getting_started_entries = stop.items %}
+
+  {% endif %}
+  <!--End Getting Started-->
+
+  <!--Begin Documentation-->
+  {% if stop.name == 'Documentation' %}
+
+  {% assign documentation_overview_title = stop.title %}
+  {% assign documentation_overview_header = stop.header %}
+  {% assign documentation_overview_footer = stop.footer %}
+
+    {% for item in stop.items %}
+
+      {% if item.name == 'Schema' %}
+
+        {% assign documentation_schema_title = item.title %}
+        {% assign documentation_schema_header = item.header %}
+        {% assign documentation_schema_footer = item.footer %}
+
+      {% endif %}
+
+      {% if item.name == 'Definitions' %}
+
+        {% assign documentation_definition_title = item.name %}
+        {% assign documentation_definition_header = item.header %}
+        {% assign documentation_definition_footer = item.footer %}
+        {% assign documentation_definition_openapi = item.fields | map: 'openapi' %}
+        {% assign documentation_definition_postman = item.fields | map: 'postman' %}
+
+      {% endif %}
+
+    {% endfor %}
+
+  {% endif %}
+  <!--End Documentation-->
+
+  <!--Begin Code-->
+  {% if stop.name == 'Code' %}
+
+      {% assign code_title = stop.title %}
+      {% assign code_header = stop.header %}
+      {% assign code_footer = stop.footer %}
+      {% assign code_image = stop.image %}
+      {% assign code_libraries = stop.items %}
+
+  {% endif %}
+  <!--End Code-->
+
+  <!--Begin Licensing-->
+  {% if stop.name == 'Licensing' %}
+
+      {% assign licensing_title = stop.title %}
+      {% assign licensing_header = stop.header %}
+      {% assign licensing_footer = stop.footer %}
+      {% assign licensing_areas = stop.items %}
+
+  {% endif %}
+  <!--End Licensing-->
+
+  <!--Begin Plans-->
+  {% if stop.name == 'Plans' %}
+
+      {% assign plans_title = stop.title %}
+      {% assign plans_header = stop.header %}
+      {% assign plans_footer = stop.footer %}
+
+      {% for item in stop.items %}
+        {% if item.name == 'Tiers' %}
+          {% assign plans = item.fields | map: 'plans' %}
+        {% endif %}
+      {% endfor %}
+
+  {% endif %}
+  <!--End Plans-->
+
+  <!--Begin Authentication-->
+  {% if stop.name == 'Support' %}
+
+      {% assign support_title = stop.name %}
+      {% assign support_header = stop.header %}
+      {% assign support_footer = stop.footer %}
+      {% assign support_channels = stop.items %}
+
+  {% endif %}
+  <!--End Documentation-->
+
+  <!--Begin FAQs-->
+  {% if stop.name == 'FAQs' %}
+
+      {% assign faq_title = stop.name %}
+      {% assign faq_header = stop.header %}
+      {% assign faq_footer = stop.footer %}
+
+      {% for item in stop.items %}
+
+        {% if item.name == 'Categories' %}
+          {% assign faq_categories = item.fields | map: 'categories' %}
+        {% endif %}
+
+        {% if item.name == 'Questions' %}
+          {% assign faq_questions = item.fields | map: 'questions' %}
+        {% endif %}
+
+      {% endfor %}
+
+  {% endif %}
+  <!--End FAQs-->
+
+  <!--Begin Communication-->
+  {% if stop.name == 'Communication' %}
+
+      {% assign communication_title = stop.name %}
+      {% assign communication_header = stop.header %}
+      {% assign communication_footer = stop.footer %}
+      {% assign communication_channels = stop.items %}
+
+  {% endif %}
+  <!--End Communication-->
+
+  <!--Begin Road Map-->
+  {% if stop.name == 'Road Map' %}
+
+      {% assign road_map_title = stop.name %}
+      {% assign road_map_header = stop.header %}
+      {% assign road_map_footer = stop.footer %}
+      {% assign road_map_image = stop.image %}
+      {% assign road_map_status = stop.status %}
+
+      {% for item in stop.items %}
+
+        {% if item.name == 'Private' %}
+
+          {% assign private_road_map_title = item.title %}
+          {% assign private_road_map_description = item.description %}
+          {% assign private_road_map_url = item.fields | map: 'url' %}
+
+        {% endif %}
+
+        {% if item.name == 'Public' %}
+
+          {% assign public_road_map_title = item.title %}
+          {% assign public_road_map_description = item.description %}
+          {% assign public_road_map_url = item.fields | map: 'url' %}
+          {% assign public_road_map_entries = item.fields | map: 'entries' %}
+
+        {% endif %}
+
+        {% if item.name == 'Suggest' %}
+
+          {% assign road_map_suggestion_status = item.status %}
+          {% assign road_map_suggestion_title = item.fields | map: 'title' %}
+          {% assign road_map_suggestion_description = item.fields | map: 'description' %}
+          {% assign road_map_suggestion_url = item.fields | map: 'url' %}
+
+        {% endif %}
+
+      {% endfor %}
+
+  {% endif %}
+  <!--End Road Map-->
+
+  <!--Begin Issues-->
+  {% if stop.name == 'Issues' %}
+
+      {% assign issues_title = stop.name %}
+      {% assign issues_header = stop.header %}
+      {% assign issues_footer = stop.footer %}
+      {% assign issues_image = stop.image %}
+      {% assign issues_status = stop.status %}
+
+      {% for item in stop.items %}
+
+        {% if item.name == 'Entries' %}
+
+          {% assign issues_url = item.fields | map: 'url' %}
+          {% assign issues_entries = item.fields | map: 'entries' %}
+
+        {% endif %}
+
+        {% if item.name == 'Report' %}
+
+          {% assign issues_report_status = item.status %}
+          {% assign issues_report_title = item.fields | map: 'title' %}
+          {% assign issues_report_description = item.fields | map: 'description' %}
+          {% assign issues_report_url = item.fields | map: 'url' %}
+
+        {% endif %}
+
+      {% endfor %}
+
+  {% endif %}
+  <!--End Issues-->
+
+  <!--Begin Change Log-->
+  {% if stop.name == 'Change Log' %}
+
+      {% assign change_log_title = stop.name %}
+      {% assign change_log_header = stop.header %}
+      {% assign change_log_footer = stop.footer %}
+      {% assign change_log_image = stop.image %}
+      {% assign change_log_status = stop.status %}
+
+      {% for item in stop.items %}
+
+        {% if item.name == 'Entries' %}
+
+          {% assign change_log_url = item.fields | map: 'url' %}
+          {% assign change_log_entries = item.fields | map: 'entries' %}
+
+        {% endif %}
+
+      {% endfor %}
+
+  {% endif %}
+  <!--End Road Map-->
+
+  <!--Begin Licensing-->
+  {% if stop.name == 'Licensing' %}
+
+      {% assign licensing_title = stop.name %}
+      {% assign licensing_header = stop.header %}
+      {% assign licensing_footer = stop.footer %}
+      {% assign licensing_areas = stop.items %}
+
+  {% endif %}
+  <!--End Licensing-->
+
+  <!--Begin Code-->
+  {% if stop.name == 'Legal' %}
+
+      {% assign legal_title = stop.title %}
+      {% assign legal_header = stop.header %}
+      {% assign legal_footer = stop.footer %}
+      {% assign legal_documents = stop.items %}
+
+  {% endif %}
+  <!--End Code-->
+
+{% endfor %}
+
+<!-- overview -->
+<section id="overview">
+	<div class="content">
+		<header>
+			<h3>{{ service_name }}</h3>
+		</header>
+		<p>{{ service_description }}</p>
+	</div>
+</section>
+
+<!-- Begin Getting Started -->
+<a name="getting-started"></a>
+<section id="getting-started">
+  <div class="content">
+		<header>
+			<h3>{{ getting_started_title }}</h3>
+		</header>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ getting_started_header }}</p>
+          <ol>
+            {% for entries in getting_started_entries %}
+              {% assign url = entries.fields | map: 'url' %}
+              <li><a href="{{ url }}"><strong>{{ entries.name }}</strong></a> - {{ entries.description }}</li>
+            {% endfor %}
+          </ol>
+          <p>{{ getting_started_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="/assets/images/getting-started.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Getting Started -->
+
+<!--SignUp SignIn--->
+<a name="sign-up"></a>
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ authentication_signuplogin_title }}</h3>
+		</header>
+
+    <p class="large">{{ authentication_signuplogin_header }}</p>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <center>
+            <a href="http://oauth.apievangelist.com/github/?action=login"><img src="/assets/images/github-icon.png" width="50" /></a>
+            <h4>Github</h4>
+            <p>Login with your Github social coding platform account.</p>
+          </center>
+        </div>
+        <div class="col-4">
+          <center>
+            <a href="http://oauth.apievangelist.com/twitter/?action=login"><img src="/assets/images/twitter-icon.png" width="50" /></a>
+            <h4>Twitter</h4>
+            <p>Login / Sign Up with your Twitter social networking account.</p>
+          </center>
+        </div>
+        <div class="col-4">
+          <center>
+            <a href="http://oauth.apievangelist.com/linkedin/?action=login"><img src="/assets/images/linkedin-icon.png" width="50" /></a>
+            <h4>LinkedIn</h4>
+            <p>Login / Sign Up with your LinkedIn business social networking account.</p>
+          </center>
+        </div>
+    </div>
+
+    <p>{{ authentication_signuplogin_footer }}</p>
+
+</section>
+<!-- Signup / Signin -->
+
+<!--Auth-->
+<a name="authentication"></a>
+<section id="authentication">
+  <div class="content">
+		<header>
+			<h3>{{ authentication_overview_title }}</h3>
+		</header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ authentication_overview_header }}</p>
+          <ul id="auth-keys">
+            <li id="auth-appkey" style="padding-left: 25px;"><strong>&rarr; x-api-key</strong> - Your API key.</li>
+          </ul>
+          <p>{{ authentication_overview_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="/assets/images/authentication.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
+</section>
+<!--Auth-->
+
+<!--Documentation-->
+<a name="documentation"></a>
+{% assign openapi = site.data.openapi %}
+
+<section id="documentation">
+  <div class="content">
+		<header>
+			<h3>{{ documentation_overview_title }}</h3>
+		</header>
+		<p>{{ documentation_overview_header }}</p>
+
+    <div id="openapi-ui"></div>
+
+    <script>
+    window.onload = function() {
+
+      // HSDS
+      const openapi_docs = SwaggerUIBundle({
+        url: "https://raw.githubusercontent.com/api-evangelist-apis/locations/master/_data/openapi.yaml",
+        dom_id: '#openapi-ui',
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout"
+      })
+      window.ui = openapi_docs;
+      }
+    </script>
+
+
+    <p>{{ documentation_overview_footer }}</p>
+
+    </div>
+</section>
+
+<!-- Begin Definitions -->
+<a name="definitions"></a>
+<section id="definitions">
+  <div class="content">
+		<header>
+			<h3>{{ documentation_definition_title }}</h3>
+		</header>
+    <p>{{ documentation_definition_header }}</p>
+    <center>
+    <table width="90%" align="center">
+      <tr>
+      {% if documentation_definition_openapi != '' %}
+        <td align="center"><a href="{{ documentation_definition_openapi }}"><img src="/assets/images/openapi.png" width="75" align="center" /></a><p align="center"><a href="{{ site.openapi_url }}"><strong>OpenAPI</strong></a></p></td>
+      {% endif %}
+      {% if documentation_definition_postman != '' %}
+        <td align="center"><a href="{{ documentation_definition_postman }}"><img src="/assets/images/postman.png" width="75" align="center" /></a><p align="center"><a href="{{ site.postman_collection_url }}"><strong>Postman</strong></a></p></td>
+      {% endif %}
+      </tr>
+    </table>
+    </center>
+    <p>{{ documentation_definition_footer }}</p>
+  </div>
+</section>
+<!-- End Definitions -->
+
+<!-- Begin Code -->
+<a name="code"></a>
+<section id="code">
+  <div class="content">
+		<header>
+			<h3>{{ code_title }}</h3>
+		</header>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ code_header }}</p>
+          <ol>
+            {% for code in code_libraries %}
+
+              {% assign name = code.name %}
+              {% assign description = code.description %}
+              {% assign status = code.status %}
+              {% assign url = code.fields | map: 'url' %}
+              {% assign logo = code.fields | map: 'logo' %}
+
+              {% if status == 'Active' %}
+                <li><a href="{{ url }}"><strong>{{ name }}</strong></a> - {{ description }}</li>
+              {% endif %}
+
+            {% endfor %}
+          </ol>
+          <p>{{ code_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="{{ code_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Code -->
+
+<!-- Begin Licensing -->
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ licensing_title }}</h3>
+		</header>
+    <p>{{ licensing_header }}</p>
+    <center>
+    <table width="90%" align="center">
+      <tr>
+      {% for area in licensing_areas %}
+
+        {% assign licensing_title = area.title %}
+        {% assign licensing_description = area.description %}
+        {% assign licensing_status = area.status %}
+
+        {% assign license_name = area.fields | map: 'name' %}
+        {% assign license_url = area.fields | map: 'url' %}
+        {% assign license_image = area.fields | map: 'image' %}
+
+        {% if licensing_status == 'Active' %}
+          <td align="center"><p align="center"><strong>{{ licensing_title }}</strong></p></strong> <a href="{{ license_url }}"><img src="{{ license_image }}" width="75" align="center" /></a><p align="center"><a href="{{ license_url }}"><strong>{{ license_name }}</strong></a></p></td>
+        {% endif %}
+      {% endfor %}
+      </tr>
+    </table>
+    </center>
+    <p>{{ licensing_footer }}</p>
+  </div>
+</section>
+<!-- End Licensing -->
+
+<!-- Begin Plans -->
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ plans_title }}</h3>
+		</header>
+    <p>{{ plans_header }}</p>
+    <center>
+    <table width="98%" align="center">
+      <tr>
+      {% for entries in plans %}
+        {% for plan in entries %}
+
+          {% assign plan_name = plan.name %}
+          {% assign plan_description = plan.description %}
+          {% assign plan_image = plan.image %}
+          {% assign plan_status = plan.status %}
+          {% assign plan_entries = plan.entries %}
+          {% assign plan_elements = plan.elements %}
+
+          <td>
+            <p><img src="{{ plan_image }}" align="left" style="width: 75px; padding: 10px;"></p>
+            <p><strong>{{ plan_name }}</strong><p>
+            <p>{{ plan_description }}</p>
+
+            <p><strong>Details:</strong><p>
+            {% for entry in plan_entries %}
+              {% assign entry_label = entry.label %}
+              {% assign entry_description = entry.description %}
+              {% assign entry_metric = entry.metric %}
+              {% assign entry_timeframe = entry.timeframe %}
+              {% assign entry_geo = entry.geo %}
+              {% assign entry_one = entry.one %}
+              {% assign entry_two = entry.two %}
+              {% assign entry_unit = entry.unit %}
+               &nbsp;&nbsp;- {{ entry_label }} - {{ entry_description }}<br />
+            {% endfor %}
+
+            <p><strong>Elements:</strong><p>
+            {% for element in plan_elements %}
+              {% assign element_name = element | map: 'name' %}
+               &nbsp;&nbsp;- {{ element_name }}<br />
+            {% endfor %}
+
+          </td>
+
+        {% endfor %}
+      {% endfor %}
+      </tr>
+    </table>
+    </center>
+    <p>{{ plans_footer }}</p>
+  </div>
+</section>
+<!-- End Plans -->
+
+<!-- Begin Support -->
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ support_title }}</h3>
+		</header>
+    <p>{{ support_header }}</p>
+    <center>
+    <table width="90%" align="center">
+      <tr>
+      {% for channel in support_channels %}
+        {% assign url = channel.fields | map: 'url' %}
+        {% if channel.status == 'Active' %}
+          <td align="center"><a href="{{ url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.title }}</strong></a></p></td>
+        {% endif %}
+      {% endfor %}
+      </tr>
+    </table>
+    </center>
+    <p>{{ support_footer }}</p>
+  </div>
+</section>
+<!-- End Support -->
+
+
+<!-- Begin FAQ -->
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ faq_title }}</h3>
+		</header>
+    <p>{{ faq_header }}</p>
+
+    {% for categories in faq_categories %}
+      {% for category in categories %}
+        <p><strong>{{ category }}</strong></p>
+        <ul>
+          {% for entries in faq_questions %}
+            {% for entry in entries %}
+
+              {% assign this_question = entry | map: 'question' %}
+              {% assign this_question = this_question[0] %}
+              {% assign this_answer = entry | map: 'answer' %}
+              {% assign this_answer = this_answer[0] %}
+              {% assign this_category = entry | map: 'category'  %}
+              {% assign this_category = this_category[0] %}
+
+              {% if this_category == category %}
+                <li><strong>{{ this_question }}</strong> - {{ this_answer }}</li>
+              {% endif %}
+
+           {% endfor %}
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    {% endfor %}
+    <p>{{ faq_footer }}</p>
+
+  </div>
+</section>
+<!-- End FAQ -->
+
+<!-- Begin Communications -->
+<a name="communications"></a>
+<section id="sign-up-login">
+  <div class="content">
+
+		<header>
+			<h3>{{ communication_title }}</h3>
+		</header>
+
+    <p>{{ communication_header }}</p>
+
+    <center>
+    <table width="90%" align="center">
+      <tr>
+      {% for channel in communication_channels %}
+
+        {% assign title = channel | map: 'title' %}
+        {% assign description = channel | map: 'description' %}
+        {% assign image = channel | map: 'image' %}
+        {% assign url = channel | map: 'url' %}
+        {% assign communication_status = channel | map: 'status' %}
+        {% assign status = communication_status[0] %}
+
+        {% if status == "Active" %}
+          <td align="center">
+            <a href="{{ url }}"><img src="{{ image }}" width="75" align="center" /></a>
+            <p align="center"><a href="{{ url }}"><strong>{{ title }}</strong></a></p>
+          </td>
+        {% endif %}
+      {% endfor %}
+      </tr>
+    </table>
+    </center>
+
+    <p>{{ communication_footer }}</p>
+
+  </div>
+</section>
+<!-- End Communications -->
+
+<!-- Begin Road Map -->
+<a name="road-map"></a>
+<section id="road-map">
+  <div class="content">
+		<header>
+			<h3>{{ road_map_title }}</h3>
+		</header>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ road_map_header }}</p>
+          {% if road_map_status == 'Active' %}
+            <p><strong>Entries:</strong></p>
+            <ul>
+              {% for entries in public_road_map_entries %}
+                {% for entry in entries %}
+                  <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
+                {% endfor %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if road_map_suggestion_status == 'Active' %}
+            <p><strong>{{ road_map_suggestion_title }}: </strong> <a href="{{ road_map_suggestion_url }}">{{ road_map_suggestion_description }}</a></p>
+          {% endif %}
+
+          <p>{{ road_map_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="{{ road_map_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Road Map -->
+
+<!-- Begin Issues -->
+<a name="issues"></a>
+<section id="issues">
+  <div class="content">
+		<header>
+			<h3>{{ issues_title }}</h3>
+		</header>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ issues_header }}</p>
+
+          {% if issues_status == 'Active' %}
+            <p><strong>Entries:</strong></p>
+            <ul>
+              {% for entries in issues_entries %}
+                {% for entry in entries %}
+                  <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
+                {% endfor %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if issues_report_status == 'Active' %}
+            <p><strong>{{ issues_report_title }}:</strong> <a href="{{ issues_report_url }}">{{ issues_report_description }}</a></p>
+          {% endif %}
+
+          <p>{{ issues_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="{{ issues_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Issues -->
+
+
+<!-- Begin Change Log -->
+<a name="change-log"></a>
+<section id="change-log">
+  <div class="content">
+		<header>
+			<h3>{{ change_log_title }}</h3>
+		</header>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ change_log_header }}</p>
+
+          {% if change_log_status == 'Active' %}
+            <p><strong>Entries:</strong></p>
+            <ul>
+              {% for entries in change_log_entries %}
+                {% for entry in entries %}
+                  <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
+                {% endfor %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          <p>{{ change_log_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="{{ change_log_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Change Log -->
+
+<!-- Begin Legal -->
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ legal_title }}</h3>
+		</header>
+    <p>{{ legal_header }}</p>
+    <center>
+    <table width="90%" align="center">
+      <tr>
+      {% for document in legal_documents %}
+        {% assign document_name = document.name %}
+        {% assign document_description = document.description %}
+        {% assign document_image = document.image %}
+        {% assign document_status = document.status %}
+        {% assign document_url = document.fields | map: 'url' %}
+        {% if document_status == 'Active' %}
+          <td align="center"><a href="{{ document_url }}"><img src="{{ document_image }}" width="75" align="center" /></a><p align="center"><a href="{{ document_url }}"><strong>{{ document_name }}</strong></a></p></td>
+        {% endif %}
+      {% endfor %}
+      </tr>
+    </table>
+    </center>
+    <p>{{ legal_footer }}</p>
+  </div>
+</section>
+<!-- End Legal -->
