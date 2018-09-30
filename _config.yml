@@ -244,6 +244,10 @@ stops:
     instructions: Establish a base set of design practices for the service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png
     status: Active
+    services:
+      - name: Stoplight.io
+        description: StopLight, providing engineering teams with the best way to document, test, and build web APIs.
+        url: https://stoplight.io/
     tools:
       - name: API Stylebook
         description: An aggregate of API design style guides from different companies.
@@ -1414,6 +1418,10 @@ stops:
     links:
       - title: Documentation (API Evangelist)
         url: http://documentation.apievangelist.com/
+    services:
+      - name: Stoplight.io
+        description: StopLight, providing engineering teams with the best way to document, test, and build web APIs.
+        url: https://stoplight.io/
     items:
 
       - name: Paths
