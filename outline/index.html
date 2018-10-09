@@ -106,13 +106,12 @@ title: Location API - Checklist
       <tr>
         <td colspan="2"><h3>{{ stop.name }}</h3></td>
       </tr>
-      
+
+      <ul>
       {% for item in stop.items %}
-        <tr>
-          <td style="width: 50px;"></td>
-          <td style="padding: 10px;"><strong>{{ item.name }}</strong> ({{ item.status }}) - {{ item.instruction }}</td>
-        </tr>
+        <li><strong>{{ item.name }}</strong> ({{ item.status }}) - {{ item.instruction }}</li>
       {% endfor %}
+      </ul>
 
     {% endfor %}
     </table>
