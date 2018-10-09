@@ -2325,17 +2325,17 @@ stops:
 
       - name: Prototype
         description: When a prototype of this service is being developed.
-        instructions: When a prototype of this service is being developed.
+        instruction: When a prototype of this service is being developed.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-prototype.png
 
       - name: Development
         description: When a production instance of service is being developed.
-        instructions: When a production instance of service is being developed.
+        instruction: When a production instance of service is being developed.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-developer-tools.png
 
       - name: Production
         description: When a production instance of service is being operated.
-        instructions: When a production instance of service is being operated.
+        instruction: When a production instance of service is being operated.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions-gears.png
 
   #----------
