@@ -122,7 +122,7 @@ title: Location API - Checklist
                   {% assign field_label = field_name| replace: '_',' ' | capitalize %}
                   {% assign field_details = field[1] %}
                   {% assign field_details_length = field_details | size %}
-
+                  field_details_length: {{ field_details_length }}<br />
                   {% if field_details_length > 1 %}
                     <td style="width: 5%;"></td>
                     <td style="width: 8%; text-align: right; padding: 2px;"><strong>{{ field_label }}:</strong></td>
