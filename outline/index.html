@@ -104,7 +104,7 @@ title: Location API - Checklist
     <table>
     {% for stop in site.stops %}
       <tr>
-        <td colspan="2"><h3>{{ stop.name }}</h3> - {{ stop.description }}</td>
+        <td colspan="2"><h3>{{ stop.name }}</h3></td>
       </tr>
       {% for item in stop.items %}
         <tr>
@@ -122,8 +122,8 @@ title: Location API - Checklist
                     {% assign field_label = field_name| replace: '_',' ' | capitalize %}
                     {% assign field_details = field[1] %}
                     <td style="width: 5%;"></td>
-                    <td style="width: 8%; text-align: right;"><strong>{{ field_label }}:</strong></td>
-                    <td  align="left">
+                    <td style="width: 8%; text-align: right; padding: 2px;"><strong>{{ field_label }}:</strong></td>
+                    <td  align="left" style="padding: 2px;">
                       {{ field_details }}
                     </td>
                   {% endfor %}
