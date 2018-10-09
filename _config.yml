@@ -2325,14 +2325,17 @@ stops:
 
       - name: Prototype
         description: When a prototype of this service is being developed.
+        instructions: When a prototype of this service is being developed.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-prototype.png
 
       - name: Development
         description: When a production instance of service is being developed.
+        instructions: When a production instance of service is being developed.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-developer-tools.png
 
       - name: Production
         description: When a production instance of service is being operated.
+        instructions: When a production instance of service is being operated.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions-gears.png
 
   #----------
@@ -2349,18 +2352,22 @@ stops:
 
       - name: Weekly
         description: Provide a version of this outline that should be considered weekly.
+        instruction: Provide a version of this outline that should be considered weekly.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
       - name: Monthly
         description: Provide a version of this outline that should be considered monthly.
+        instruction: Provide a version of this outline that should be considered monthly.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
       - name: Releases
         description: Provide a version of this outline that should be considered for each release.
+        instruction: Provide a version of this outline that should be considered for each release.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
       - name: Governance
         description: Provide an outline of how this outline is measured, reported, and evolved.
+        instruction: Provide an outline of how this outline is measured, reported, and evolved.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
 #------------------
