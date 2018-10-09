@@ -104,7 +104,7 @@ title: Location API - Checklist
     <table>
     {% for stop in site.stops %}
       <tr>
-        <td colspan="2"><h3>{{ stop.name }}</h3></td>
+        <td colspan="2"><h3>{{ stop.name }}</h3> - {{ stop.description }}</td>
       </tr>
       {% for item in stop.items %}
         <tr>
