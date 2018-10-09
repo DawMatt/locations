@@ -101,7 +101,7 @@ title: Location API - Checklist
 <section id="documentation">
   <div class="content">
 
-    <table>
+    <table border="1">
     {% for stop in site.stops %}
       <tr>
         <td colspan="2"><h3>{{ stop.name }}</h3></td>
@@ -114,7 +114,7 @@ title: Location API - Checklist
         <tr>
           <td style="width: 50px;"></td>
           <td style="padding: 3px;">
-            <table width="100%" style="padding-top: 5px; padding-bottom: 5px;">
+            <table width="100%" style="padding-top: 5px; padding-bottom: 5px;" border="1">
               {% for fields in item.fields %}
                 <tr>
                 {% for field in fields %}
@@ -130,6 +130,7 @@ title: Location API - Checklist
                       {{ field_details }}
                     </td>
                   {% endif %}
+
                 {% endfor %}
                 </tr>
               {% endfor %}
