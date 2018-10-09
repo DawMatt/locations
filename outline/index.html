@@ -121,10 +121,11 @@ title: Location API - Checklist
                     {% assign field_name = field[0] %}
                     {% assign field_label = field_name| replace: '_',' ' | capitalize %}
                     {% assign field_details = field[1] %}
+                    {% assign field_details_length = field_details | size %}
                     <td style="width: 5%;"></td>
                     <td style="width: 8%; text-align: right; padding: 2px;"><strong>{{ field_label }}:</strong></td>
                     <td  align="left" style="padding: 2px;">
-                      {{ field_details }}
+                      {{ field_details }} - {{ field_details_length }}
                     </td>
                   {% endfor %}
                   </tr>
