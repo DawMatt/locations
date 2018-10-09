@@ -30,10 +30,508 @@ status_values:
 stops:
 
   #-------------
-  # Definitions
+  # API Discovery
+  #-------------
+
+  #-------------
+  # API Discovery - Low Hanging Fruit
+  #-------------
+  - name: Low Hanging Fruit
+    title: Low Hanging Fruit
+    area: API Discovery
+    description: Learning where to start with APIs based upon what is already on a website. Spidering existing domains looking for data assets that should be considered for delivery as APIs.
+    header:
+    footer:
+    instructions: Harvest all the CSV, XML, JSON, and tables from the public websites.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-grapes.png
+    status: Active
+    items:
+
+      - name: Spreadsheets
+        description: Identify all of the spreadsheets that have been published within any domains.
+        instruction: Harvest any spreadsheet that is published to the website.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: Active
+
+      - name: CSV
+        description: Identify all of the CSV files that have been published within any domains.
+        instruction: Harvest any CSV files that is published to the website.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: Active
+
+      - name: XML
+        description: Identify all of the XML files that have been published within any domains.
+        instruction: Harvest any XML files that is published to the website.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: Active
+
+      - name: Tables
+        description: Identify all of the HTML tables that have been published within any domains.
+        instruction: Harvest any HTML tables that is published to the website.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: Active
+
+  #-----------
+  # API Production - Discovery
+  #-----------
+  - name: Discovery
+    title: Discovery
+    area: API Production
+    description: Making sure that all APIs are discoverable by default, and able to be easily registered in aPI catalogs, and able to be included in search indexes, and API discovery services. Baking API discovery into the regular operations of each service being deployed.
+    header: The definitions for this service.
+    footer:
+    instructions: Defining the discovery aspects for this service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png
+    status: None
+    items:
+
+      - name: API.json
+        description: The API discovery document for this service.
+        instruction: Publish an API Discovery (APIs.json) index for the project.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-commons-icon.png
+        status: None
+        fields:
+          - url: http://example.com/api-discovery.json
+
+      - name: OpenAPI
+        description: The complete OpenAPI for this service.
+        instruction: Provide URL for all OpenAPI definitions and index in API discovery index.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-openapi-spec.png
+        status: None
+        fields:
+          - url: http://example.com/openapi.json
+
+      - name: Postman Collection
+        description: The Postman Collection for this service.
+        instruction: Provide URL for all Postman Collections and index in API discovery index.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-postman.png
+        status: None
+        fields:
+          - url: http://example.com/postman.json        
+
+  #-------------
+  # API Discovery - Definitions
   #-------------
   - name: Definition
     title: Definitions
+    area: API Design
+    description: All of the definitions that go into defining this service, from the original schema, the OpenAPI definitions, the Postman Collections, and the assertions that contribute to the testing of the service to ensure it is doing what is expected of it.
+    header: All of the definitions available for this service, providing a single way to find everything that drives the project.
+    footer: Providing a machine readable core for the entire lifecycle of this service, allowing documentation to be used elsewhere.
+    instructions: Define the problem and solution in a human and machine readable way.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png
+    status: Active
+    items:
+
+      - name: Organization
+        description: The over-arching source control organization for this service, providing an umbrella for different development groups and projects.
+        instruction: Define the organization for this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
+        status: Active
+        fields:
+          - github_organization: api-evangelist-apis
+        services:
+          - name: GitHub
+            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
+            url: https://github.com
+          - name: GitLab
+            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
+            url: https://about.gitlab.com/
+          - name: Bitbucket
+            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
+            url: https://bitbucket.org/
+        links:
+          - title: API Evangelist APIs
+            url: https://github.com/api-evangelist-apis
+
+      - name: Repository
+        description: The source control repository for this service, providing a self-contained, shareable, forkable way to engage with a service. Allowing for EVERYTHING involved with a service to be accessed in a single location.
+        instruction: Establish a Github repository.
+        status: Active
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-repository.jpg
+        fields:
+          - github_repository: locations
+        services:
+          - name: GitHub
+            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
+            url: https://github.com
+          - name: GitLab
+            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
+            url: https://about.gitlab.com/
+          - name: Bitbucket
+            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
+            url: https://bitbucket.org/
+        links:
+          - title: Locations
+            url: https://github.com/api-evangelist-apis/locations
+
+      - name: README
+        description: The README for this services repository, providing an overview of the service, complete with all the relevant links to all the moving parts. Any user should be able to land on the README, and easily get up to speed on what a service delivers.
+        instruction: Craft a README for the repository.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-readme.png
+        status: Active
+        fields:
+          - readme_path: /README.md
+        services:
+          - name: GitHub
+            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
+            url: https://github.com
+          - name: GitLab
+            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
+            url: https://about.gitlab.com/
+          - name: Bitbucket
+            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
+            url: https://bitbucket.org/
+        links:
+          - title: Locations README
+            url: https://github.com/api-evangelist-apis/locations/blob/master/README.md
+
+      - name: Service Name
+        description: A simple title for this service, describing what it does in concise terms, providing a simple way for any internal or external part to learn about the value it offers.
+        instruction: Provide title for the service.
+        status: Active
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-request.png
+        fields:
+          - service_name: API Evangelist Location API
+
+      - name: Service Description
+        description: A simple, descriptive paragraph for this service. Providing less that 250 words about what value this service delivers. Avoid just writing the obvious, and describing what an APIs, and focusing in on describing the value being delivered by this service.
+        instruction: Provide concise description for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
+        status: Active
+        fields:
+          - service_description: This is a location API, providing many of the common building blocks of location for use in any application. Providing the essential location ingredients needed through a variety of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
+
+      - name: Service Goals
+        description: Providing some basic goals for this service, helping clearly articulate why this service is being delivered, providing insight beyond the obvious about why this service is worthy of being developed, and operated in production.
+        instruction: Establish goals that will guide this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gear-life-cycle.png
+        status: Active
+        fields:
+          - service_goals: This is the goals for this service.
+            goals:
+              - name: Provide Locations
+                descripton: Provide a set of cities, states, countries, and other location specific data for use across other applications.
+
+      - name: Schema
+        description: JSON schema for the data behind service, providing a stanalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind this service.
+        instruction: Organize loose, and JSON schema for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
+        status: Active
+        fields:
+          - title: Cities
+          - path: /json-schema/cities.json
+          - title: Regions
+          - path: /json-schema/regions.json
+          - title: Countries
+          - path: /json-schema/countries.json
+        tools:
+          - name: JSON Schema
+            description: JSON Schema is a vocabulary that allows you to annotate and validate JSON documents.
+            url: https://json-schema.org/
+          - name: JSON Schema Tools
+            description: A tool for managing JSON schema documents, and working with them to make sure they are complete.
+            url: https://www.jsonschema.net/
+
+      - name: OpenAPI
+        description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what this service delivers, that can be used across the API lifecycle, guiding everying aspect of delivering this service.
+        instruction: Establish an OpenAPI for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/openapi/openapi-icon.png
+        status: None
+        fields:
+          - openapi: /_data/openapi.yaml
+        tools:
+          - name: OpenAPI
+            description: The OpenAPI specification for describing the surface area of the API.
+            url: https://github.com/OAI/OpenAPI-Specification
+
+      - name: Domain
+        description: Considering the domain that this service fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within. Quantify the service domain, helping decompose from a larger domain, and helping focus what this service does, helping it do one things well.
+        instruction: Provide insight into the domain in which this service is operating.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
+        status: Active
+        elements:
+          - title: Context
+            description: Describing the setting and meaning the defines the value of this service.
+          - title: Model
+            description: The system of models used to define the elements of the domain this service.
+          - title: Language
+            description: The vocabulary and language used to help articulate the value this service delivers.
+          - title: Bounded Context
+            description:  Describing the boundaries of where this service operates and delivers value.
+        links:
+          - title: Domain-driven design
+            url: https://en.wikipedia.org/wiki/Domain-driven_design
+          - title: Restful Objects
+            url: https://en.wikipedia.org/wiki/Restful_Objects
+
+      - name: Event Storming
+        description: Event storming is a rapid, lightweight, and underappreciated group modeling technique that is intense, fun, and useful for accelerating development teams.
+        instruction: Engage in an event storming exercise to help model the domain.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sticky-notes.png
+        status: Active
+        elements:
+          - title: Domain Event
+            description: The event that occurs within the domain as part of a service execution.
+          - title: Command
+            description: The trigger for the domain event occurring, setting it into motion.
+          - title: Actor
+            description: Defining who executes command to trigger event, and is making things happen.
+          - title: Aggregates
+            description:  Aggregates logically group various commands, events, and reactions together.
+        links:
+          - title: Event Storming (Wikipedia)
+            url: https://en.wikipedia.org/wiki/Event_storming
+          - title: Event Storming
+            url: https://www.eventstorming.com/
+
+      - name: Tags
+        description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.
+        instruction: Provide a list of tags that will be used to organize schema, resources, infrastructure, and other elements of this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tag.png
+        status: Active
+
+      - name: Assertions
+        description: Human and machine readable assertions of what service does, leveraging the existing JSON schema, and translating that into business objectives, asserting that a service does what it is supposed to.
+        instruction: Craft a set of assertions for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
+        status: Active
+        fields:
+          - assertions:
+            - title: The title of the assertion
+              path: /path/of/the/assertion
+
+      - name: Team
+        description: A list of team members for the service, providing a nice list of who is responsible for making a service operate.
+        instruction: Define the team behind the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-team-working.png
+        status: Active
+        fields:
+          - team:
+            - name: Kin Lane
+              role: API Evangelist
+              email: info@apievangelist.com
+              twitter: kinlane
+              github: kinlane
+
+
+
+  #-------------
+  # API Design
+  #-------------
+
+  #-------------
+  # API Design - Definitions
+  #-------------
+  - name: Definition
+    title: Definitions
+    area: API Design
+    description: All of the definitions that go into defining this service, from the original schema, the OpenAPI definitions, the Postman Collections, and the assertions that contribute to the testing of the service to ensure it is doing what is expected of it.
+    header: All of the definitions available for this service, providing a single way to find everything that drives the project.
+    footer: Providing a machine readable core for the entire lifecycle of this service, allowing documentation to be used elsewhere.
+    instructions: Define the problem and solution in a human and machine readable way.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png
+    status: Active
+    items:
+
+      - name: Organization
+        description: The over-arching source control organization for this service, providing an umbrella for different development groups and projects.
+        instruction: Define the organization for this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
+        status: Active
+        fields:
+          - github_organization: api-evangelist-apis
+        services:
+          - name: GitHub
+            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
+            url: https://github.com
+          - name: GitLab
+            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
+            url: https://about.gitlab.com/
+          - name: Bitbucket
+            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
+            url: https://bitbucket.org/
+        links:
+          - title: API Evangelist APIs
+            url: https://github.com/api-evangelist-apis
+
+      - name: Repository
+        description: The source control repository for this service, providing a self-contained, shareable, forkable way to engage with a service. Allowing for EVERYTHING involved with a service to be accessed in a single location.
+        instruction: Establish a Github repository.
+        status: Active
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-repository.jpg
+        fields:
+          - github_repository: locations
+        services:
+          - name: GitHub
+            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
+            url: https://github.com
+          - name: GitLab
+            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
+            url: https://about.gitlab.com/
+          - name: Bitbucket
+            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
+            url: https://bitbucket.org/
+        links:
+          - title: Locations
+            url: https://github.com/api-evangelist-apis/locations
+
+      - name: README
+        description: The README for this services repository, providing an overview of the service, complete with all the relevant links to all the moving parts. Any user should be able to land on the README, and easily get up to speed on what a service delivers.
+        instruction: Craft a README for the repository.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-readme.png
+        status: Active
+        fields:
+          - readme_path: /README.md
+        services:
+          - name: GitHub
+            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
+            url: https://github.com
+          - name: GitLab
+            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
+            url: https://about.gitlab.com/
+          - name: Bitbucket
+            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
+            url: https://bitbucket.org/
+        links:
+          - title: Locations README
+            url: https://github.com/api-evangelist-apis/locations/blob/master/README.md
+
+      - name: Service Name
+        description: A simple title for this service, describing what it does in concise terms, providing a simple way for any internal or external part to learn about the value it offers.
+        instruction: Provide title for the service.
+        status: Active
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-request.png
+        fields:
+          - service_name: API Evangelist Location API
+
+      - name: Service Description
+        description: A simple, descriptive paragraph for this service. Providing less that 250 words about what value this service delivers. Avoid just writing the obvious, and describing what an APIs, and focusing in on describing the value being delivered by this service.
+        instruction: Provide concise description for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
+        status: Active
+        fields:
+          - service_description: This is a location API, providing many of the common building blocks of location for use in any application. Providing the essential location ingredients needed through a variety of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
+
+      - name: Service Goals
+        description: Providing some basic goals for this service, helping clearly articulate why this service is being delivered, providing insight beyond the obvious about why this service is worthy of being developed, and operated in production.
+        instruction: Establish goals that will guide this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gear-life-cycle.png
+        status: Active
+        fields:
+          - service_goals: This is the goals for this service.
+            goals:
+              - name: Provide Locations
+                descripton: Provide a set of cities, states, countries, and other location specific data for use across other applications.
+
+      - name: Schema
+        description: JSON schema for the data behind service, providing a stanalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind this service.
+        instruction: Organize loose, and JSON schema for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
+        status: Active
+        fields:
+          - title: Cities
+          - path: /json-schema/cities.json
+          - title: Regions
+          - path: /json-schema/regions.json
+          - title: Countries
+          - path: /json-schema/countries.json
+        tools:
+          - name: JSON Schema
+            description: JSON Schema is a vocabulary that allows you to annotate and validate JSON documents.
+            url: https://json-schema.org/
+          - name: JSON Schema Tools
+            description: A tool for managing JSON schema documents, and working with them to make sure they are complete.
+            url: https://www.jsonschema.net/
+
+      - name: OpenAPI
+        description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what this service delivers, that can be used across the API lifecycle, guiding everying aspect of delivering this service.
+        instruction: Establish an OpenAPI for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/openapi/openapi-icon.png
+        status: None
+        fields:
+          - openapi: /_data/openapi.yaml
+        tools:
+          - name: OpenAPI
+            description: The OpenAPI specification for describing the surface area of the API.
+            url: https://github.com/OAI/OpenAPI-Specification
+
+      - name: Domain
+        description: Considering the domain that this service fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within. Quantify the service domain, helping decompose from a larger domain, and helping focus what this service does, helping it do one things well.
+        instruction: Provide insight into the domain in which this service is operating.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
+        status: Active
+        elements:
+          - title: Context
+            description: Describing the setting and meaning the defines the value of this service.
+          - title: Model
+            description: The system of models used to define the elements of the domain this service.
+          - title: Language
+            description: The vocabulary and language used to help articulate the value this service delivers.
+          - title: Bounded Context
+            description:  Describing the boundaries of where this service operates and delivers value.
+        links:
+          - title: Domain-driven design
+            url: https://en.wikipedia.org/wiki/Domain-driven_design
+          - title: Restful Objects
+            url: https://en.wikipedia.org/wiki/Restful_Objects
+
+      - name: Event Storming
+        description: Event storming is a rapid, lightweight, and underappreciated group modeling technique that is intense, fun, and useful for accelerating development teams.
+        instruction: Engage in an event storming exercise to help model the domain.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sticky-notes.png
+        status: Active
+        elements:
+          - title: Domain Event
+            description: The event that occurs within the domain as part of a service execution.
+          - title: Command
+            description: The trigger for the domain event occurring, setting it into motion.
+          - title: Actor
+            description: Defining who executes command to trigger event, and is making things happen.
+          - title: Aggregates
+            description:  Aggregates logically group various commands, events, and reactions together.
+        links:
+          - title: Event Storming (Wikipedia)
+            url: https://en.wikipedia.org/wiki/Event_storming
+          - title: Event Storming
+            url: https://www.eventstorming.com/
+
+      - name: Tags
+        description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.
+        instruction: Provide a list of tags that will be used to organize schema, resources, infrastructure, and other elements of this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tag.png
+        status: Active
+
+      - name: Assertions
+        description: Human and machine readable assertions of what service does, leveraging the existing JSON schema, and translating that into business objectives, asserting that a service does what it is supposed to.
+        instruction: Craft a set of assertions for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
+        status: Active
+        fields:
+          - assertions:
+            - title: The title of the assertion
+              path: /path/of/the/assertion
+
+      - name: Team
+        description: A list of team members for the service, providing a nice list of who is responsible for making a service operate.
+        instruction: Define the team behind the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-team-working.png
+        status: Active
+        fields:
+          - team:
+            - name: Kin Lane
+              role: API Evangelist
+              email: info@apievangelist.com
+              twitter: kinlane
+              github: kinlane
+
+
+  #-------------
+  # API Production - Definitions
+  #-------------
+  - name: Definition
+    title: Definitions
+    area: API Production
     description: All of the definitions that go into defining this service, from the original schema, the OpenAPI definitions, the Postman Collections, and the assertions that contribute to the testing of the service to ensure it is doing what is expected of it.
     header: All of the definitions available for this service, providing a single way to find everything that drives the project.
     footer: Providing a machine readable core for the entire lifecycle of this service, allowing documentation to be used elsewhere.
@@ -234,10 +732,11 @@ stops:
               github: kinlane
 
   #--------
-  # Design
+  # API Production - Design
   #--------
   - name: Design
     title: Design
+    area: API Production
     description: The overall design of your API, the design patterns that are in use as part of the delivery of services. Providing a common set of patterns that can be used across services, beginning with REST, but also leverage hypermedia, GraphQL, and other patterns when it comes to the deliver of services.
     header: The API design strategy for use as part of this service.
     footer: Setting a consistent design strategy for all services.
@@ -473,6 +972,7 @@ stops:
   #----------
   - name: Database
     title: Database
+    area: API Production
     description: Defining the database layer behind this service, providing an isolated database for the access and storage of all data used as part of this service.
     header: The database behind this service, acting as the data source for these resources.
     footer: Providing a dedicated database resource for just this single service to use.
@@ -541,10 +1041,11 @@ stops:
           - encryption: enabled
 
   #---------
-  # Storage
+  # API Production - Storage
   #---------
   - name: Storage
     title: Storage
+    area: API Production
     description: Defining the storage layer that is used as part of a services operation, providing a single strategy for managing the storage of objects used by this service.
     header: The storage used for this service, where all objects are stored.
     footer: Providing a single location this service to manage it's storage.
@@ -603,10 +1104,11 @@ stops:
           - encryption: enabled
 
   #-----
-  # DNS
+  # API Production - DNS
   #-----
   - name: DNS
     title: DNS
+    area: API Production
     description: Managing the DNS for a service, ensuring it is part of a wider DNS strategy, and allows for isolation of this service within a specific domain namespace.
     header: The DNS addressing used to route all traffic to this service.
     footer: Using a single subdomain that can be used to access this resource.
@@ -671,10 +1173,11 @@ stops:
           - enabled: true
 
   #----------------
-  # Virtualization
+  # API Production - Virtualization
   #----------------
   - name: Virtualization
     title: Virtualization
+    area: API Production
     description: Providing mocked, sandbox, and virtualized instances of APIs and other data for understanding what an API does.
     header: Mocked, sandbox, and virtualized instances of APIs and other data for understanding what an API does.
     footer: Helping consumers understand what is possible when it comes to integrating and learning about an API.
@@ -718,10 +1221,11 @@ stops:
 
 
   #------------
-  # Deployment
+  # API Production - Deployment
   #------------
   - name: Deployment
     title: Deployment
+    area: API Production
     description: Managing the actual deployment of an API into product, providing a common way in which APIs are deployed. Defining one, or many ways in which APIs can be put into production as part of any service.
     header: The deployment of any service, and defining how it can be delivered into a production environment.
     footer: Providing a strong framework for consistently delivering services across an organization.
@@ -829,10 +1333,11 @@ stops:
           - region: us-east
 
   #---------------
-  # Orchestration
+  # API Production - Orchestration
   #---------------
   - name: Orchestration
     title: Orchestration
+    area: API Production
     description: The orchestration of the build and deliver of a service, defining how the technical building blocks are orchestrated to deliver the resulting service.
     instructions: Define how the service will be orchestrated.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-conductor.png
@@ -893,10 +1398,11 @@ stops:
               command: command
 
   #--------------
-  # Dependencies
+  # API Production - Dependencies
   #--------------
   - name: Dependencies
     title: Dependencies
+    area: API Production
     description: Defining the dependencies associated with this service, helping quantifying what this service needs to do what it does successfully.
     header:
     footer:
@@ -961,10 +1467,11 @@ stops:
           - url: http://example.com
 
   #--------------
-  # Authentication
+  # API Production - Authentication
   #--------------
   - name: Authentication
     title: Authentication
+    area: API Production
     description: Providing a standardized approach to authenticating with the service, allowing consumers to successfuly, and securely access a service.
     header:
     footer:
@@ -1023,10 +1530,11 @@ stops:
           - url: http://public.companies.apievangelist.com#sign-up-login
 
   #------------
-  # Management
+  # API Production - Management
   #------------
   - name: Management
     title: Management
+    area: API Production
     description: Having a consistent management layer for use across all APIs, applying a strategy for authentication, service composition, logging, analysis, and measuring value being generated at the gateway and management layers.
     header: The management of this service, managing all access to APIs.
     footer: Leveraging a proven solution for securing all resources provided.
@@ -1101,10 +1609,11 @@ stops:
           - url: https://example.com/applications/
 
   #---------
-  # Logging
+  # API Production - Logging
   #---------
   - name: Logging
     title: Logging
+    area: API Production
     description: Having a consistent strategy for logging across the entire API stack, ensuring that logging is a first class citizen, and all activity across APIs is being stored, shipped, and made accessible across analysis systems and tooling.
     header: The definitions for this service.
     footer: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-2.png
@@ -1150,10 +1659,11 @@ stops:
           - location: /api-evangelist-api-bucket/locations/logs/
 
   #--------------
-  # Monetization
+  # API Production - Monetization
   #--------------
   - name: Monetization
     title: Monetization
+    area: API Production
     description: Understanding what the costs associated with API development and operation are, tracking all the costs along the way so it can be used to help understand the value being generated, and drive the overall plan for operating a service.
     header: Define the monetization history, and the details leading to a plan.
     footer: Tracking on everything that goes into delivering this service.
@@ -1207,10 +1717,11 @@ stops:
           - description: Delivers X value for consumers by providing them Y.
 
   #-------
-  # Plans
+  # API Production - Plans
   #-------
   - name: Plans
     title: Plans
+    area: API Production
     description: Having one or many plans for accessing this service, ensuring that all consumption occurs through the filter of a plan, and fit into a wider platform management strategy.
     header: These are the plans for accessing this service, providing different tiers of access depending on your needs, and what is allowed for this service. Each plan should have the details you need to understand the limitations, as well as other elements provided for the service at this tier.
     footer: Currently there are just two plans available, if you have more needs than what is here, use one of the support channels to let us know what it is that you need. There are other levels available, but this is the standard public offering for this service at this moment in time.
@@ -1269,10 +1780,11 @@ stops:
                 - name: SLA
 
   #--------
-  # Portal
+  # API Production - Portal
   #--------
   - name: Portal
     title: Portal / Landing Page
+    area: API Production
     description: Providing one, or many public or private portals, providing a single known location for API proviers and API consumers to find what they are looking for when it comes to API integration with services being made available.
     header: The portal landing page for this service, providing a single location to access the service.
     footer: Providing a single known location discovery and return when information about service is needed.
@@ -1335,10 +1847,11 @@ stops:
 
 
   #-----------------
-  # Getting Started
+  # API Production - Getting Started
   #-----------------
   - name: Getting Started
     title: Getting Started
+    area: API Production
     description: Providing basic getting started information for dvelopers to use when on-boarding.
     header: These are the steps you need to take when getting started using this service.
     footer: If you have any questions, feel free to reach out, and I'll do my best to help.
@@ -1405,10 +1918,11 @@ stops:
           - url: http://locations.apievangelist.com/#support
 
   #---------------
-  # Documentation
+  # API Production - Documentation
   #---------------
   - name: Documentation
     title: Documentation
+    area: API Production
     description: Ensuring that there is always comprehensive, up to date, and if possible interactive API documentation available for all APIs, providing developers with everything they need to understand what an API does, and successfully integrate APIs into their applications.
     header: This is the interactive API documentation for this API, and when you are authenticated, will allow you to make API calls, and see the responses for each API path.
     footer: This documentation is generated from the OpenAPI definition for this API, which you can use to publish, syndicate, and integrate with this API documentation elsewhere.
@@ -1475,10 +1989,11 @@ stops:
           - enabled: true
 
   #------
-  # Code
+  # API Production - Code
   #------
   - name: Code
     title: Code / Libraries / SDKs
+    area: API Production
     description: Providing code samples, libraries, SDKs, and other solutions in a variety of languages, and for a variety of platforms, helping do much of the heavy lifting that is required when it comes to putting an API to use in applications, and system to system integration.
     header: These are the code samples, libraries, and SDKs we provide in a variety of programming languages, helping jumpstart your integration with the API.
     footer: If there isn't a language library you need available, make sure and let us know through one of the support channels, so we can consider for the road map.
@@ -1540,7 +2055,7 @@ stops:
 
       - name: C#
         description: This is the C# SDK for integrating with this service.
-        instruction: Provide a C# SDK.
+        instruction: Provide a C# API Production - SDK.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-code-c-sharp.png
         status: Active
         fields:
@@ -1563,10 +2078,11 @@ stops:
           - url: http://example.com/javascript/
 
   #-----------
-  # Licensing
+  # API Production - Licensing
   #-----------
   - name: Licensing
     title: Licensing
+    area: API Production
     description: Ensuring that all of the licensing for the entire API stack has been considered, providing references for the licenses of each layer of API operations, and even dependencies whenever possible.
     header: This is what you need to know regarding the licensing of resources that are available as part of this service, breaking down the license applied to each component.
     footer: If you have any questions on licensing of code, data, or other aspect of this service, please use one of the support channels to give us more detail on your licensing query.
@@ -1623,10 +2139,11 @@ stops:
           - image: http://locations.apievangelist.com/assets/images/mit-license.png
 
   #----------
-  # Support
+  # API Production - Support
   #----------
   - name: Support
     title: Support
+    area: API Production
     description: Ensuring that each individual API has the necessary support, making sure that the support channels for a service are easy to find, have a responsive and knowledgeable person available to answer questions, and is being measured and audited for quality.
     header: We provide three ways in which you can receive support for this API, and have your questions answered as you are working to integrate it into your web or mobile application.
     footer: If your question is of the private nature please email us, for all other inquires please submit as GitHub issue if possible, so that others can learn from your question to.
@@ -1679,10 +2196,11 @@ stops:
           - url: http://example.com/tickets/
 
   #------
-  # FAQs
+  # API Production - FAQs
   #------
   - name: FAQs
     title: Frequently Asked Questions (FAQ)
+    area: API Production
     description: Providing a self-service listing of the most common questions that get asked of a service, so that API consumers will to have to ask the question, and put support channels to work, resulting in additional resources being required to support the platform.
     header: These are the frequently asked questions (FAQ) for this service, reflecting the questions most asked by consumers of this service.
     footer: If you have a question, and you don't find the answer listed here, feel free to use one of the support channels above to get it answered.
@@ -1746,10 +2264,11 @@ stops:
           - url: http://example.com/ask/
 
   #---------------
-  # Communication
+  # API Production - Communication
   #---------------
   - name: Communication
     title: Staying In Tune
+    area: API Production
     description: Having a comprehensive communication strategy for a service, ensuring that each service is properly communicating with other teams, stakeholders, and API consumers. Providing a regular stream of information regarding what is happening with the service.
     header: Here are the commmunication channels provided to you, helping you stay in tune with what is changing with this service, and the overall platform behind it.
     footer: These channels should provide you with a regular hearbeat of the changes being made, and what is being planned as part of this platform's operations.
@@ -1808,10 +2327,11 @@ stops:
           - url: http://example.com/communication/
 
   #----------
-  # Road Map
+  # API Production - Road Map
   #----------
   - name: Road Map
     title: Road Map
+    area: API Production
     description: Providing API consumers with as much information as possible about what changes are being planned for a service. Helping include consumers in the conversation about what is being planned whenever possible.
     instructions: Provide a road map for the future of this service.
     header: This is what we plan on doing in the near future when it comes to evolving this service, documenting the features we are planning to add to this service in future iterations.
@@ -1866,10 +2386,11 @@ stops:
           - url: https://github.com/api-evangelist-apis/locations/issues
 
   #--------
-  # Issues
+  # API Production - Issues
   #--------
   - name: Issues
     title: Issues
+    area: API Production
     description: Being transparent around the issues that are currently outstanding regarding a platform. Potentially saving resources having to respond to further emails, tickets, and issues being reported.
     header: These are the current issues that are outstanding for this service at the moment--letting you know that we are working hard to fix.
     footer: We provide visibility into these issues because we want to be as transparent as possible with what is happening with the service.
@@ -1907,10 +2428,11 @@ stops:
           - url: https://github.com/api-evangelist-apis/locations/issues
 
   #------------
-  # Change Log
+  # API Production - Change Log
   #------------
   - name: Change Log
     title: Change Log
+    area: API Production
     description: Provide consumers with a detail history of what has changed in the past with a service. Rolling over road map items, and  issues when they have been accomplished or satisfied into a detailed change log.
     header: This is a detailed list of everything that has changed with this platform, providing you with the history of what has happened over time with this service.
     footer: Showing our track record when it comes to changes being made to this platform, showing the work we've done to deliver on our road map, and satisfy all the open issue.
@@ -1945,10 +2467,11 @@ stops:
               description: This is a description for the item.
 
   #-------
-  # Legal
+  # API Production - Legal
   #-------
   - name: Legal
     title: The Legal Department
+    area: API Production
     description: Covering the legal bases when it comes to operating a service, ensuring there are terms of service, privacy policies, and the other legal aspects of delivering a service online, with partners, and even internally with an organization.
     header: This is the legal department for this service, with all the details you will need to comply with usage of this service.
     footer: If you have any questions about the legal documents provided here, you can contact us through one of the support channels.
@@ -1982,10 +2505,11 @@ stops:
           - url: http://locations.apievangelist.com/service-level-agreement/
 
   #------------
-  # Monitoring
+  # API Production - Monitoring
   #------------
   - name: Monitoring
     title: Monitoring
+    area: API Production
     description: Making sure all aspects of a service is being monitored, understanding the overall availability of a service, and whether or not a service is being delivered as expected, and meeting the SLA as promised.
     header: The definitions for this service.
     footer:
@@ -2036,10 +2560,11 @@ stops:
           - embed: <embed code>
 
   #---------
-  # Testing
+  # API Production - Testing
   #---------
   - name: Testing
     title: Testing
+    area: API Production
     description: Going beyond just testing, and making sure that a service is being tested at a granular level, using schema for validation, and making sure each service is doing exactly what it should, and nothing more.
     header: The definitions for this service.
     footer:
@@ -2099,10 +2624,11 @@ stops:
               description: This is a description for the item.
 
   #-------------
-  # Performance
+  # API Production - Performance
   #-------------
   - name: Performance
     title: Performance
+    area: API Production
     description: Testing each service for performance, benchmarking the speed in which resources are being delivered from multiple regions, working to understand and establish what the baseline speed for each API is, and understanding if the service is meeting, or falling beneath expectations.
     header: The definitions for this service.
     footer:
@@ -2162,10 +2688,11 @@ stops:
               description: This is a description for the item.
 
   #----------
-  # Security
+  # API Production - Security
   #----------
   - name: Security
     title: Security
+    area: API Production
     description: Going beyond authentication, encryption and other aspects of security, and working to scan the surface area of APIs to ensure that there are no vulnerabilities, and that APIs are not doing anything they should not be doing. Keeping services secure, and operating reliabily.
     header: The definitions for this service.
     footer:
@@ -2233,10 +2760,11 @@ stops:
               description: This is a description for the item.
 
   #-----------
-  # Discovery
+  # API Production - Discovery
   #-----------
   - name: Discovery
     title: Discovery
+    area: API Production
     description: Making sure that all APIs are discoverable by default, and able to be easily registered in aPI catalogs, and able to be included in search indexes, and API discovery services. Baking API discovery into the regular operations of each service being deployed.
     header: The definitions for this service.
     footer:
@@ -2270,10 +2798,11 @@ stops:
           - url: http://example.com/postman.json
 
   #----------
-  # Analysis
+  # API Production - Analysis
   #----------
   - name: Analysis
     title: Analysis
+    area: API Production
     description: Measuring, quantifying, and analyzing the usage of all APIs to make sure the platform is aware of how all APIs are being put to to use, and that teams are able to respond to any type of activity on the platform in near real time.
     header: The definitions for this service.
     footer:
@@ -2312,10 +2841,11 @@ stops:
           - url: http://example.com/sla/
 
   #----------
-  # Stages
+  # API Production - Stages
   #----------
   - name: Stages
     title: Stages
+    area: API Production
     description: Understanding what the stages are for each service, defining the overall maturity of each service, and understanding the road from inception to production.
     header: The definitions for this service.
     footer:
@@ -2339,10 +2869,11 @@ stops:
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions-gears.png
 
   #----------
-  # Maintenance
+  # API Production - Maintenance
   #----------
   - name: Maintenance
     title: Maintenance
+    area: API Production
     description: Defining what maintenance looks like for each service, defining what is needed to keep a service running, and meeting the recurring needs of each API being made available.
     header: The definitions for this service.
     footer:

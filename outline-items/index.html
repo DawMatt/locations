@@ -100,12 +100,51 @@ title: Location API - Checklist
   <div class="content">
 
     {% for stop in site.stops %}
-      <h3>{{ stop.name }}</h3>
-      <ul>
-      {% for item in stop.items %}
-        <li><strong>{{ item.name }}</strong> - {{ item.instruction }}</li>
-      {% endfor %}
-      </ul>
+
+      <h2>API Discovery</h2>
+      {% if stop.area == 'API Discovery' %}
+        <h3>{{ stop.name }}</h3>
+        <p>{{ stop.description }}</p>
+        <ul>
+        {% for item in stop.items %}
+          <li><strong>{{ item.name }}</strong> - {{ item.instruction }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+      <h2>API Design</h2>
+      {% if stop.area == 'API Design' %}
+        <h3>{{ stop.name }}</h3>
+        <p>{{ stop.description }}</p>
+        <ul>
+        {% for item in stop.items %}
+          <li><strong>{{ item.name }}</strong> - {{ item.instruction }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+      <h2>API Development</h2>
+      {% if stop.area == 'API Development' %}
+        <h3>{{ stop.name }}</h3>
+        <p>{{ stop.description }}</p>
+        <ul>
+        {% for item in stop.items %}
+          <li><strong>{{ item.name }}</strong> - {{ item.instruction }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+      <h2>API Production</h2>
+      {% if stop.area == 'API Production' %}
+        <h3>{{ stop.name }}</h3>
+        <p>{{ stop.description }}</p>
+        <ul>
+        {% for item in stop.items %}
+          <li><strong>{{ item.name }}</strong> - {{ item.instruction }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
     {% endfor %}
 
   </div>
