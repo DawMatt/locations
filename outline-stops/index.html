@@ -104,7 +104,7 @@ title: Location API - Checklist
       {% for stop in site.stops %}
         <ul>
           {% if stop.area == 'API Discovery' %}
-            <li>{{ stop.name }} - {{ stop.description }}</li>
+            <li><strong>{{ stop.name }}</strong> - {{ stop.description }}</li>
           {% endif %}
         </ul>
       {% endfor %}
@@ -116,7 +116,7 @@ title: Location API - Checklist
       {% for stop in site.stops %}
         <ul>
           {% if stop.area == 'API Design' %}
-            <li>{{ stop.name }} - {{ stop.description }}</li>
+            <li><strong>{{ stop.name }}</strong> - {{ stop.description }}</li>
           {% endif %}
         </ul>
       {% endfor %}
@@ -128,7 +128,7 @@ title: Location API - Checklist
       {% for stop in site.stops %}
         <ul>
           {% if stop.area == 'API Development' %}
-            <li>{{ stop.name }} - {{ stop.description }}</li>
+            <li><strong>{{ stop.name }}</strong> - {{ stop.description }}</li>
           {% endif %}
         </ul>
       {% endfor %}
@@ -140,7 +140,7 @@ title: Location API - Checklist
       {% for stop in site.stops %}
         <ul>
           {% if stop.area == 'API Production' %}
-            <li>{{ stop.name }} - {{ stop.description }}</li>
+            <li><strong>{{ stop.name }}</strong> - {{ stop.description }}</li>
           {% endif %}
         </ul>
       {% endfor %}
