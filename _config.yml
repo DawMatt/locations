@@ -1423,6 +1423,44 @@ stops:
               twitter: kinlane
               github: kinlane
 
+  #-----------
+  # API Development - Discovery
+  #-----------
+  - name: Discovery
+    title: Discovery
+    area: API Development
+    description: Making sure there are machine readable definitions available at development time, providing an OpenAPI as a contract for what each service should do.
+    header:
+    footer:
+    instructions: Defining the discovery aspects for each service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png
+    status: None
+    items:
+
+      - name: API.json
+        description: The API discovery document for this service.
+        instruction: Publish an API Discovery (APIs.json) index for the project.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-commons-icon.png
+        status: None
+        fields:
+          - url: http://example.com/api-discovery.json
+
+      - name: OpenAPI
+        description: The complete OpenAPI for this service.
+        instruction: Provide URL for all OpenAPI definitions and index in API discovery index.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-openapi-spec.png
+        status: None
+        fields:
+          - url: http://example.com/openapi.json
+
+      - name: Postman Collection
+        description: The Postman Collection for this service.
+        instruction: Provide URL for all Postman Collections and index in API discovery index.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-postman.png
+        status: None
+        fields:
+          - url: http://example.com/postman.json
+
   #----------------
   # API Development - Virtualization
   #----------------
