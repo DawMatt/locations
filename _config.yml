@@ -170,16 +170,16 @@ stops:
   - name: Definition
     title: Definitions
     area: API Discovery
-    description: All of the definitions that go into defining this service, from the original schema, the OpenAPI definitions, the Postman Collections, and the assertions that contribute to the testing of the service to ensure it is doing what is expected of it.
-    header: All of the definitions available for this service, providing a single way to find everything that drives the project.
-    footer: Providing a machine readable core for the entire lifecycle of this service, allowing documentation to be used elsewhere.
-    instructions: Define the problem and solution in a human and machine readable way.
+    description: Ensuring that all definitions are being aggregated as part of the process so that they can be evolved and moved forward into design, development and production.
+    header:
+    footer:
+    instructions: Making sure definitions are being organized for future use.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png
     status: Active
     items:
 
       - name: Organization
-        description: Define the different groups who are being engaged.
+        description: Define what group a definition is organized within.
         instruction: Define the organization for each individual service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: Active
@@ -200,7 +200,7 @@ stops:
             url: https://github.com/api-evangelist-apis
 
       - name: Schema
-        description: JSON schema for the data behind service, providing a stanalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind this service.
+        description: Organizing individual schema assocated with a service, while also including in the OpenAPI.
         instruction: Organize loose, and JSON schema for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
         status: Active
@@ -220,7 +220,7 @@ stops:
             url: https://www.jsonschema.net/
 
       - name: OpenAPI
-        description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what this service delivers, that can be used across the API lifecycle, guiding everying aspect of delivering this service.
+        description: Producing an OpenAPI should be the central objective of the API discovery process.
         instruction: Establish an OpenAPI for the service.
         image: https://s3.amazonaws.com/kinlane-productions/openapi/openapi-icon.png
         status: None
@@ -232,7 +232,7 @@ stops:
             url: https://github.com/OAI/OpenAPI-Specification
 
       - name: Domain
-        description: Considering the domain that this service fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within. Quantify the service domain, helping decompose from a larger domain, and helping focus what this service does, helping it do one things well.
+        description: Considering the domain that services fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within. Quantify the service domain, helping decompose from a larger domain, and helping focus what this service does, helping it do one things well.
         instruction: Provide insight into the domain in which this service is operating.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
         status: Active
@@ -415,9 +415,9 @@ stops:
   - name: Definition
     title: Definitions
     area: API Design
-    description: All of the definitions that go into defining this service, from the original schema, the OpenAPI definitions, the Postman Collections, and the assertions that contribute to the testing of the service to ensure it is doing what is expected of it.
-    header: All of the definitions available for this service, providing a single way to find everything that drives the project.
-    footer: Providing a machine readable core for the entire lifecycle of this service, allowing documentation to be used elsewhere.
+    description: Using definitions as the center of the API design process, employing an OpenAPI contract for moving things through the design phase.
+    header:
+    footer:
     instructions: Define the problem and solution in a human and machine readable way.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png
     status: Active
@@ -501,17 +501,6 @@ stops:
         status: Active
         fields:
           - service_description: This is a location API, providing many of the common building blocks of location for use in any application. Providing the essential location ingredients needed through a variety of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
-
-      - name: Service Goals
-        description: Providing some basic goals for this service, helping clearly articulate why this service is being delivered, providing insight beyond the obvious about why this service is worthy of being developed, and operated in production.
-        instruction: Establish goals that will guide this service.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gear-life-cycle.png
-        status: Active
-        fields:
-          - service_goals: This is the goals for this service.
-            goals:
-              - name: Provide Locations
-                descripton: Provide a set of cities, states, countries, and other location specific data for use across other applications.
 
       - name: Schema
         description: JSON schema for the data behind service, providing a stanalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind this service.
@@ -910,18 +899,15 @@ stops:
     title: Testing
     area: API Design
     description: Going beyond just testing, and making sure that a service is being tested at a granular level, using schema for validation, and making sure each service is doing exactly what it should, and nothing more.
-    header: The definitions for this service.
+    header:
     footer:
     instructions: Defining the testing for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-testing.png
     status: None
     services:
-      - name: API Fortress
-        description: A complete API testing solution for companies that care about their APIs. Test during development, deployments, and live monitoring.
-        url: https://apifortress.com/
-      - name: APIMetrics
-        description: Enterprise and Banking ready, API testing, performance monitoring, SLA management, compliance monitoring and analysis.
-        url: https://apimetrics.io/
+      - name: Stoplight.io
+        description: StopLight, providing engineering teams with the best way to document, test, and build web APIs.
+        url: https://stoplight.io/
     links:
       - title: Testing (API Evangelist)
         url: http://testing.apievangelist.com/
@@ -946,6 +932,32 @@ stops:
             - title: Scenario Title
               description: This is a description for the scenario.
               url: http://example.com/scenario/
+
+      - name: Saved Requests
+        description: Save specific requests from a service to be used in testing.
+        instruction: Save the latest request for each individual API path.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
+        status: None
+        fields:
+          - entries:
+            - title: Request Name
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Request Name
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Request Name
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Request Name
+              date: 1/1/2019
+              description: This is a description for the item.
+
+      - name: Responses
+        description: Save specific responses from a service to be used in testing.
+        instruction: Save the latest response for each individual API path.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
+        status: None
 
       - name: Results
         description: The results of assertions tested against this service.
@@ -973,7 +985,7 @@ stops:
   - name: Portal / Landing Page
     title: Portal / Landing Page
     area: API Design
-    description: Making sure that each individual service being designed has a landing page for acccessing it's documentation, and other elements during the design phase
+    description: Making sure that each individual service being designed has a landing page for acccessing it's documentation, and other elements during the design phase.
     header:
     footer:
     instructions: Define the public or private portal in use to present this service.
@@ -1119,9 +1131,9 @@ stops:
   - name: Communication
     title: Staying In Tune
     area: API Design
-    description: Having a comprehensive communication strategy for a service, ensuring that each service is properly communicating with other teams, stakeholders, and API consumers. Providing a regular stream of information regarding what is happening with the service.
-    header: Here are the commmunication channels provided to you, helping you stay in tune with what is changing with this service, and the overall platform behind it.
-    footer: These channels should provide you with a regular hearbeat of the changes being made, and what is being planned as part of this platform's operations.
+    description: Making sure there is a communication strategy for moving an API through the design phase, and making sure stakeholders are engaged as part of the process.
+    header:
+    footer:
     instructions: Establish a communication strategy for this service.
     image: http://locations.apievangelist.com/assets/images/communication.png
     status: Active
@@ -1173,10 +1185,10 @@ stops:
   - name: Road Map
     title: Road Map
     area: API Design
-    description: Providing API consumers with as much information as possible about what changes are being planned for a service. Helping include consumers in the conversation about what is being planned whenever possible.
+    description: Providing a list of what is being worked on with each service being designed.
     instructions: Provide a road map for the future of this service.
-    header: This is what we plan on doing in the near future when it comes to evolving this service, documenting the features we are planning to add to this service in future iterations.
-    footer: We try to share as much information as possible about what changes will be occurring, helping you plan for your integration--make sure and share your thoughts about what you'd like to see.
+    header:
+    footer:
     image: http://locations.apievangelist.com/assets/images/road-map.png
     status: Active
     links:
