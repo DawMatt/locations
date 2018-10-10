@@ -18,10 +18,9 @@ title: API Lifecycle Workshop Presentation - Production
       {% for stop in site.stops %}
         {% if stop.area == 'API Design' %}
           {% assign number_of_stops = number_of_stops | plus: 1 %}
-          {% endif %}
         {% endif %}
       {% endfor %}
-      
+
       {% assign cutoff = number_of_stops | divided_by: 3 %}
       {% assign cutoff = cutoff | plus: 1 %}
       {% assign this_stop = 0 %}
