@@ -1811,7 +1811,7 @@ stops:
     items:
 
       - name: Build
-        description: Information regarding the build of this service.
+        description: Information regarding the build of this service and how it is deployed.
         instruction: Define the build process for this service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-build.png
         status: None
@@ -1931,6 +1931,17 @@ stops:
           - description: The description of organization / relationship.
           - email: info@example.com
           - url: http://example.com
+
+      - name: Applications
+        description: Information about applications that depend on services.
+        instruction: Details of other applications that depend on services.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-app-icon.jpg
+        status: None
+        fields:
+          - name: Name of Application
+          - description: The description of application.
+          - url: http://example.com
+          - tags: Tag          
 
   #---------
   # API Development - Testing
