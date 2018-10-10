@@ -121,9 +121,15 @@ stops:
         image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
         status: None
 
-      - name: HTML
-        description: Looking for PDF service and API documents across an organization.
-        instruction: Crawling, harvesting, and documenting PDF documentation that exists.
+      - name: .HAR
+        description: Looking for evidence of APIs from .HAR files tht are gathered.
+        instruction: Aggregating .HAR files from proxies and logs and pull an evidence of APIs.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: None
+
+      - name: Logs
+        description: Looking for evidence of APIs from log files tht are gathered.
+        instruction: Aggregating log files from proxies and logs and pull an evidence of APIs.
         image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
         status: None
 
@@ -173,8 +179,8 @@ stops:
     items:
 
       - name: Organization
-        description: The over-arching source control organization for this service, providing an umbrella for different development groups and projects.
-        instruction: Define the organization for this service.
+        description: Define the different groups who are being engaged.
+        instruction: Define the organization for each individual service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: Active
         fields:
@@ -192,75 +198,6 @@ stops:
         links:
           - title: API Evangelist APIs
             url: https://github.com/api-evangelist-apis
-
-      - name: Repository
-        description: The source control repository for this service, providing a self-contained, shareable, forkable way to engage with a service. Allowing for EVERYTHING involved with a service to be accessed in a single location.
-        instruction: Establish a Github repository.
-        status: Active
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-repository.jpg
-        fields:
-          - github_repository: locations
-        services:
-          - name: GitHub
-            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
-            url: https://github.com
-          - name: GitLab
-            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
-            url: https://about.gitlab.com/
-          - name: Bitbucket
-            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
-            url: https://bitbucket.org/
-        links:
-          - title: Locations
-            url: https://github.com/api-evangelist-apis/locations
-
-      - name: README
-        description: The README for this services repository, providing an overview of the service, complete with all the relevant links to all the moving parts. Any user should be able to land on the README, and easily get up to speed on what a service delivers.
-        instruction: Craft a README for the repository.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-readme.png
-        status: Active
-        fields:
-          - readme_path: /README.md
-        services:
-          - name: GitHub
-            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
-            url: https://github.com
-          - name: GitLab
-            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
-            url: https://about.gitlab.com/
-          - name: Bitbucket
-            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
-            url: https://bitbucket.org/
-        links:
-          - title: Locations README
-            url: https://github.com/api-evangelist-apis/locations/blob/master/README.md
-
-      - name: Service Name
-        description: A simple title for this service, describing what it does in concise terms, providing a simple way for any internal or external part to learn about the value it offers.
-        instruction: Provide title for the service.
-        status: Active
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-request.png
-        fields:
-          - service_name: API Evangelist Location API
-
-      - name: Service Description
-        description: A simple, descriptive paragraph for this service. Providing less that 250 words about what value this service delivers. Avoid just writing the obvious, and describing what an APIs, and focusing in on describing the value being delivered by this service.
-        instruction: Provide concise description for the service.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
-        status: Active
-        fields:
-          - service_description: This is a location API, providing many of the common building blocks of location for use in any application. Providing the essential location ingredients needed through a variety of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
-
-      - name: Service Goals
-        description: Providing some basic goals for this service, helping clearly articulate why this service is being delivered, providing insight beyond the obvious about why this service is worthy of being developed, and operated in production.
-        instruction: Establish goals that will guide this service.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gear-life-cycle.png
-        status: Active
-        fields:
-          - service_goals: This is the goals for this service.
-            goals:
-              - name: Provide Locations
-                descripton: Provide a set of cities, states, countries, and other location specific data for use across other applications.
 
       - name: Schema
         description: JSON schema for the data behind service, providing a stanalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind this service.
@@ -334,34 +271,23 @@ stops:
           - title: Event Storming
             url: https://www.eventstorming.com/
 
+      - name: Vocabulary
+        description: Organizing the common vocabulary in use across services, and APIs, establishing a single place to find the language used across domains.
+        instruction: Organize a common vocabulary library.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: Active
+
       - name: Tags
         description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.
         instruction: Provide a list of tags that will be used to organize schema, resources, infrastructure, and other elements of this service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tag.png
         status: Active
 
-      - name: Assertions
-        description: Human and machine readable assertions of what service does, leveraging the existing JSON schema, and translating that into business objectives, asserting that a service does what it is supposed to.
-        instruction: Craft a set of assertions for the service.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
-        status: Active
-        fields:
-          - assertions:
-            - title: The title of the assertion
-              path: /path/of/the/assertion
-
-      - name: Team
-        description: A list of team members for the service, providing a nice list of who is responsible for making a service operate.
-        instruction: Define the team behind the service.
+      - name: Team(s)
+        description: Map out all of the teams being engaged as part of the service and API discovery process.
+        instruction: Document all teams across organizations and groups.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-team-working.png
         status: Active
-        fields:
-          - team:
-            - name: Kin Lane
-              role: API Evangelist
-              email: info@apievangelist.com
-              twitter: kinlane
-              github: kinlane
 
   #--------------
   # API Discovery - Dependencies
@@ -369,10 +295,10 @@ stops:
   - name: Dependencies
     title: Dependencies
     area: API Discovery
-    description: Defining the dependencies associated with this service, helping quantifying what this service needs to do what it does successfully.
+    description: Defining any dependencies that are in play, and will play a role in operations.
     header:
     footer:
-    instructions: Providing details of the dependencies that exist for this service.
+    instructions: Providing details of the dependencies that exist across services.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-depend.png
     status: None
     links:
@@ -380,9 +306,9 @@ stops:
         url: http://dependencies.apievangelist.com/
     items:
 
-      - name: Service
-        description: Information about services this service depends on.
-        instruction: Details of other services this service depends upon.
+      - name: Services
+        description: Information about services all services depends on.
+        instruction: Details of other services all services depends upon.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-request.png
         status: None
         fields:
@@ -391,8 +317,8 @@ stops:
           - url: http://example.com/service-information/
 
       - name: Software
-        description: Information about software this service depends on.
-        instruction: Details of other software this service depends upon.
+        description: Information about software all services depends on.
+        instruction: Details of other software all services depends upon.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-software.png
         status: None
         fields:
@@ -401,8 +327,8 @@ stops:
           - url: http://example.com/software-information/
 
       - name: Data
-        description: Information about data this service depends on.
-        instruction: Details of other data this service depends upon.
+        description: Information about data all services depends on.
+        instruction: Details of other data all services depends upon.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-big-data-2.png
         status: Active
         fields:
@@ -411,8 +337,8 @@ stops:
           - url: https://github.com/prograhammer/countries-regions-cities
 
       - name: People
-        description: Information about people this service depends on.
-        instruction: Details of other people this service depends upon.
+        description: Information about people services depends on.
+        instruction: Details of other people services depends upon.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-people.png
         status: None
         fields:
@@ -421,9 +347,9 @@ stops:
           - email: info@example.com
           - github_user: user
 
-      - name: Organization
-        description: Information about organization this service depends on.
-        instruction: Details of other organizations this service depends upon.
+      - name: Organizations
+        description: Information about organizations services depends on.
+        instruction: Details of other organizations services depends on.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: None
         fields:
@@ -432,21 +358,29 @@ stops:
           - email: info@example.com
           - url: http://example.com
 
+      - name: Applications
+        description: Information about applications that depend on services.
+        instruction: Details of other applications that depend on services.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-app-icon.jpg
+        status: None
+        fields:
+          - name: Name of Application
+          - description: The description of application.
+          - url: http://example.com
+          - tags: Tag
+
   #----------
   # API Discovery - Support
   #----------
   - name: Support
     title: Support
     area: API Discovery
-    description: Ensuring that each individual API has the necessary support, making sure that the support channels for a service are easy to find, have a responsive and knowledgeable person available to answer questions, and is being measured and audited for quality.
-    header: We provide three ways in which you can receive support for this API, and have your questions answered as you are working to integrate it into your web or mobile application.
-    footer: If your question is of the private nature please email us, for all other inquires please submit as GitHub issue if possible, so that others can learn from your question to.
-    instructions: Establish the support apparatus in place for this service.
+    description: Ensure that all teams have support when it comes to questions about web service and API discovery, helping the intially, as well as along the way, making sure all their APIs are accounted for.
+    header:
+    footer:
+    instructions: Have a strategy for supporting all groups when it comes to API discovery.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png
     status: Active
-    links:
-      - title: Support (API Evangelist)
-        url: http://support.apievangelist.com/
     items:
 
       - name: Email
@@ -468,31 +402,6 @@ stops:
         status: Active
         fields:
           - url: https://github.com/api-evangelist-apis/locations/issues
-
-      - name: Twitter
-        title: Twitter
-        description: Where to get support publicly using a supported Twitter account
-        instruction: Provide the URL to the Twitter account supporting the API.
-        image: http://locations.apievangelist.com/assets/images/twitter.png
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png
-        status: Active
-        fields:
-          - url: https://twitter.com/apievangelist/
-
-      - name: Ticket
-        title: Ticket
-        description: Where to submit a ticket to get support for this service.
-        instruction: Provide a URL to the ticketing system used to support this service.
-        image: http://locations.apievangelist.com/assets/images/twitter.png
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-ticket-system.png
-        status: None
-        fields:
-          - url: http://example.com/tickets/
-
-
-  #-------------
-  # API Design
-  #-------------
 
   #-------------
   # API Design - Definitions
