@@ -565,26 +565,6 @@ stops:
           - title: Restful Objects
             url: https://en.wikipedia.org/wiki/Restful_Objects
 
-      - name: Event Storming
-        description: Event storming is a rapid, lightweight, and underappreciated group modeling technique that is intense, fun, and useful for accelerating development teams.
-        instruction: Engage in an event storming exercise to help model the domain.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sticky-notes.png
-        status: Active
-        elements:
-          - title: Domain Event
-            description: The event that occurs within the domain as part of a service execution.
-          - title: Command
-            description: The trigger for the domain event occurring, setting it into motion.
-          - title: Actor
-            description: Defining who executes command to trigger event, and is making things happen.
-          - title: Aggregates
-            description:  Aggregates logically group various commands, events, and reactions together.
-        links:
-          - title: Event Storming (Wikipedia)
-            url: https://en.wikipedia.org/wiki/Event_storming
-          - title: Event Storming
-            url: https://www.eventstorming.com/
-
       - name: Tags
         description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.
         instruction: Provide a list of tags that will be used to organize schema, resources, infrastructure, and other elements of this service.
@@ -935,25 +915,25 @@ stops:
         url: http://testing.apievangelist.com/
     items:
 
-      - name: Assertions
-        description: The assertions for this service.
-        instruction: Provide details of the assertions being tested for.
+      - name: Scenarios
+        description: The sceanrios for testing this service.
+        instruction: Provide details of the scenarios being tested for.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
         status: None
         fields:
           - assertions:
-            - title: Assertion Title
-              description: This is a description for the assertion.
-              url: http://example.com/assertion/
-            - title: Assertion Title
-              description: This is a description for the assertion.
-              url: http://example.com/assertion/
-            - title: Assertion Title
-              description: This is a description for the assertion.
-              url: http://example.com/assertion/
-            - title: Assertion Title
-              description: This is a description for the assertion.
-              url: http://example.com/assertion/
+            - title: Scenario Title
+              description: This is a description for the scenario.
+              url: http://example.com/scenario/
+            - title: Scenario Title
+              description: This is a description for the scenario.
+              url: http://example.com/scenario/
+            - title: Scenario Title
+              description: This is a description for the scenario.
+              url: http://example.com/scenario/
+            - title: Scenario Title
+              description: This is a description for the scenario.
+              url: http://example.com/scenario/
 
       - name: Results
         description: The results of assertions tested against this service.
@@ -978,26 +958,15 @@ stops:
   #--------
   # API Design - Portal
   #--------
-  - name: Portal
+  - name: Portal / Landing Page
     title: Portal / Landing Page
     area: API Design
-    description: Providing one, or many public or private portals, providing a single known location for API proviers and API consumers to find what they are looking for when it comes to API integration with services being made available.
-    header: The portal landing page for this service, providing a single location to access the service.
-    footer: Providing a single known location discovery and return when information about service is needed.
+    description: Making sure that each individual service being designed has a landing page for acccessing it's documentation, and other elements during the design phase
+    header:
+    footer:
     instructions: Define the public or private portal in use to present this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-portal-developers.jpg
     status: Active
-    links:
-      - title: Portal (API Evangelist)
-        url: http://portal.apievangelist.com/
-    services:
-      - name: APIMATIC
-        description: Instantly build an API Portal with SDKs, Live Code Samples, Test Cases, API.
-        url: https://apimatic.io/
-    tools:
-      - name: Minimum Viable API Portal Template
-        description: A minimum API documentation template developed by James Higginbotham and Hillary Fraley.
-        url: https://launchany.github.io/mvd-template/
     items:
 
       - name: Hosting
@@ -1023,23 +992,6 @@ stops:
           - name: HTML5 Up
             description: A HTML, CSS, and JavaScript Jekyll template.
             url: https://html5up.net/
-
-      - name: Analytics
-        description: Information about the analytics in use for tracking on this portal.
-        instruction: Define which analytics package is used to measure traffic for portal.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-analytics-2.png
-        status: None
-        fields:
-          - analytics:
-              - Google Analytics
-              - Github Analytics
-        tools:
-          - name: Google Analytics
-            description: Using embedded Google Analytics for managing traffic.
-            url: https://analytics.google.com/analytics/web/
-          - name: Github Analytics
-            description: Using embedded Google Analytics for managing traffic.
-            url: https://blog.github.com/2014-01-07-introducing-github-traffic-analytics/
 
   #---------------
   # API Design - Documentation
@@ -1118,9 +1070,9 @@ stops:
   - name: Support
     title: Support
     area: API Design
-    description: Ensuring that each individual API has the necessary support, making sure that the support channels for a service are easy to find, have a responsive and knowledgeable person available to answer questions, and is being measured and audited for quality.
-    header: We provide three ways in which you can receive support for this API, and have your questions answered as you are working to integrate it into your web or mobile application.
-    footer: If your question is of the private nature please email us, for all other inquires please submit as GitHub issue if possible, so that others can learn from your question to.
+    description: Ensuring there is support channels available for an API, and stakeholders know who to contact when providing feedback and answering questions.
+    header:
+    footer:
     instructions: Establish the support apparatus in place for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png
     status: Active
@@ -1149,26 +1101,6 @@ stops:
         fields:
           - url: https://github.com/api-evangelist-apis/locations/issues
 
-      - name: Twitter
-        title: Twitter
-        description: Where to get support publicly using a supported Twitter account
-        instruction: Provide the URL to the Twitter account supporting the API.
-        image: http://locations.apievangelist.com/assets/images/twitter.png
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png
-        status: Active
-        fields:
-          - url: https://twitter.com/apievangelist/
-
-      - name: Ticket
-        title: Ticket
-        description: Where to submit a ticket to get support for this service.
-        instruction: Provide a URL to the ticketing system used to support this service.
-        image: http://locations.apievangelist.com/assets/images/twitter.png
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-ticket-system.png
-        status: None
-        fields:
-          - url: http://example.com/tickets/
-
   #---------------
   # API Design - Communication
   #---------------
@@ -1195,15 +1127,6 @@ stops:
         fields:
           - url: http://example.com/blog/
           - atom: http://example.com/atom/
-
-      - name: Twitter
-        title: Twitter
-        description: The Twitter account for this service.
-        instruction: Provide the Twitter handle that is used as part of this service.
-        image: http://locations.apievangelist.com/assets/images/twitter.png
-        status: Active
-        fields:
-          - handle: http://twitter.com/handle/
 
       - name: Github
         title: Github
@@ -1290,9 +1213,6 @@ stops:
           - title: Suggest Road Map Item
           - description: Make Suggestion
           - url: https://github.com/api-evangelist-apis/locations/issues
-
-
-
 
   #-------------
   # API Development
