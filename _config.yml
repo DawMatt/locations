@@ -77,48 +77,66 @@ stops:
   - name: Discovery
     title: Discovery
     area: API Discovery
-    description: Making sure that all APIs are discoverable by default, and able to be easily registered in aPI catalogs, and able to be included in search indexes, and API discovery services. Baking API discovery into the regular operations of each service being deployed.
-    header: The definitions for this service.
+    description: Actively looking for web services and APIs that exist across an organization, industry, or any other landscape. Documenting, aggregating, and evolving what is available about each API being used across the targeted landscape.
+    header:
     footer:
-    instructions: Defining the discovery aspects for this service.
+    instructions: Looking for web services and APIs across an organiation, industry, or other landsacpe.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png
     status: None
     items:
 
+      - name: WSDL
+        description: Looking for WSDL documents across an organization.
+        instruction: Crawling, harvesting, and documenting WSDLs.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: None
+
       - name: API.json
-        description: The API discovery document for this service.
-        instruction: Publish an API Discovery (APIs.json) index for the project.
+        description: Looking for APIs.json files across an organization.
+        instruction: Crawling, harvesting, and documenting APIs.json files.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-commons-icon.png
         status: None
         fields:
           - url: http://example.com/api-discovery.json
 
       - name: OpenAPI
-        description: The complete OpenAPI for this service.
-        instruction: Provide URL for all OpenAPI definitions and index in API discovery index.
+        description: Looking for OpenAPI files across an organization.
+        instruction: Crawling, harvesting, and documenting OpenAPI files.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-openapi-spec.png
         status: None
         fields:
           - url: http://example.com/openapi.json
 
       - name: Postman Collection
-        description: The Postman Collection for this service.
-        instruction: Provide URL for all Postman Collections and index in API discovery index.
+        description: Looking for Postman Collections across an organization.
+        instruction: Crawling, harvesting, and documenting Postman Collections.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-postman.png
         status: None
         fields:
           - url: http://example.com/postman.json
 
+      - name: HTML
+        description: Looking for HTML service and API documents across an organization.
+        instruction: Crawling, harvesting, and documenting HTML documentation that exists.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: None
+
+      - name: HTML
+        description: Looking for PDF service and API documents across an organization.
+        instruction: Crawling, harvesting, and documenting PDF documentation that exists.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: None
+
   #---------------
   # API Discovery - Communication
   #---------------
   - name: Communication
-    title: Staying In Tune
+    title: Communication
     area: API Discovery
-    description: Having a comprehensive communication strategy for a service, ensuring that each service is properly communicating with other teams, stakeholders, and API consumers. Providing a regular stream of information regarding what is happening with the service.
-    header: Here are the commmunication channels provided to you, helping you stay in tune with what is changing with this service, and the overall platform behind it.
-    footer: These channels should provide you with a regular hearbeat of the changes being made, and what is being planned as part of this platform's operations.
-    instructions: Establish a communication strategy for this service.
+    description: Having a strategy for reaching out to teams and engaging with them around API discovery, helping the remember to register and define their APIs as part of wider strategy.
+    header:
+    footer:
+    instructions: Have a strategy for reaching out to other team members and talking about APIs.
     image: http://locations.apievangelist.com/assets/images/communication.png
     status: Active
     links:
@@ -126,51 +144,19 @@ stops:
         url: http://communication.apievangelist.com/
     items:
 
-      - name: Blog
-        title: Blog
-        description: The blog for this service.
-        instruction: Provide a simple blog and update mechanism for this service.
-        image: http://locations.apievangelist.com/assets/images/blog.png
+      - name: Email
+        title: Email
+        description: Use email to coordinate with other groups.
+        instruction: Email other teams looking for APIs.
+        image: http://locations.apievangelist.com/assets/images/email.png
         status: Active
-        fields:
-          - url: http://example.com/blog/
-          - atom: http://example.com/atom/
 
-      - name: Twitter
-        title: Twitter
-        description: The Twitter account for this service.
-        instruction: Provide the Twitter handle that is used as part of this service.
-        image: http://locations.apievangelist.com/assets/images/twitter.png
+      - name: Meetings
+        title: Meetings
+        description: Having regular meetings to discuss where APIs are.
+        instruction: Conduct regular meetings to discuss where APIs are.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-meeting-rrom.png
         status: Active
-        fields:
-          - handle: http://twitter.com/handle/
-
-      - name: Github
-        title: Github
-        description: The Github account for this service.
-        instruction: Provide the Github account or organization behind this service.
-        image: http://locations.apievangelist.com/assets/images/github.png
-        status: Active
-        fields:
-          - handle: http://github.com/handle/
-
-      - name: Internal
-        title: Internal
-        description: Internal communication channel for this service.
-        instruction: Provide a location where internal communication is available.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-internal.png
-        status: None
-        fields:
-          - url: http://example.com/private-comm/
-
-      - name: External
-        title: External
-        description: External communication channels for this service.
-        instruction: Provide a location where public communication is available.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-external.png
-        status: None
-        fields:
-          - url: http://example.com/communication/
 
   #-------------
   # API Discovery - Definitions
