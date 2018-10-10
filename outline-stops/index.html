@@ -102,10 +102,11 @@ title: Location API - Checklist
       <h2>API Discovery</h2>
       <p>Ensuring APIs are known across teams.</p>
       {% for stop in site.stops %}
-        {% if stop.area == 'API Discovery' %}
-          <h3>{{ stop.name }}</h3>
-          <p>{{ stop.description }}</p>
-        {% endif %}
+        <ul>
+          {% if stop.area == 'API Discovery' %}
+            <li>{{ stop.name }} - {{ stop.description }}</li>
+          {% endif %}
+        </ul>
       {% endfor %}
 
       <hr />
@@ -113,10 +114,11 @@ title: Location API - Checklist
       <h2>API Design</h2>
       <p>Defining and designing API contracts.</p>
       {% for stop in site.stops %}
-        {% if stop.area == 'API Design' %}
-          <h3>{{ stop.name }}</h3>
-          <p>{{ stop.description }}</p>
-        {% endif %}
+        <ul>
+          {% if stop.area == 'API Design' %}
+            <li>{{ stop.name }} - {{ stop.description }}</li>
+          {% endif %}
+        </ul>
       {% endfor %}
 
       <hr />
@@ -124,10 +126,11 @@ title: Location API - Checklist
       <h2>API Development</h2>
       <p>The actual development and delivery.</p>
       {% for stop in site.stops %}
-        {% if stop.area == 'API Development' %}
-          <h3>{{ stop.name }}</h3>
-          <p>{{ stop.description }}</p>
-        {% endif %}
+        <ul>
+          {% if stop.area == 'API Development' %}
+            <li>{{ stop.name }} - {{ stop.description }}</li>
+          {% endif %}
+        </ul>
       {% endfor %}
 
       <hr />
@@ -135,10 +138,11 @@ title: Location API - Checklist
       <h2>API Production</h2>
       <p>Moving to and operating APIs in production.</p>
       {% for stop in site.stops %}
-        {% if stop.area == 'API Production' %}
-          <h3>{{ stop.name }}</h3>
-          <p>{{ stop.description }}</p>
-        {% endif %}
+        <ul>
+          {% if stop.area == 'API Production' %}
+            <li>{{ stop.name }} - {{ stop.description }}</li>
+          {% endif %}
+        </ul>
       {% endfor %}
 
 
