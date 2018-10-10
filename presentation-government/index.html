@@ -1,13 +1,13 @@
 ---
 layout: presentation
-title: Location API - Presentation - Discovery
+title: Location API - Presentation - Government
 ---
 
 {% assign openapi = site.data.openapi %}
 
 <section>
   <p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-lifecycle.png" style="width: 7%; padding: 2px;"></p>
-  <p align="center" style="font-size: 36px;"><strong>API Lifecycle - Discovery</strong></p>
+  <p align="center" style="font-size: 36px;"><strong>API Lifecycle - Government</strong></p>
 
   <center>
   <div style="display: table; width: 60%; table-layout: fixed; border-spacing: 10px; margin-top: 15px;">
@@ -19,7 +19,7 @@ title: Location API - Presentation - Discovery
       {% assign this_stop = 0 %}
 
       {% for stop in site.stops %}
-        {% if stop.area == 'API Discovery' %}
+        {% if stop.area == 'API Government' %}
           <li style="font-size: 22px; font-weight: bold; list-style: none; padding: 7px;">&#8594; {{ stop.name }}</li>
           {% assign this_stop = this_stop | plus: 1 %}
           {% if this_stop == cutoff %}
@@ -35,7 +35,7 @@ title: Location API - Presentation - Discovery
 
 {% for stop in site.stops %}
 
-  {% if stop.area == 'API Discovery' %}
+  {% if stop.area == 'API Government' %}
     <section>
 
       <br style="padding: 25px;" />
