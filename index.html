@@ -1,53 +1,7 @@
 ---
 layout: default
-title: Location APIs
+title: Location API - Checklist
 ---
-
-<script src="/js/ui/swagger-ui-bundle.js"> </script>
-<script src="/js/ui/swagger-ui-standalone-preset.js"> </script>
-<style>
-.topbar
-  {
-  display:none;
-  }
-.info
-  {
-  display:none;
-  }
-</style>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
-  <defs>
-    <symbol viewBox="0 0 20 20" id="unlocked">
-          <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196-.387c.524-.167.953-.757.953-1.306V9.199C17 8.646 16.352 8 15.8 8z"></path>
-    </symbol>
-
-    <symbol viewBox="0 0 20 20" id="locked">
-      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196-.387c.524-.167.953-.757.953-1.306V9.199C17 8.646 16.352 8 15.8 8zM12 8H8V5.199C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8z"/>
-    </symbol>
-
-    <symbol viewBox="0 0 20 20" id="close">
-      <path d="M14.348 14.849c-.469.469-1.229.469-1.697 0L10 11.819l-2.651 3.029c-.469.469-1.229.469-1.697 0-.469-.469-.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-.469-.469-.469-1.228 0-1.697.469-.469 1.228-.469 1.697 0L10 8.183l2.651-3.031c.469-.469 1.228-.469 1.697 0 .469.469.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c.469.469.469 1.229 0 1.698z"/>
-    </symbol>
-
-    <symbol viewBox="0 0 20 20" id="large-arrow">
-      <path d="M13.25 10L6.109 2.58c-.268-.27-.268-.707 0-.979.268-.27.701-.27.969 0l7.83 7.908c.268.271.268.709 0 .979l-7.83 7.908c-.268.271-.701.27-.969 0-.268-.269-.268-.707 0-.979L13.25 10z"/>
-    </symbol>
-
-    <symbol viewBox="0 0 20 20" id="large-arrow-down">
-      <path d="M17.418 6.109c.272-.268.709-.268.979 0s.271.701 0 .969l-7.908 7.83c-.27.268-.707.268-.979 0l-7.908-7.83c-.27-.268-.27-.701 0-.969.271-.268.709-.268.979 0L10 13.25l7.418-7.141z"/>
-    </symbol>
-
-
-    <symbol viewBox="0 0 24 24" id="jump-to">
-      <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
-    </symbol>
-
-    <symbol viewBox="0 0 24 24" id="expand">
-      <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/>
-    </symbol>
-
-  </defs>
-</svg>
 
 <!--Definitions-->
 {% assign service_name = "" %}
@@ -78,6 +32,31 @@ title: Location APIs
   {% endif %}
   <!--End Definition-->
 
+  <!--Begin Documentation-->
+  {% if stop.name == 'Documentation' %}
+    {% for item in stop.items %}
+
+      {% if item.name == 'Overview' %}
+
+        {% assign documentation_overview_title = item.fields | map: 'title' %}
+        {% assign documentation_overview_header = item.fields | map: 'header' %}
+        {% assign documentation_overview_footer = item.fields | map: 'footer' %}
+
+      {% endif %}
+
+      {% if item.name == 'Schema' %}
+
+        {% assign documentation_schema_title = item.fields | map: 'title' %}
+        {% assign documentation_schema_header = item.fields | map: 'header' %}
+        {% assign documentation_schema_footer = item.fields | map: 'footer' %}
+
+      {% endif %}
+
+    {% endfor %}
+
+  {% endif %}
+  <!--End Documentation-->
+
   <!--Begin Authentication-->
   {% if stop.name == 'Authentication' %}
     {% for item in stop.items %}
@@ -90,7 +69,7 @@ title: Location APIs
 
       {% endif %}
 
-      {% if item.name == 'Signup / Login' %}
+      {% if item.name == 'SignupLogin' %}
 
         {% assign authentication_signuplogin_title = item.fields | map: 'title' %}
         {% assign authentication_signuplogin_header = item.fields | map: 'header' %}
@@ -101,253 +80,7 @@ title: Location APIs
     {% endfor %}
 
   {% endif %}
-  <!--End Authentication-->
-
-  <!--Begin Getting Started-->
-  {% if stop.name == 'Getting Started' %}
-
-      {% assign getting_started_title = stop.name %}
-      {% assign getting_started_header = stop.header %}
-      {% assign getting_started_footer = stop.footer %}
-      {% assign getting_started_image = stop.image %}
-      {% assign getting_started_entries = stop.items %}
-
-  {% endif %}
-  <!--End Getting Started-->
-
-  <!--Begin Documentation-->
-  {% if stop.name == 'Documentation' %}
-
-  {% assign documentation_overview_title = stop.title %}
-  {% assign documentation_overview_header = stop.header %}
-  {% assign documentation_overview_footer = stop.footer %}
-
-    {% for item in stop.items %}
-
-      {% if item.name == 'Schema' %}
-
-        {% assign documentation_schema_title = item.title %}
-        {% assign documentation_schema_header = item.header %}
-        {% assign documentation_schema_footer = item.footer %}
-
-      {% endif %}
-
-      {% if item.name == 'Definitions' %}
-
-        {% assign documentation_definition_title = item.name %}
-        {% assign documentation_definition_header = item.header %}
-        {% assign documentation_definition_footer = item.footer %}
-        {% assign documentation_definition_openapi = item.fields | map: 'openapi' %}
-        {% assign documentation_definition_postman = item.fields | map: 'postman' %}
-
-      {% endif %}
-
-    {% endfor %}
-
-  {% endif %}
   <!--End Documentation-->
-
-  <!--Begin Code-->
-  {% if stop.name == 'Code' %}
-
-      {% assign code_title = stop.title %}
-      {% assign code_header = stop.header %}
-      {% assign code_footer = stop.footer %}
-      {% assign code_image = stop.image %}
-      {% assign code_libraries = stop.items %}
-
-  {% endif %}
-  <!--End Code-->
-
-  <!--Begin Licensing-->
-  {% if stop.name == 'Licensing' %}
-
-      {% assign licensing_title = stop.title %}
-      {% assign licensing_header = stop.header %}
-      {% assign licensing_footer = stop.footer %}
-      {% assign licensing_areas = stop.items %}
-
-  {% endif %}
-  <!--End Licensing-->
-
-  <!--Begin Plans-->
-  {% if stop.name == 'Plans' %}
-
-      {% assign plans_title = stop.title %}
-      {% assign plans_header = stop.header %}
-      {% assign plans_footer = stop.footer %}
-
-      {% for item in stop.items %}
-        {% if item.name == 'Tiers' %}
-          {% assign plans = item.fields | map: 'plans' %}
-        {% endif %}
-      {% endfor %}
-
-  {% endif %}
-  <!--End Plans-->
-
-  <!--Begin Authentication-->
-  {% if stop.name == 'Support' %}
-
-      {% assign support_title = stop.name %}
-      {% assign support_header = stop.header %}
-      {% assign support_footer = stop.footer %}
-      {% assign support_channels = stop.items %}
-
-  {% endif %}
-  <!--End Documentation-->
-
-  <!--Begin FAQs-->
-  {% if stop.name == 'FAQs' %}
-
-      {% assign faq_title = stop.name %}
-      {% assign faq_header = stop.header %}
-      {% assign faq_footer = stop.footer %}
-
-      {% for item in stop.items %}
-
-        {% if item.name == 'Categories' %}
-          {% assign faq_categories = item.fields | map: 'categories' %}
-        {% endif %}
-
-        {% if item.name == 'Questions' %}
-          {% assign faq_questions = item.fields | map: 'questions' %}
-        {% endif %}
-
-      {% endfor %}
-
-  {% endif %}
-  <!--End FAQs-->
-
-  <!--Begin Communication-->
-  {% if stop.name == 'Communication' %}
-
-      {% assign communication_title = stop.name %}
-      {% assign communication_header = stop.header %}
-      {% assign communication_footer = stop.footer %}
-      {% assign communication_channels = stop.items %}
-
-  {% endif %}
-  <!--End Communication-->
-
-  <!--Begin Road Map-->
-  {% if stop.name == 'Road Map' %}
-
-      {% assign road_map_title = stop.name %}
-      {% assign road_map_header = stop.header %}
-      {% assign road_map_footer = stop.footer %}
-      {% assign road_map_image = stop.image %}
-      {% assign road_map_status = stop.status %}
-
-      {% for item in stop.items %}
-
-        {% if item.name == 'Private' %}
-
-          {% assign private_road_map_title = item.title %}
-          {% assign private_road_map_description = item.description %}
-          {% assign private_road_map_url = item.fields | map: 'url' %}
-
-        {% endif %}
-
-        {% if item.name == 'Public' %}
-
-          {% assign public_road_map_title = item.title %}
-          {% assign public_road_map_description = item.description %}
-          {% assign public_road_map_url = item.fields | map: 'url' %}
-          {% assign public_road_map_entries = item.fields | map: 'entries' %}
-
-        {% endif %}
-
-        {% if item.name == 'Suggest' %}
-
-          {% assign road_map_suggestion_status = item.status %}
-          {% assign road_map_suggestion_title = item.fields | map: 'title' %}
-          {% assign road_map_suggestion_description = item.fields | map: 'description' %}
-          {% assign road_map_suggestion_url = item.fields | map: 'url' %}
-
-        {% endif %}
-
-      {% endfor %}
-
-  {% endif %}
-  <!--End Road Map-->
-
-  <!--Begin Issues-->
-  {% if stop.name == 'Issues' %}
-
-      {% assign issues_title = stop.name %}
-      {% assign issues_header = stop.header %}
-      {% assign issues_footer = stop.footer %}
-      {% assign issues_image = stop.image %}
-      {% assign issues_status = stop.status %}
-
-      {% for item in stop.items %}
-
-        {% if item.name == 'Entries' %}
-
-          {% assign issues_url = item.fields | map: 'url' %}
-          {% assign issues_entries = item.fields | map: 'entries' %}
-
-        {% endif %}
-
-        {% if item.name == 'Report' %}
-
-          {% assign issues_report_status = item.status %}
-          {% assign issues_report_title = item.fields | map: 'title' %}
-          {% assign issues_report_description = item.fields | map: 'description' %}
-          {% assign issues_report_url = item.fields | map: 'url' %}
-
-        {% endif %}
-
-      {% endfor %}
-
-  {% endif %}
-  <!--End Issues-->
-
-  <!--Begin Change Log-->
-  {% if stop.name == 'Change Log' %}
-
-      {% assign change_log_title = stop.name %}
-      {% assign change_log_header = stop.header %}
-      {% assign change_log_footer = stop.footer %}
-      {% assign change_log_image = stop.image %}
-      {% assign change_log_status = stop.status %}
-
-      {% for item in stop.items %}
-
-        {% if item.name == 'Entries' %}
-
-          {% assign change_log_url = item.fields | map: 'url' %}
-          {% assign change_log_entries = item.fields | map: 'entries' %}
-
-        {% endif %}
-
-      {% endfor %}
-
-  {% endif %}
-  <!--End Road Map-->
-
-  <!--Begin Licensing-->
-  {% if stop.name == 'Licensing' %}
-
-      {% assign licensing_title = stop.name %}
-      {% assign licensing_header = stop.header %}
-      {% assign licensing_footer = stop.footer %}
-      {% assign licensing_areas = stop.items %}
-
-  {% endif %}
-  <!--End Licensing-->
-
-  <!--Begin Code-->
-  {% if stop.name == 'Legal' %}
-
-      {% assign legal_title = stop.title %}
-      {% assign legal_header = stop.header %}
-      {% assign legal_footer = stop.footer %}
-      {% assign legal_documents = stop.items %}
-
-  {% endif %}
-  <!--End Code-->
 
 {% endfor %}
 
@@ -355,569 +88,165 @@ title: Location APIs
 <section id="overview">
 	<div class="content">
 		<header>
-			<h3>{{ service_name }}</h3>
+			<h3>API Lifecycle Workshop</h3>
 		</header>
-		<p>{{ service_description }}</p>
+
+    <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-lifecycle.png" align="right" width="15%" /></p>
+
+		<p>This is the home page for conducting an API lifecycle workshop using this API demo, providing a single landing page attendees can use when navigating the moving parts of this workshop, and come out the other end with a human, and machine readable strategy for executing on the delivery of APIs across any company, organization, institution, or government agency.</p>
+
+    <p>This API lifecycle blueprint provides guidance in five distinct areas of the API lifecycle, which can be operated individually for a single API, or in unison across many APIs, helping flesh out a standardized approach to thinking about how APIs are delivered across an organization. This isn't meant to be a one size fits all strategy, but a walk through of what is possible, that can be added to, and customized to make fit the specific needs of an organization.</p>
+
+    <ul>
+      <li><strong>Discovery</strong> (<a href="#Discovery">Jump To</a>)  (<a href="/presentation-discovery/" target="_blank">Presentation</a>) - Knowing where all of your APIs and services are across groups.</li>
+      <li><strong>Design</strong> (<a href="#Design">Jump To</a>)  (<a href="/presentation-design/" target="_blank">Presentation</a>) - Focus in on an a design and virtualized API lifecycle before deployment.</li>
+      <li><strong>Development</strong> (<a href="#Development">Jump To</a>)  (<a href="/presentation-development/" target="_blank">Presentation</a>) - Understanding the many ways in which APIs can be deployed.</li>
+      <li><strong>Production</strong> (<a href="#Production">Jump To</a>)  (<a href="/presentation-production/" target="_blank">Presentation</a>) - Thinking critically about properly operating API infrastructure.</li>
+      <li><strong>Governance</strong> (<a href="#Governance">Jump To</a>)  (<a href="/presentation-governance/" target="_blank">Presentation</a>) - Understanding how to measure, report, and evolve API operations.</li>
+    </ul>
+
+    <p>Not all workshops will cover all of these areas. Depending on the time available, the scope of the team participating in a workshop(s), and how far along teams are in their overall API journey, the workshops might head in different directions, and expand or contract the depth in which we dive into each of these area (ie. not everyone is ready for governance). After several workshops this year, we have found these areas of the API lifecycle to be the most meaningful ways to organize a workshop, and help enterprise group think more critically about their API strategy.
+
+    <table width="100%">
+			<tr>
+				<td width="50%" align="center"><img src="https://s3.amazonaws.com/kinlane-productions/workshops/43043431_10156747264069813_2487933138479611904_n.jpg" align="center" width="95%" /></td>
+				<td width="50%" align="center"><img src="https://s3.amazonaws.com/kinlane-productions/workshops/kin-lane-api-days-spain.jpg" align="center" width="95%" /></td>
+			</tr>
+		</table>
+
+    <p><strong>Craft An API Strategy For Your Enterprise</strong></p>
+    The purpose of this API lifecycle workshops is to help enterprise organizations develop their own API strategy. Bring in outside API knowledge, learn more about where an enterprise API group is in their overall API journey, and leave them with a structured artifact that helps them step back and look at the entire lifecycle of their APIs. Moving the API conversation across the enterprise forward in a meaningful way with three distinct actions:</p>
+
+    <ul>
+      <li><strong>Starter API Lifecycle Strategy</strong> - This workshop starts with this template API lifecycle strategy in GitHub or GitLab as README, and YAML file. Standing up a framework to consider as you craft your own API strategy, providing a starting point for your journey. Generated from eight years of research on the API space, providing a living document that can be used to execute and evolve the overall API lifecycle strategy for an enterprise organization.</li>
+      <li><strong>API Lifecycle Workshop</strong>  - Conduct a single, or multi-day API lifecycle workshop on-site, with as many enterprise and / or partner stakeholders as possible. We will come on site, and walk teams through each stop along a modern API lifecycle, helping customize, personalize, and make the API strategy better fit the enterprises strategy.</li>
+      <li><strong>Evolve API Lifecycle Strategy</strong>  - Coming out of the workshop, you will be given an updated API lifecycle artificat file in YAML, with an outline, and presentation to help navigate. Providing a human and machine readable framework that represents your API lifecycle strategy, helping provide a scaffolding for future discussions. Producing a usable artifact out of the gathering, encapsulating the research and experience we bring to the table, adding what we learned during the workshop, and hopefully continually being used to drive the API strategy road map.</li>
+      <li><strong>Provide Execution & Support</strong> - After the workshop is done, and we have an updated API lifecycle, we are here to support. We can answer questions via the repository we leave an API strategy artifact, as well as email. We are happy to conduct virtual meetings to help check in on where you are at, and of course we are happy to always come back and conduct future workshops as you need.</li>
+    </ul>
+
+    <p>We are happy to continue the conversation around the API lifecycle artifact we will leave with you. We don’t expect you to use everything we propose. We are more interested in teaching you about what is possible, and continuing to work with you to refine, evolve, and make the API lifecycle your own. We’ve just worked hard to identified many different ways to operating API infrastructure at scale, and continue to help standardize and make it more accessible by large enterprise organizations.</p>
+
+    <p><strong>Helping You In Your Journey</strong></p>
+    The API lifecycle strategy we will leave behind will possess all the knowledge we’ve aggregated across API research, gathered across leading API providers, and honed by conducting API workshops within the enterprise. Embedded within this API lifecycle artifact we’ll leave you with some added elements that will help you in your journey, going beyond just advice on process, and helping the rubber meet the road.</p>
+
+    <ul>
+      <li><strong>Areas</strong> - Help you see the separate the different layers of your API operations by quantifying the real world areas that already exist across your API platform, as well as seeing the API lifecycle from the perspective of other platforms.</li>
+      <li><strong>Stops</strong> - Teach how to follow in the footsteps of other successful API providers, while also defining your own journey, when it comes to delivering APIs across the lifecycle, with details stops along the API lifecycle.</li>
+      <li><strong>Links</strong> - Provide a wealth of references to external resources, attached to each stop along the API lifecycle, bring our API research into your organization, allowing you to put to use inline as you are building your API strategy.</li>
+      <li><strong>Services</strong> - Embedding links to API services that you are already using, and introducing you to other useful API services along the way. Making sure specific services are associated with each stop along the API lifecycle, across the different areas, and even sub-linking to specific features that can help accomplish a specific aspect of API operations.</li>
+      <li><strong>Tooling</strong> - Embedding links to open source API tools, specifications, and other solutions that can be used to accomplish a specific aspect of operating an API platform. Brining in open source solutions that can be considered as you are crafting the API strategy for your enterprise organization.</li>
+    </ul>
+
+    <p>While not all organizations will be ready to use a YAML API lifecycle artifact as part of their API orchestration, it helps to have the API lifecycle well defined, even if many steps are still manual. It helps teams think more critically about how they approach the deliver of APIs, while also being something that can be downloaded, forked, and reused by different groups across the enterprise. Eventually it is something that can be further automated, measured, and used to help quantify the maturity level of each APIs, as well as API across distributed teams.</p>
+
+    <p>Let's begin this lifecycle journey with a look at API discovery...</p>
+
 	</div>
 </section>
 
-<!-- Begin Getting Started -->
-<a name="getting-started"></a>
-<section id="getting-started">
-  <div class="content">
-		<header>
-			<h3>{{ getting_started_title }}</h3>
-		</header>
-    <div class="container">
-      <div class="row">
-        <div class="col-9">
-          <p>{{ getting_started_header }}</p>
-          <ol>
-            {% for entries in getting_started_entries %}
-              {% assign url = entries.fields | map: 'url' %}
-              <li><a href="{{ url }}"><strong>{{ entries.name }}</strong></a> - {{ entries.description }}</li>
-            {% endfor %}
-          </ol>
-          <p>{{ getting_started_footer }}</p>
-        </div>
-        <div class="col-lg-3">
-          <center><img src="/assets/images/getting-started.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Getting Started -->
-
-<!--SignUp SignIn--->
-<a name="sign-up"></a>
-<section id="sign-up-login">
-  <div class="content">
-		<header>
-			<h3>{{ authentication_signuplogin_title }}</h3>
-		</header>
-
-    <p class="large">{{ authentication_signuplogin_header }}</p>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <center>
-            <a href="http://oauth.apievangelist.com/github/?action=login"><img src="/assets/images/github-icon.png" width="50" /></a>
-            <h4>Github</h4>
-            <p>Login with your Github social coding platform account.</p>
-          </center>
-        </div>
-        <div class="col-4">
-          <center>
-            <a href="http://oauth.apievangelist.com/twitter/?action=login"><img src="/assets/images/twitter-icon.png" width="50" /></a>
-            <h4>Twitter</h4>
-            <p>Login / Sign Up with your Twitter social networking account.</p>
-          </center>
-        </div>
-        <div class="col-4">
-          <center>
-            <a href="http://oauth.apievangelist.com/linkedin/?action=login"><img src="/assets/images/linkedin-icon.png" width="50" /></a>
-            <h4>LinkedIn</h4>
-            <p>Login / Sign Up with your LinkedIn business social networking account.</p>
-          </center>
-        </div>
-    </div>
-
-    <p>{{ authentication_signuplogin_footer }}</p>
-
-</section>
-<!-- Signup / Signin -->
-
-<!--Auth-->
-<a name="authentication"></a>
-<section id="authentication">
-  <div class="content">
-		<header>
-			<h3>{{ authentication_overview_title }}</h3>
-		</header>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-9">
-          <p>{{ authentication_overview_header }}</p>
-          <ul id="auth-keys">
-            <li id="auth-appkey" style="padding-left: 25px;"><strong>&rarr; x-api-key</strong> - Your API key.</li>
-          </ul>
-          <p>{{ authentication_overview_footer }}</p>
-        </div>
-        <div class="col-lg-3">
-          <center><img src="/assets/images/authentication.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
-        </div>
-      </div>
-    </div>
-</section>
-<!--Auth-->
-
-<!--Documentation-->
-<a name="documentation"></a>
 {% assign openapi = site.data.openapi %}
 
 <section id="documentation">
   <div class="content">
-		<header>
-			<h3>{{ documentation_overview_title }}</h3>
-		</header>
-		<p>{{ documentation_overview_header }}</p>
 
-    <div id="openapi-ui"></div>
-
-    <script>
-    window.onload = function() {
-
-      // HSDS
-      const openapi_docs = SwaggerUIBundle({
-        url: "https://raw.githubusercontent.com/api-evangelist-apis/locations/master/_data/openapi.yaml",
-        dom_id: '#openapi-ui',
-        presets: [
-          SwaggerUIBundle.presets.apis,
-          SwaggerUIStandalonePreset
-        ],
-        plugins: [
-          SwaggerUIBundle.plugins.DownloadUrl
-        ],
-        layout: "StandaloneLayout"
-      })
-      window.ui = openapi_docs;
-      }
-    </script>
-
-
-    <p>{{ documentation_overview_footer }}</p>
-
-    </div>
-</section>
-
-<!-- Begin Definitions -->
-<a name="definitions"></a>
-<section id="definitions">
-  <div class="content">
-		<header>
-			<h3>{{ documentation_definition_title }}</h3>
-		</header>
-    <p>{{ documentation_definition_header }}</p>
-    <center>
-    <table width="90%" align="center">
-      <tr>
-      {% if documentation_definition_openapi != '' %}
-        <td align="center"><a href="{{ documentation_definition_openapi }}"><img src="/assets/images/openapi.png" width="75" align="center" /></a><p align="center"><a href="{{ site.openapi_url }}"><strong>OpenAPI</strong></a></p></td>
-      {% endif %}
-      {% if documentation_definition_postman != '' %}
-        <td align="center"><a href="{{ documentation_definition_postman }}"><img src="/assets/images/postman.png" width="75" align="center" /></a><p align="center"><a href="{{ site.postman_collection_url }}"><strong>Postman</strong></a></p></td>
-      {% endif %}
-      </tr>
-    </table>
-    </center>
-    <p>{{ documentation_definition_footer }}</p>
-  </div>
-</section>
-<!-- End Definitions -->
-
-<!-- Begin Code -->
-<a name="code"></a>
-<section id="code">
-  <div class="content">
-		<header>
-			<h3>{{ code_title }}</h3>
-		</header>
-    <div class="container">
-      <div class="row">
-        <div class="col-9">
-          <p>{{ code_header }}</p>
-          <ol>
-            {% for code in code_libraries %}
-
-              {% assign name = code.name %}
-              {% assign description = code.description %}
-              {% assign status = code.status %}
-              {% assign url = code.fields | map: 'url' %}
-              {% assign logo = code.fields | map: 'logo' %}
-
-              {% if status == 'Active' %}
-                <li><a href="{{ url }}"><strong>{{ name }}</strong></a> - {{ description }}</li>
-              {% endif %}
-
-            {% endfor %}
-          </ol>
-          <p>{{ code_footer }}</p>
-        </div>
-        <div class="col-lg-3">
-          <center><img src="{{ code_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Code -->
-
-<!-- Begin Licensing -->
-<section id="sign-up-login">
-  <div class="content">
-		<header>
-			<h3>{{ licensing_title }}</h3>
-		</header>
-    <p>{{ licensing_header }}</p>
-    <center>
-    <table width="90%" align="center">
-      <tr>
-      {% for area in licensing_areas %}
-
-        {% assign licensing_title = area.title %}
-        {% assign licensing_description = area.description %}
-        {% assign licensing_status = area.status %}
-
-        {% assign license_name = area.fields | map: 'name' %}
-        {% assign license_url = area.fields | map: 'url' %}
-        {% assign license_image = area.fields | map: 'image' %}
-
-        {% if licensing_status == 'Active' %}
-          <td align="center"><p align="center"><strong>{{ licensing_title }}</strong></p></strong> <a href="{{ license_url }}"><img src="{{ license_image }}" width="75" align="center" /></a><p align="center"><a href="{{ license_url }}"><strong>{{ license_name }}</strong></a></p></td>
-        {% endif %}
-      {% endfor %}
-      </tr>
-    </table>
-    </center>
-    <p>{{ licensing_footer }}</p>
-  </div>
-</section>
-<!-- End Licensing -->
-
-<!-- Begin Plans -->
-<section id="sign-up-login">
-  <div class="content">
-		<header>
-			<h3>{{ plans_title }}</h3>
-		</header>
-    <p>{{ plans_header }}</p>
-    <center>
-    <table width="98%" align="center">
-      <tr>
-      {% for entries in plans %}
-        {% for plan in entries %}
-
-          {% assign plan_name = plan.name %}
-          {% assign plan_description = plan.description %}
-          {% assign plan_image = plan.image %}
-          {% assign plan_status = plan.status %}
-          {% assign plan_entries = plan.entries %}
-          {% assign plan_elements = plan.elements %}
-
-          <td>
-            <p><img src="{{ plan_image }}" align="left" style="width: 75px; padding: 10px;"></p>
-            <p><strong>{{ plan_name }}</strong><p>
-            <p>{{ plan_description }}</p>
-
-            <p><strong>Details:</strong><p>
-            {% for entry in plan_entries %}
-              {% assign entry_label = entry.label %}
-              {% assign entry_description = entry.description %}
-              {% assign entry_metric = entry.metric %}
-              {% assign entry_timeframe = entry.timeframe %}
-              {% assign entry_geo = entry.geo %}
-              {% assign entry_one = entry.one %}
-              {% assign entry_two = entry.two %}
-              {% assign entry_unit = entry.unit %}
-               &nbsp;&nbsp;- {{ entry_label }} - {{ entry_description }}<br />
-            {% endfor %}
-
-            <p><strong>Elements:</strong><p>
-            {% for element in plan_elements %}
-              {% assign element_name = element | map: 'name' %}
-               &nbsp;&nbsp;- {{ element_name }}<br />
-            {% endfor %}
-
-          </td>
-
-        {% endfor %}
-      {% endfor %}
-      </tr>
-    </table>
-    </center>
-    <p>{{ plans_footer }}</p>
-  </div>
-</section>
-<!-- End Plans -->
-
-<!-- Begin Support -->
-<section id="sign-up-login">
-  <div class="content">
-		<header>
-			<h3>{{ support_title }}</h3>
-		</header>
-    <p>{{ support_header }}</p>
-    <center>
-    <table width="90%" align="center">
-      <tr>
-      {% for channel in support_channels %}
-        {% assign url = channel.fields | map: 'url' %}
-        {% if channel.status == 'Active' %}
-          <td align="center"><a href="{{ url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.title }}</strong></a></p></td>
-        {% endif %}
-      {% endfor %}
-      </tr>
-    </table>
-    </center>
-    <p>{{ support_footer }}</p>
-  </div>
-</section>
-<!-- End Support -->
-
-
-<!-- Begin FAQ -->
-<section id="sign-up-login">
-  <div class="content">
-		<header>
-			<h3>{{ faq_title }}</h3>
-		</header>
-    <p>{{ faq_header }}</p>
-
-    {% for categories in faq_categories %}
-      {% for category in categories %}
-        <p><strong>{{ category }}</strong></p>
+      <a name="Discovery"></a>
+      <h2>API Discovery (<a href="/presentation-discovery/" target="_blank">Presentation</a>)</h2>
+      <p>Ensuring APIs are known across all teams, across the entire organization, and are always actively maintained.</p>
+      {% assign stop_number = 1 %}
+      {% for stop in site.stops %}
         <ul>
-          {% for entries in faq_questions %}
-            {% for entry in entries %}
-
-              {% assign this_question = entry | map: 'question' %}
-              {% assign this_question = this_question[0] %}
-              {% assign this_answer = entry | map: 'answer' %}
-              {% assign this_answer = this_answer[0] %}
-              {% assign this_category = entry | map: 'category'  %}
-              {% assign this_category = this_category[0] %}
-
-              {% if this_category == category %}
-                <li><strong>{{ this_question }}</strong> - {{ this_answer }}</li>
-              {% endif %}
-
-           {% endfor %}
-          {% endfor %}
+          {% if stop.area == 'API Discovery' %}
+            <li><strong>{{ stop.name }}</strong> (<a href="/outline-items/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
+          {% endif %}
         </ul>
+        {% assign stop_number = stop_number | plus: 1 %}
       {% endfor %}
-    {% endfor %}
-    <p>{{ faq_footer }}</p>
 
-  </div>
-</section>
-<!-- End FAQ -->
+      <hr />
 
-<!-- Begin Communications -->
-<a name="communications"></a>
-<section id="sign-up-login">
-  <div class="content">
-
-		<header>
-			<h3>{{ communication_title }}</h3>
-		</header>
-
-    <p>{{ communication_header }}</p>
-
-    <center>
-    <table width="90%" align="center">
-      <tr>
-      {% for channel in communication_channels %}
-
-        {% assign title = channel | map: 'title' %}
-        {% assign description = channel | map: 'description' %}
-        {% assign image = channel | map: 'image' %}
-        {% assign url = channel | map: 'url' %}
-        {% assign communication_status = channel | map: 'status' %}
-        {% assign status = communication_status[0] %}
-
-        {% if status == "Active" %}
-          <td align="center">
-            <a href="{{ url }}"><img src="{{ image }}" width="75" align="center" /></a>
-            <p align="center"><a href="{{ url }}"><strong>{{ title }}</strong></a></p>
-          </td>
-        {% endif %}
+      <a name="Design"></a>
+      <h2>API Design (<a href="/presentation-design/" target="_blank">Presentation</a>)</h2>
+      <p>Defining and designing API contracts that can be used across develop, production, and governance areas of the lifecycle.</p>
+      {% assign stop_number = 1 %}
+      {% for stop in site.stops %}
+        <ul>
+          {% if stop.area == 'API Design' %}
+            <li><strong>{{ stop.name }}</strong> (<a href="/outline-items/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
+          {% endif %}
+        </ul>
+        {% assign stop_number = stop_number | plus: 1 %}
       {% endfor %}
-      </tr>
-    </table>
-    </center>
 
-    <p>{{ communication_footer }}</p>
+      <hr />
 
-  </div>
-</section>
-<!-- End Communications -->
-
-<!-- Begin Road Map -->
-<a name="road-map"></a>
-<section id="road-map">
-  <div class="content">
-		<header>
-			<h3>{{ road_map_title }}</h3>
-		</header>
-    <div class="container">
-      <div class="row">
-        <div class="col-9">
-          <p>{{ road_map_header }}</p>
-          {% if road_map_status == 'Active' %}
-            <p><strong>Entries:</strong></p>
-            <ul>
-              {% for entries in public_road_map_entries %}
-                {% for entry in entries %}
-                  <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
-                {% endfor %}
-              {% endfor %}
-            </ul>
+      <a name="Development"></a>
+      <h2>API Development (<a href="/presentation-development/" target="_blank">Presentation</a>)</h2>
+      <p>Understanding the actual development and delivery of API resources, based upon API contracts defined during design phase.</p>
+      {% assign stop_number = 1 %}
+      {% for stop in site.stops %}
+        <ul>
+          {% if stop.area == 'API Development' %}
+            <li><strong>{{ stop.name }}</strong> (<a href="/outline-items/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
           {% endif %}
-
-          {% if road_map_suggestion_status == 'Active' %}
-            <p><strong>{{ road_map_suggestion_title }}: </strong> <a href="{{ road_map_suggestion_url }}">{{ road_map_suggestion_description }}</a></p>
-          {% endif %}
-
-          <p>{{ road_map_footer }}</p>
-        </div>
-        <div class="col-lg-3">
-          <center><img src="{{ road_map_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Road Map -->
-
-<!-- Begin Issues -->
-<a name="issues"></a>
-<section id="issues">
-  <div class="content">
-		<header>
-			<h3>{{ issues_title }}</h3>
-		</header>
-    <div class="container">
-      <div class="row">
-        <div class="col-9">
-          <p>{{ issues_header }}</p>
-
-          {% if issues_status == 'Active' %}
-            <p><strong>Entries:</strong></p>
-            <ul>
-              {% for entries in issues_entries %}
-                {% for entry in entries %}
-                  <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
-                {% endfor %}
-              {% endfor %}
-            </ul>
-          {% endif %}
-
-          {% if issues_report_status == 'Active' %}
-            <p><strong>{{ issues_report_title }}:</strong> <a href="{{ issues_report_url }}">{{ issues_report_description }}</a></p>
-          {% endif %}
-
-          <p>{{ issues_footer }}</p>
-        </div>
-        <div class="col-lg-3">
-          <center><img src="{{ issues_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Issues -->
-
-
-<!-- Begin Change Log -->
-<a name="change-log"></a>
-<section id="change-log">
-  <div class="content">
-		<header>
-			<h3>{{ change_log_title }}</h3>
-		</header>
-    <div class="container">
-      <div class="row">
-        <div class="col-9">
-          <p>{{ change_log_header }}</p>
-
-          {% if change_log_status == 'Active' %}
-            <p><strong>Entries:</strong></p>
-            <ul>
-              {% for entries in change_log_entries %}
-                {% for entry in entries %}
-                  <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
-                {% endfor %}
-              {% endfor %}
-            </ul>
-          {% endif %}
-
-          <p>{{ change_log_footer }}</p>
-        </div>
-        <div class="col-lg-3">
-          <center><img src="{{ change_log_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Change Log -->
-
-<!-- Begin Legal -->
-<section id="sign-up-login">
-  <div class="content">
-		<header>
-			<h3>{{ legal_title }}</h3>
-		</header>
-    <p>{{ legal_header }}</p>
-    <center>
-    <table width="90%" align="center">
-      <tr>
-      {% for document in legal_documents %}
-        {% assign document_name = document.name %}
-        {% assign document_description = document.description %}
-        {% assign document_image = document.image %}
-        {% assign document_status = document.status %}
-        {% assign document_url = document.fields | map: 'url' %}
-        {% if document_status == 'Active' %}
-          <td align="center"><a href="{{ document_url }}"><img src="{{ document_image }}" width="75" align="center" /></a><p align="center"><a href="{{ document_url }}"><strong>{{ document_name }}</strong></a></p></td>
-        {% endif %}
+        </ul>
+        {% assign stop_number = stop_number | plus: 1 %}
       {% endfor %}
-      </tr>
-    </table>
-    </center>
-    <p>{{ legal_footer }}</p>
+
+      <hr />
+
+      <a name="Production"></a>
+      <h2>API Production (<a href="/presentation-production/" target="_blank">Presentation</a>)</h2>
+      <p>Moving to and operating APIs in production, and making sure services are consistently delivered across the organization.</p>
+      {% assign stop_number = 1 %}
+      {% for stop in site.stops %}
+        <ul>
+          {% if stop.area == 'API Production' %}
+            <li><strong>{{ stop.name }}</strong> (<a href="/outline-items/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
+          {% endif %}
+        </ul>
+        {% assign stop_number = stop_number | plus: 1 %}
+      {% endfor %}
+
+      <hr />
+
+      <a name="Governance"></a>
+      <h2>API Governance (<a href="/presentation-governance/" target="_blank">Presentation</a>)</h2>
+      <p>Getting more organized about how APIs are quantified, understood, and reported upon across the entire organization.</p>
+      {% assign stop_number = 1 %}
+      {% for stop in site.stops %}
+        <ul>
+          {% if stop.area == 'API Governance' %}
+            <li><strong>{{ stop.name }}</strong> (<a href="/outline-items/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
+          {% endif %}
+        </ul>
+        {% assign stop_number = stop_number | plus: 1 %}
+      {% endfor %}
+
   </div>
 </section>
-<!-- End Legal -->
 
 
-<script type="text/javascript">
-  $appid = getUrlVar('app_id');
-  //console.log($appid);
-  Cookies.set('app_id', $appid);
-  $appkey = getUrlVar('app_key');
-  //console.log($appkey);
-  Cookies.set('app_key', $appkey);
-  if($appkey != '')
-    {
-    $('#auth-keys').html('');
-    //$appid_link = '<li><strong>x-appid</strong> - ' + $appid + '</li>';
-    //console.log($appid_link)
-    $appkey_link = '<li><strong>x-appkey</strong> - ' + $appkey + '</li>';
-    //console.log($appkey_link)
-    $auth_html = '<ul>' + $appkey_link + '</ul>';
-    //console.log($auth_html);
-    $('#auth-keys').html($auth_html);
-    $('#auth-header').html('Authentication (AUTHENTICATED)');
-    //document.getElementById("x-api-key").style.display = '';
-    }
-  app_key = Cookies.get('app_key');
-  if(app_key != '')
-    {
-    document.getElementById('x-api-key').value = app_key;
-    var elements = document.body.getElementsByTagName('input');
-    for (var i = 0; i < elements.length; i++)
-      {
-      //elements[i].innerHTML = "foo";
-      if(elements[i].name=='x-api-key')
-        {
-        elements[i].value = app_key;
-        }
-      //console.log("name: " + elements[i].name);
-      }
-    }
-
-</script>
+<!-- overview -->
+<section id="overview">
+	<div class="content">
+		<header>
+			<h3>Navigating This Workshop</h3>
+		</header>
+    <p>This workshop centers around a single mock API, and is driven by a central YAML definition which provides a human and machine readable API lifecycle outline. This YAML definition drives the outline of lifecycle stops present on this page, as well as items for each stop, and the other details provided. Providing several core elements for exploring, learning about, and hopefully evolving this API lifecycle blueprint to be your own. There are X core building blocks of this blueprint:</p>
+    <ul>
+			<li><strong>API Developer Portal</strong> (<a href="/portal/" target="_blank">view</a>) - A working developer portal to show what is possible.</li>
+			<li><strong>API Lifecycle Presentation(s)</strong>
+        <ul>
+          <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/presentation-discovery/" target="_blank">Discovery</a> - A walk through of the discovery phase.</li>
+          <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/presentation-design/" target="_blank">Design</a> - A walk through of the design phase.</li>
+          <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/presentation-development/" target="_blank">Development</a> - A walk through of the development phase.</li>
+          <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/presentation-production/" target="_blank">Production</a> - A walk through of the production phase.</li>
+          <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/presentation-governance/" target="_blank">Governance</a> - A walk through of the governance layer.</li>
+        </ul>
+      </li>
+			<li><strong>API Lifecycle Config</strong> (<a href="https://github.com/api-lifecycle-workshop/locations/blob/master/_config.yml" target="_blank">view</a>) - The YAML API lifecycle checklist for the locations API.</li>
+			<li><strong>API Lifecycle Checklist</strong> (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline/" target="_blank">view</a>) - A simple checklist of all the stops and items to consider on the checklist.</li>
+		</ul>
+    <p>This lifecycle can be applied to a single API, or many APIs as part of a more holistic strategy. While many stops along this API lifecycle will be manual to begin with, because it exists as a YAML artificact, it introduces the opportunity to think about automation at every stop. Providing a human and machine readable API lifecycle document, that can be used for outlines, presentations, documentation, and eventually driving the API delivery pipeline across an organization.</p>
+	</div>
+</section>
