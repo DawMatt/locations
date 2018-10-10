@@ -1319,6 +1319,14 @@ stops:
               twitter: kinlane
               github: kinlane
 
+      - name: Export Contract
+        description: The Postman Collection for this service.
+        instruction: Provide URL for all Postman Collections and index in API discovery index.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-postman.png
+        status: None
+        fields:
+          - url: http://example.com/postman.json
+
   #-----------
   # API Development - Discovery
   #-----------
@@ -1356,6 +1364,12 @@ stops:
         status: None
         fields:
           - url: http://example.com/postman.json
+
+      - name: Catalog
+        description: Keeping all definitions available in a central catalog after design time.
+        instruction: Publish all updated definitions to the central catalog.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-directory-api.png
+        status: None
 
   #----------------
   # API Development - Virtualization
