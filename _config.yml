@@ -3917,7 +3917,7 @@ stops:
         description: Making sure that everything is being actively reported upon.
         instruction: Making sure that everything is being actively reported upon.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-reporting.png
-        status: None          
+        status: None
 
   #----------
   # API Production - Stages
@@ -3939,7 +3939,7 @@ stops:
 
       - name: Design
         description: When things are still being designed and contract hammered out.
-        instruction:When things are still being designed and contract hammered out.
+        instruction: When things are still being designed and contract hammered out.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png
 
       - name: Development
