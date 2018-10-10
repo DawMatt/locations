@@ -1248,11 +1248,11 @@ stops:
           - url: https://github.com/api-evangelist-apis/locations/issues
 
   #-----------
-  # API Development - Discovery
+  # API Design - Discovery
   #-----------
   - name: Discovery
     title: Discovery
-    area: API Development
+    area: API Design
     description: Make sure all APIs are discoverable after they go through the design phase, ensuring each type of API definition is up to date, and catalogs are updated as part of the process.
     header:
     footer:
@@ -1311,7 +1311,7 @@ stops:
 
       - name: Repository
         description: Use repository to version, build, and deploy each service.
-        instruction:
+        instruction: Use repository to version, build, and deploy each service.
         status: Active
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-repository.jpg
         fields:
