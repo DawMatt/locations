@@ -21,9 +21,10 @@ title: API Lifecycle Workshop Presentation - Design
           {% endif %}
         {% endif %}
       {% endfor %}
-
+      number_of_stops: {{ number_of_stops }}<br />
       {% assign cutoff = number_of_stops | divided_by: 3 %}
       {% assign cutoff = cutoff | plus: 1 %}
+      cutoff: {{ cutoff }}<br />
       {% assign this_stop = 0 %}
 
       {% for stop in site.stops %}
