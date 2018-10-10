@@ -72,11 +72,11 @@ stops:
         status: Active
 
   #-----------
-  # API Production - Discovery
+  # API Discovery - Discovery
   #-----------
   - name: Discovery
     title: Discovery
-    area: API Production
+    area: API Discovery
     description: Making sure that all APIs are discoverable by default, and able to be easily registered in aPI catalogs, and able to be included in search indexes, and API discovery services. Baking API discovery into the regular operations of each service being deployed.
     header: The definitions for this service.
     footer:
@@ -107,7 +107,70 @@ stops:
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-postman.png
         status: None
         fields:
-          - url: http://example.com/postman.json        
+          - url: http://example.com/postman.json
+
+  #---------------
+  # API Discovery - Communication
+  #---------------
+  - name: Communication
+    title: Staying In Tune
+    area: API Discovery
+    description: Having a comprehensive communication strategy for a service, ensuring that each service is properly communicating with other teams, stakeholders, and API consumers. Providing a regular stream of information regarding what is happening with the service.
+    header: Here are the commmunication channels provided to you, helping you stay in tune with what is changing with this service, and the overall platform behind it.
+    footer: These channels should provide you with a regular hearbeat of the changes being made, and what is being planned as part of this platform's operations.
+    instructions: Establish a communication strategy for this service.
+    image: http://locations.apievangelist.com/assets/images/communication.png
+    status: Active
+    links:
+      - title: Communication (API Evangelist)
+        url: http://communication.apievangelist.com/
+    items:
+
+      - name: Blog
+        title: Blog
+        description: The blog for this service.
+        instruction: Provide a simple blog and update mechanism for this service.
+        image: http://locations.apievangelist.com/assets/images/blog.png
+        status: Active
+        fields:
+          - url: http://example.com/blog/
+          - atom: http://example.com/atom/
+
+      - name: Twitter
+        title: Twitter
+        description: The Twitter account for this service.
+        instruction: Provide the Twitter handle that is used as part of this service.
+        image: http://locations.apievangelist.com/assets/images/twitter.png
+        status: Active
+        fields:
+          - handle: http://twitter.com/handle/
+
+      - name: Github
+        title: Github
+        description: The Github account for this service.
+        instruction: Provide the Github account or organization behind this service.
+        image: http://locations.apievangelist.com/assets/images/github.png
+        status: Active
+        fields:
+          - handle: http://github.com/handle/
+
+      - name: Internal
+        title: Internal
+        description: Internal communication channel for this service.
+        instruction: Provide a location where internal communication is available.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-internal.png
+        status: None
+        fields:
+          - url: http://example.com/private-comm/
+
+      - name: External
+        title: External
+        description: External communication channels for this service.
+        instruction: Provide a location where public communication is available.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-external.png
+        status: None
+        fields:
+          - url: http://example.com/communication/
 
   #-------------
   # API Discovery - Definitions
