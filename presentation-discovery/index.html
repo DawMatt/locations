@@ -17,6 +17,7 @@ title: Location API - Presentation - Discovery
       {% assign cutoff = number_of_stops | divided_by: 3 %}
       {% assign cutoff = cutoff | plus: 1 %}
       {% assign this_stop = 0 %}
+
       {% for stop in site.stops %}
         {% if stop.area == 'API Discovery' %}
           <li style="font-size: 22px; font-weight: bold; list-style: none; padding: 7px;">&#8594; {{ stop.name }}</li>
@@ -34,92 +35,96 @@ title: Location API - Presentation - Discovery
 
 {% for stop in site.stops %}
 
-  <section>
-
-    <br style="padding: 25px;" />
-    <p align="center"><img src="{{ stop.image }}" style="width: 10%; padding: 5px;"></p>
-    <p align="center" style="font-size: 36px;">{{ stop.name }}</p>
-
-    <center>
-      <div align="center" style="border: 0px solid #000; text-align: left; width: 40%; margin-top: 20px;">
-        <p align="center" style="font-size: 20px;">{{ stop.description }}</p>
-
-        {% if stop.services != Empty %}
-          <br /><p style="font-size: 22px;"><strong>Services:</strong></p>
-          <ul style="padding: 5px;">
-            {% for service in stop.services %}
-              <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ service.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ service.name }}</strong></a> - <span style="font-size: 18px;">{{ service.description }}</span></li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-        {% if stop.tools != Empty %}
-          <br /><p style="font-size: 22px;"><strong>Tools:</strong></p>
-          <ul style="padding: 5px;">
-            {% for tool in stop.tools %}
-              <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ tool.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ tool.name }}</strong></a> - <span style="font-size: 18px;">{{ tool.description }}</span></li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-        {% if stop.links != Empty %}
-          <br /><p style="font-size: 22px;"><strong>Links:</strong></p>
-          <ul style="padding: 5px;">
-            {% for link in stop.links %}
-              <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ link.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ link.title }}</strong></a></li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-      </div>
-    </center>
-
-  </section>
-
-  {% for item in stop.items %}
-
+  {% if stop.area == 'API Discovery' %}
     <section>
 
-      <p align="center"><img src="{{ item.image }}" style="width: 8%; padding: 5px;"></p>
-      <p align="center" style="font-size: 36px;">{{ stop.name }} &#8594; {{ item.name }}</p>
+      <br style="padding: 25px;" />
+      <p align="center"><img src="{{ stop.image }}" style="width: 10%; padding: 5px;"></p>
+      <p align="center" style="font-size: 36px;">{{ stop.name }}</p>
+
       <center>
         <div align="center" style="border: 0px solid #000; text-align: left; width: 40%; margin-top: 20px;">
-          <p align="center" style="font-size: 20px;">{{ item.description }}</p>
-          {% if item.services != Empty %}
+          <p align="center" style="font-size: 20px;">{{ stop.description }}</p>
+
+          {% if stop.services != Empty %}
             <br /><p style="font-size: 22px;"><strong>Services:</strong></p>
             <ul style="padding: 5px;">
-              {% for service in item.services %}
+              {% for service in stop.services %}
                 <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ service.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ service.name }}</strong></a> - <span style="font-size: 18px;">{{ service.description }}</span></li>
               {% endfor %}
             </ul>
           {% endif %}
-          {% if item.tools != Empty %}
+
+          {% if stop.tools != Empty %}
             <br /><p style="font-size: 22px;"><strong>Tools:</strong></p>
             <ul style="padding: 5px;">
-              {% for tool in item.tools %}
+              {% for tool in stop.tools %}
                 <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ tool.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ tool.name }}</strong></a> - <span style="font-size: 18px;">{{ tool.description }}</span></li>
               {% endfor %}
             </ul>
           {% endif %}
-          {% if item.links != Empty %}
+
+          {% if stop.links != Empty %}
             <br /><p style="font-size: 22px;"><strong>Links:</strong></p>
             <ul style="padding: 5px;">
-              {% for link in item.links %}
+              {% for link in stop.links %}
                 <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ link.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ link.title }}</strong></a></li>
               {% endfor %}
             </ul>
           {% endif %}
-          {% if item.elements != Empty %}
-            <br /><p style="font-size: 22px;"><strong>Elements:</strong></p>
-            <ul style="padding: 5px;">
-              {% for element in item.elements %}
-                <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <strong>{{ element.title }}</strong> - {{ element.description }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
+
         </div>
       </center>
+
     </section>
 
-  {% endfor %}
+    {% for item in stop.items %}
+
+      <section>
+
+        <p align="center"><img src="{{ item.image }}" style="width: 8%; padding: 5px;"></p>
+        <p align="center" style="font-size: 36px;">{{ stop.name }} &#8594; {{ item.name }}</p>
+        <center>
+          <div align="center" style="border: 0px solid #000; text-align: left; width: 40%; margin-top: 20px;">
+            <p align="center" style="font-size: 20px;">{{ item.description }}</p>
+            {% if item.services != Empty %}
+              <br /><p style="font-size: 22px;"><strong>Services:</strong></p>
+              <ul style="padding: 5px;">
+                {% for service in item.services %}
+                  <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ service.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ service.name }}</strong></a> - <span style="font-size: 18px;">{{ service.description }}</span></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if item.tools != Empty %}
+              <br /><p style="font-size: 22px;"><strong>Tools:</strong></p>
+              <ul style="padding: 5px;">
+                {% for tool in item.tools %}
+                  <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ tool.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ tool.name }}</strong></a> - <span style="font-size: 18px;">{{ tool.description }}</span></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if item.links != Empty %}
+              <br /><p style="font-size: 22px;"><strong>Links:</strong></p>
+              <ul style="padding: 5px;">
+                {% for link in item.links %}
+                  <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ link.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ link.title }}</strong></a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if item.elements != Empty %}
+              <br /><p style="font-size: 22px;"><strong>Elements:</strong></p>
+              <ul style="padding: 5px;">
+                {% for element in item.elements %}
+                  <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <strong>{{ element.title }}</strong> - {{ element.description }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </center>
+      </section>
+
+    {% endfor %}
+
+  {% endif %}
+
 {% endfor %}
