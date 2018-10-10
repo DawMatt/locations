@@ -2364,11 +2364,11 @@ stops:
           - url: http://example.com/communication/
 
   #----------
-  # API Production - Support
+  # API Development - Support
   #----------
   - name: Support
     title: Support
-    area: API Production
+    area: API Development
     description: Ensuring that each individual API has the necessary support, making sure that the support channels for a service are easy to find, have a responsive and knowledgeable person available to answer questions, and is being measured and audited for quality.
     header: We provide three ways in which you can receive support for this API, and have your questions answered as you are working to integrate it into your web or mobile application.
     footer: If your question is of the private nature please email us, for all other inquires please submit as GitHub issue if possible, so that others can learn from your question to.
