@@ -105,7 +105,7 @@ title: Location API - Checklist
       {% for stop in site.stops %}
         <ul>
           {% if stop.area == 'API Discovery' %}
-            <li><strong>{{ stop.name }}</strong> - {{ stop.description }}</li>
+            <li><strong>{{ stop.name }}</strong> (<a href="outline-stops/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
           {% endif %}
         </ul>
         {% assign stop_number = stop_number | plus: 1 %}
@@ -119,7 +119,7 @@ title: Location API - Checklist
       {% for stop in site.stops %}
         <ul>
           {% if stop.area == 'API Design' %}
-            <li><strong>{{ stop.name }}</strong> - {{ stop.description }}</li>
+            <li><strong>{{ stop.name }}</strong> (<a href="outline-stops/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
           {% endif %}
         </ul>
         {% assign stop_number = stop_number | plus: 1 %}
@@ -133,7 +133,7 @@ title: Location API - Checklist
       {% for stop in site.stops %}
         <ul>
           {% if stop.area == 'API Development' %}
-            <li><strong>{{ stop.name }}</strong> - {{ stop.description }}</li>
+            <li><strong>{{ stop.name }}</strong> (<a href="outline-stops/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
           {% endif %}
         </ul>
         {% assign stop_number = stop_number | plus: 1 %}
@@ -147,7 +147,7 @@ title: Location API - Checklist
       {% for stop in site.stops %}
         <ul>
           {% if stop.area == 'API Production' %}
-            <li><strong>{{ stop.name }}</strong> - {{ stop.description }}</li>
+            <li><strong>{{ stop.name }}</strong> (<a href="outline-stops/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
           {% endif %}
         </ul>
         {% assign stop_number = stop_number | plus: 1 %}
@@ -161,7 +161,7 @@ title: Location API - Checklist
       {% for stop in site.stops %}
         <ul>
           {% if stop.area == 'API Governance' %}
-            <li><strong>{{ stop.name }}</strong> - {{ stop.description }}</li>
+            <li><strong>{{ stop.name }}</strong> (<a href="outline-stops/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
           {% endif %}
         </ul>
         {% assign stop_number = stop_number | plus: 1 %}
