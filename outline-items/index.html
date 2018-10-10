@@ -128,6 +128,7 @@ title: Location API - Checklist
           <a name="{{ stop.name }}"></a>
           <h4>{{ stop.name }}</h4>
           <p>{{ stop.description }}</p>
+          {% assign item_number = item_number | plus: 1 %}
           <ul>
           {% for item in stop.items %}
             <li><strong>{{ item.name }}</strong> (<a href="/presentation-design/#/{{ item_number }}" target="_blank">details</a>) - {{ item.description }}</li>
@@ -149,6 +150,7 @@ title: Location API - Checklist
           <a name="{{ stop.name }}"></a>
           <h4>{{ stop.name }}</h4>
           <p>{{ stop.description }}</p>
+          {% assign item_number = item_number | plus: 1 %}
           <ul>
           {% for item in stop.items %}
             <li><strong>{{ item.name }}</strong> (<a href="/presentation-development/#/{{ item_number }}" target="_blank">details</a>) - {{ item.description }}</li>
@@ -170,6 +172,7 @@ title: Location API - Checklist
           <a name="{{ stop.name }}"></a>
           <h4>{{ stop.name }}</h4>
           <p>{{ stop.description }}</p>
+          {% assign item_number = item_number | plus: 1 %}
           <ul>
           {% for item in stop.items %}
             <li><strong>{{ item.name }}</strong> (<a href="/presentation-production/#/{{ item_number }}" target="_blank">details</a>) - {{ item.description }}</li>
@@ -191,6 +194,7 @@ title: Location API - Checklist
           <a name="{{ stop.name }}"></a>
           <h4>{{ stop.name }}</h4>
           <p>{{ stop.description }}</p>
+          {% assign item_number = item_number | plus: 1 %}
           <ul>
           {% for item in stop.items %}
             <li><strong>{{ item.name }}</strong> (<a href="/presentation-governance/#/{{ item_number }}" target="_blank">details</a>) - {{ item.description }}</li>
