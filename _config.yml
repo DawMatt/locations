@@ -3955,18 +3955,18 @@ stops:
     items:
 
       - name: Weekly
-        description: Provide a version of this outline that should be considered weekly.
-        instruction: Provide a version of this outline that should be considered weekly.
+        description: Provide a list that should be considered weekly.
+        instruction: Provide a list that should be considered weekly.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
       - name: Monthly
-        description: Provide a version of this outline that should be considered monthly.
-        instruction: Provide a version of this outline that should be considered monthly.
+        description: Provide a list that should be considered monthly.
+        instruction: Provide a list that should be considered monthly.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
       - name: Releases
-        description: Provide a version of this outline that should be considered for each release.
-        instruction: Provide a version of this outline that should be considered for each release.
+        description: Provide a list that should be considered for each release.
+        instruction: Provide a list that should be considered for each release.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
       - name: Governance
@@ -3986,6 +3986,17 @@ stops:
     footer:
     instructions: Establish an approach to operating and scaling API governance.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-governance.png
+    items:
+
+      - name: Distribution
+        description: How distributed or centralized will API governance be.
+        instruction: How distributed or centralized will API governance be.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dns.png
+
+      - name: Resources
+        description: Defining the resources that are available to realize governance.
+        instruction: Defining the resources that are available to realize governance.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-cross-origin-resource-sharing-cors.png
 
   - name: Design
     title: Design
@@ -3995,6 +4006,22 @@ stops:
     footer:
     instructions: Establish API guidance and work to measure progress.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png
+    items:
+
+      - name: Paths
+        description: Ensuring there are consistently designed API paths.
+        instruction: Ensuring there are consistently designed API paths.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-path-2.png
+
+      - name: Parameters
+        description: Having a common approach to defining parameters.
+        instruction: Having a common approach to defining parameters.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-paper.png
+
+      - name: Definitions
+        description: Making sure all definitions are properly defined.
+        instruction: Making sure all definitions are properly defined.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-definition.png
 
   - name: Testing
     title: Testing
@@ -4004,6 +4031,12 @@ stops:
     footer:
     instructions: Establish API guidance and work to measure progress.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-testing.png
+    items:
+
+      - name: Results
+        description: Measuring and reporting on all testing results.
+        instruction: Measuring and reporting on all testing results.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
 
   - name: Monitoring
     title: Monitoring
@@ -4013,6 +4046,12 @@ stops:
     footer:
     instructions: Establish API guidance and work to measure progress.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-heart-monitor.png
+    items:
+
+      - name: Results
+        description: Measuring and reporting on all testing results.
+        instruction: Measuring and reporting on all testing results.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
 
   - name: Performance
     title: Performance
@@ -4022,6 +4061,12 @@ stops:
     footer:
     instructions: Establish API guidance and work to measure progress.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-performance.png
+    items:
+
+      - name: Results
+        description: Measuring and reporting on all testing results.
+        instruction: Measuring and reporting on all testing results.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
 
   - name: Security
     title: Security
@@ -4031,6 +4076,12 @@ stops:
     footer:
     instructions: Establish API guidance and work to measure progress.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-security.png
+    items:
+
+      - name: Results
+        description: Measuring and reporting on all testing results.
+        instruction: Measuring and reporting on all testing results.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
 
   - name: Observability
     title: Observability
@@ -4040,6 +4091,86 @@ stops:
     footer:
     instructions: Push for observability into teams, and how they operate services.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-observable.png
+    items:
+
+      - name: Monitoring
+        description: Ensure tessting results are observable.
+        instruction: Ensure tessting results are observable.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-heart-monitor.png
+
+      - name: Testing
+        description: Ensure tessting results are observable.
+        instruction: Ensure tessting results are observable.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
+
+      - name: Performance
+        description: Ensure tessting results are observable.
+        instruction: Ensure tessting results are observable.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-performance.png
+
+      - name: Security
+        description: Ensure tessting results are observable.
+        instruction: Ensure tessting results are observable.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-security.png
+
+  - name: Discovery
+    title: Discovery
+    area: API Governance
+    description: Ensuring that all APis are discoverable and able to be measured.
+    header:
+    footer:
+    instructions: Centering things on the ability to discovery APIs throughout the lifecycle.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png
+    items:
+
+      - name: API.json
+        description: Ensure APIs.json are available and measured.
+        instruction: Ensure APIs.json are available and measured.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-commons-icon.png
+        status: None
+
+      - name: OpenAPI
+        description: Ensure OpenAPIs are available and measured.
+        instruction: Ensure OpenAPIs are available and measured.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-openapi-spec.png
+        status: None
+
+  #----------
+  # API Governance - Analysis
+  #----------
+  - name: Analysis
+    title: Analysis
+    area: API Governance
+    description: Measuring as much as possibly regarding what is going on with API activity.
+    header:
+    footer:
+    instructions: Define the analysis in play for this service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-analysis.png
+    status: None
+    services:
+      - name: Axway
+        description: API management platform offering a suite of services.
+        url: https://www.axway.com/en
+        status: None
+    items:
+
+      - name: Traffic
+        description: The traffic information across services.
+        instruction: The traffic information across services.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-traffic-light.png
+        status: None
+
+      - name: Usage
+        description: The usage information across services.
+        instruction: Document usage of APIs across services.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-usage.png
+        status: None
+
+      - name: SLA
+        description: The service level agreements across services.
+        instruction: Document whether the SLA was met across services.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-level-agreements.png
+        status: None
 
 #------------------
 # General Settings
