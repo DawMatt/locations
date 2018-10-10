@@ -3974,6 +3974,73 @@ stops:
         instruction: Provide an outline of how this outline is measured, reported, and evolved.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
+  #----------
+  # API Governance - Design
+  #----------
+
+  - name: Structure
+    title: Structure
+    area: API Governance
+    description: Working to understand the scope and structure for governance operations.
+    header:
+    footer:
+    instructions: Establish an approach to operating and scaling API governance.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-governance.png
+
+  - name: Design
+    title: Design
+    area: API Governance
+    description: Work to provide guidance regarding API design, and consider how to measure if it is followed.
+    header:
+    footer:
+    instructions: Establish API guidance and work to measure progress.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png
+
+  - name: Testing
+    title: Testing
+    area: API Governance
+    description: Work to provide guidance regarding API testing, and track on the results of all API testing.
+    header:
+    footer:
+    instructions: Establish API guidance and work to measure progress.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-testing.png
+
+  - name: Monitoring
+    title: Monitoring
+    area: API Governance
+    description: Work to provide guidance regarding API monitoring, and track on the results of all API monitoring.
+    header:
+    footer:
+    instructions: Establish API guidance and work to measure progress.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-heart-monitor.png
+
+  - name: Performance
+    title: Performance
+    area: API Governance
+    description: Work to provide guidance regarding API performance, and track on the results of all API performance.
+    header:
+    footer:
+    instructions: Establish API guidance and work to measure progress.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-performance.png
+
+  - name: Security
+    title: Security
+    area: API Governance
+    description: Work to provide guidance regarding API security, and track on the results of all API security.
+    header:
+    footer:
+    instructions: Establish API guidance and work to measure progress.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-security.png
+
+  - name: Observability
+    title: Observability
+    area: API Governance
+    description: Push for observability into all teams and the services that they operate.
+    header:
+    footer:
+    instructions: Push for observability into teams, and how they operate services.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-observable.png
+
 #------------------
 # General Settings
 #------------------
