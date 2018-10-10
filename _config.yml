@@ -301,7 +301,7 @@ stops:
   - name: Dependencies
     title: Dependencies
     area: API Discovery
-    description: Defining any dependencies that are in play, and will play a role in operations.
+    description: Defining any dependencies that are in play, and will play a role in operations. Auditing the stack behind any service as it is being discovered and documented as part of the overall effort.
     header:
     footer:
     instructions: Providing details of the dependencies that exist across services.
