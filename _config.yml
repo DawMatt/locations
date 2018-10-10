@@ -1440,9 +1440,9 @@ stops:
   - name: Virtualization
     title: Virtualization
     area: API Development
-    description: Providing mocked, sandbox, and virtualized instances of APIs and other data for understanding what an API does.
-    header: Mocked, sandbox, and virtualized instances of APIs and other data for understanding what an API does.
-    footer: Helping consumers understand what is possible when it comes to integrating and learning about an API.
+    description: Continuing to maintain virtualized instances of APIs as part of the API development process.
+    header:
+    footer:
     instructions: Provide a mock representation of this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-virtualization.png
     status: Not Used
@@ -1452,7 +1452,7 @@ stops:
     items:
 
       - name: Paths
-        description: Considering offering mock API paths for use by integrators, providing production-like instances of the API to use, and play with to provide feedback on API services.
+        description: Offering mock API paths for use by developers to understand what an API does / should do.
         instruction: Providing virtualized paths for the API driving service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-path-2.png
         status: None
