@@ -3926,10 +3926,15 @@ stops:
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stages.png
     items:
 
-      - name: Prototype
-        description: When a prototype of this service is being developed.
-        instruction: When a prototype of this service is being developed.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-prototype.png
+      - name: Discovery
+        description: When things are still being discovered, and figured out for design.
+        instruction: When things are still being discovered, and figured out for design.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png
+
+      - name: Design
+        description: When things are still being designed and contract hammered out.
+        instruction:When things are still being designed and contract hammered out.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png
 
       - name: Development
         description: When a production instance of service is being developed.
