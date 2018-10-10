@@ -39,7 +39,7 @@ stops:
   - name: Low Hanging Fruit
     title: Low Hanging Fruit
     area: API Discovery
-    description: Learning where to start with APIs based upon what is already on a website. Spidering existing domains looking for data assets that should be considered for delivery as APIs.
+    description: Understanding what resources are already on the public websites, and applications, by spidering existing domains looking for data assets that should be delivered as API resources.
     header:
     footer:
     instructions: Harvest all the CSV, XML, JSON, and tables from the public websites.
@@ -48,8 +48,8 @@ stops:
     items:
 
       - name: Spreadsheets
-        description: Identify all of the spreadsheets that have been published within any domains.
-        instruction: Harvest any spreadsheet that is published to the website.
+        description: Identify all of the XML files that are published across any domains.
+        instruction: Index any spreadsheet that is arleady published to the website.
         image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
         status: Active
 
@@ -77,7 +77,7 @@ stops:
   - name: Discovery
     title: Discovery
     area: API Discovery
-    description: Actively looking for web services and APIs that exist across an organization, industry, or any other landscape. Documenting, aggregating, and evolving what is available about each API being used across the targeted landscape.
+    description: Actively looking for web services and APIs that exist across an organization, industry, or any other defined landscape. Documenting, aggregating, and evolving what is available about each API, while also publishing back out and making available relevant teams.
     header:
     footer:
     instructions: Looking for web services and APIs across an organiation, industry, or other landsacpe.
