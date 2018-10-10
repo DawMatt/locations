@@ -1941,7 +1941,7 @@ stops:
           - name: Name of Application
           - description: The description of application.
           - url: http://example.com
-          - tags: Tag          
+          - tags: Tag
 
   #---------
   # API Development - Testing
@@ -1967,25 +1967,45 @@ stops:
         url: http://testing.apievangelist.com/
     items:
 
-      - name: Assertions
-        description: The assertions for this service.
-        instruction: Provide details of the assertions being tested for.
+      - name: Scenarios
+        description: The sceanrios for testing this service.
+        instruction: Provide details of the scenarios being tested for.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
         status: None
         fields:
           - assertions:
-            - title: Assertion Title
-              description: This is a description for the assertion.
-              url: http://example.com/assertion/
-            - title: Assertion Title
-              description: This is a description for the assertion.
-              url: http://example.com/assertion/
-            - title: Assertion Title
-              description: This is a description for the assertion.
-              url: http://example.com/assertion/
-            - title: Assertion Title
-              description: This is a description for the assertion.
-              url: http://example.com/assertion/
+            - title: Scenario Title
+              description: This is a description for the scenario.
+              url: http://example.com/scenario/
+            - title: Scenario Title
+              description: This is a description for the scenario.
+              url: http://example.com/scenario/
+            - title: Scenario Title
+              description: This is a description for the scenario.
+              url: http://example.com/scenario/
+            - title: Scenario Title
+              description: This is a description for the scenario.
+              url: http://example.com/scenario/
+
+      - name: Saved Requests
+        description: Save specific requests from a service to be used in testing.
+        instruction: Save the latest request for each individual API path.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
+        status: None
+        fields:
+          - entries:
+            - title: Request Name
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Request Name
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Request Name
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Request Name
+              date: 1/1/2019
+              description: This is a description for the item.
 
       - name: Results
         description: The results of assertions tested against this service.
@@ -2013,8 +2033,8 @@ stops:
   - name: Performance
     title: Performance
     area: API Development
-    description: Testing each service for performance, benchmarking the speed in which resources are being delivered from multiple regions, working to understand and establish what the baseline speed for each API is, and understanding if the service is meeting, or falling beneath expectations.
-    header: The definitions for this service.
+    description: Establishing what the benchmarks are for a service, and what can be expected when it comes to performance.
+    header:
     footer:
     instructions: Defining the performance monitoring for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-performance.png
