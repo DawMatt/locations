@@ -4177,6 +4177,12 @@ stops:
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-level-agreements.png
         status: None
 
+      - name: Reporting
+        description: Making sure that everything is being actively reported upon.
+        instruction: Making sure that everything is being actively reported upon.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-reporting.png
+        status: None
+
 #------------------
 # General Settings
 #------------------
