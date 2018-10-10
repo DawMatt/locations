@@ -145,6 +145,17 @@ title: Location API - Checklist
         </ul>
       {% endfor %}
 
+      <hr />
+
+      <h2>API Governance</h2>
+      <p>GEtting more organized about how API quantified, understood, and reported upon.</p>
+      {% for stop in site.stops %}
+        <ul>
+          {% if stop.area == 'API Governance' %}
+            <li><strong>{{ stop.name }}</strong> - {{ stop.description }}</li>
+          {% endif %}
+        </ul>
+      {% endfor %}
 
   </div>
 </section>
