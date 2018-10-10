@@ -1232,30 +1232,9 @@ stops:
     status: Active
     items:
 
-      - name: Organization
-        description: The over-arching source control organization for this service, providing an umbrella for different development groups and projects.
-        instruction: Define the organization for this service.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
-        status: Active
-        fields:
-          - github_organization: api-evangelist-apis
-        services:
-          - name: GitHub
-            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
-            url: https://github.com
-          - name: GitLab
-            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
-            url: https://about.gitlab.com/
-          - name: Bitbucket
-            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
-            url: https://bitbucket.org/
-        links:
-          - title: API Evangelist APIs
-            url: https://github.com/api-evangelist-apis
-
       - name: Repository
-        description: The source control repository for this service, providing a self-contained, shareable, forkable way to engage with a service. Allowing for EVERYTHING involved with a service to be accessed in a single location.
-        instruction: Establish a Github repository.
+        description: Use repository to version, build, and deploy each service.
+        instruction:
         status: Active
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-repository.jpg
         fields:
@@ -1275,7 +1254,7 @@ stops:
             url: https://github.com/api-evangelist-apis/locations
 
       - name: README
-        description: The README for this services repository, providing an overview of the service, complete with all the relevant links to all the moving parts. Any user should be able to land on the README, and easily get up to speed on what a service delivers.
+        description: Update the README for the repository to reflect what is happening as part of development.
         instruction: Craft a README for the repository.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-readme.png
         status: Active
@@ -1294,33 +1273,6 @@ stops:
         links:
           - title: Locations README
             url: https://github.com/api-evangelist-apis/locations/blob/master/README.md
-
-      - name: Service Name
-        description: A simple title for this service, describing what it does in concise terms, providing a simple way for any internal or external part to learn about the value it offers.
-        instruction: Provide title for the service.
-        status: Active
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-request.png
-        fields:
-          - service_name: API Evangelist Location API
-
-      - name: Service Description
-        description: A simple, descriptive paragraph for this service. Providing less that 250 words about what value this service delivers. Avoid just writing the obvious, and describing what an APIs, and focusing in on describing the value being delivered by this service.
-        instruction: Provide concise description for the service.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
-        status: Active
-        fields:
-          - service_description: This is a location API, providing many of the common building blocks of location for use in any application. Providing the essential location ingredients needed through a variety of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
-
-      - name: Service Goals
-        description: Providing some basic goals for this service, helping clearly articulate why this service is being delivered, providing insight beyond the obvious about why this service is worthy of being developed, and operated in production.
-        instruction: Establish goals that will guide this service.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gear-life-cycle.png
-        status: Active
-        fields:
-          - service_goals: This is the goals for this service.
-            goals:
-              - name: Provide Locations
-                descripton: Provide a set of cities, states, countries, and other location specific data for use across other applications.
 
       - name: Schema
         description: JSON schema for the data behind service, providing a stanalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind this service.
@@ -1354,64 +1306,8 @@ stops:
             description: The OpenAPI specification for describing the surface area of the API.
             url: https://github.com/OAI/OpenAPI-Specification
 
-      - name: Domain
-        description: Considering the domain that this service fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within. Quantify the service domain, helping decompose from a larger domain, and helping focus what this service does, helping it do one things well.
-        instruction: Provide insight into the domain in which this service is operating.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
-        status: Active
-        elements:
-          - title: Context
-            description: Describing the setting and meaning the defines the value of this service.
-          - title: Model
-            description: The system of models used to define the elements of the domain this service.
-          - title: Language
-            description: The vocabulary and language used to help articulate the value this service delivers.
-          - title: Bounded Context
-            description:  Describing the boundaries of where this service operates and delivers value.
-        links:
-          - title: Domain-driven design
-            url: https://en.wikipedia.org/wiki/Domain-driven_design
-          - title: Restful Objects
-            url: https://en.wikipedia.org/wiki/Restful_Objects
-
-      - name: Event Storming
-        description: Event storming is a rapid, lightweight, and underappreciated group modeling technique that is intense, fun, and useful for accelerating development teams.
-        instruction: Engage in an event storming exercise to help model the domain.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sticky-notes.png
-        status: Active
-        elements:
-          - title: Domain Event
-            description: The event that occurs within the domain as part of a service execution.
-          - title: Command
-            description: The trigger for the domain event occurring, setting it into motion.
-          - title: Actor
-            description: Defining who executes command to trigger event, and is making things happen.
-          - title: Aggregates
-            description:  Aggregates logically group various commands, events, and reactions together.
-        links:
-          - title: Event Storming (Wikipedia)
-            url: https://en.wikipedia.org/wiki/Event_storming
-          - title: Event Storming
-            url: https://www.eventstorming.com/
-
-      - name: Tags
-        description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.
-        instruction: Provide a list of tags that will be used to organize schema, resources, infrastructure, and other elements of this service.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tag.png
-        status: Active
-
-      - name: Assertions
-        description: Human and machine readable assertions of what service does, leveraging the existing JSON schema, and translating that into business objectives, asserting that a service does what it is supposed to.
-        instruction: Craft a set of assertions for the service.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
-        status: Active
-        fields:
-          - assertions:
-            - title: The title of the assertion
-              path: /path/of/the/assertion
-
       - name: Team
-        description: A list of team members for the service, providing a nice list of who is responsible for making a service operate.
+        description: Extend the team list for a service to include the development, QA, and other stakeholders involved in this area of the lifecycle.
         instruction: Define the team behind the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-team-working.png
         status: Active
