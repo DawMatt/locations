@@ -164,13 +164,20 @@ stops:
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-meeting-rrom.png
         status: Active
 
+      - name: Workshops
+        title: Workshops
+        description: Conducting workshops to actively develop wider discovery practices.
+        instruction: Conducting workshops to actively develop wider discovery practices.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-meeting-rrom.png
+        status: Active
+
   #-------------
   # API Discovery - Definitions
   #-------------
   - name: Definition
     title: Definitions
     area: API Discovery
-    description: Ensuring that all definitions are being aggregated as part of the process so that they can be evolved and moved forward into design, development and production.
+    description: Work to make ensure that all definitions are being aggregated as part of the process so that they can be evolved and moved forward into design, development and production--investing in all of the artifacts that will be needed down the road.
     header:
     footer:
     instructions: Making sure definitions are being organized for future use.
@@ -179,7 +186,7 @@ stops:
     items:
 
       - name: Organization
-        description: Define what group a definition is organized within.
+        description: Defining the organizational structure, group, or other bounded context for organization definitions into.
         instruction: Define the organization for each individual service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: Active
@@ -200,7 +207,7 @@ stops:
             url: https://github.com/api-evangelist-apis
 
       - name: Schema
-        description: Organizing individual schema assocated with a service, while also including in the OpenAPI.
+        description: Organizing individual schema assocated with a service, while also including it as part of the OpenAPI.
         instruction: Organize loose, and JSON schema for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
         status: Active
@@ -220,7 +227,7 @@ stops:
             url: https://www.jsonschema.net/
 
       - name: OpenAPI
-        description: Producing an OpenAPI should be the central objective of the API discovery process.
+        description: Producing an OpenAPI should be the central objective of the API discovery process, producing, then also evolving each API's definition throughout the lifecycle.
         instruction: Establish an OpenAPI for the service.
         image: https://s3.amazonaws.com/kinlane-productions/openapi/openapi-icon.png
         status: None
@@ -232,7 +239,7 @@ stops:
             url: https://github.com/OAI/OpenAPI-Specification
 
       - name: Domain
-        description: Considering the domain that services fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within. Quantify the service domain, helping decompose from a larger domain, and helping focus what this service does, helping it do one things well.
+        description: Considering the domain that services fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within. Quantifying the service domain, helping decompose from a larger domain, and helping focus what this service does.
         instruction: Provide insight into the domain in which this service is operating.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
         status: Active
@@ -284,13 +291,13 @@ stops:
         status: Active
 
       - name: Team(s)
-        description: Map out all of the teams being engaged as part of the service and API discovery process.
+        description: Map out all of the individuals being engaged as part of the service and API discovery process, and grouping them by team, group, or other organizational structure.
         instruction: Document all teams across organizations and groups.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-team-working.png
         status: Active
 
       - name: Catalog
-        description: Establish a central way to track on all API definitions that are being organized.
+        description: Establish a central way to track on all API definitions that are being organized, from a folder on network drive, to GitHub, GitLab, or other CMS, with the object to eventually publish all usable definitions to a master catalog.
         instruction: Have a central catalog for managing all API definitions.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-directory-api.png
         status: Active
@@ -313,7 +320,7 @@ stops:
     items:
 
       - name: Services
-        description: Information about services all services depends on.
+        description: What existing services does a service depend on to do what it does, and would be impacted if something changes.
         instruction: Details of other services all services depends upon.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-request.png
         status: None
@@ -323,7 +330,7 @@ stops:
           - url: http://example.com/service-information/
 
       - name: Software
-        description: Information about software all services depends on.
+        description: What are the software libraries a service depends on for its operations, covering the code layer dependencies.
         instruction: Details of other software all services depends upon.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-software.png
         status: None
@@ -333,7 +340,7 @@ stops:
           - url: http://example.com/software-information/
 
       - name: Data
-        description: Information about data all services depends on.
+        description: What is the provenance of data being used as part of the service, and where are their continued dependencies.
         instruction: Details of other data all services depends upon.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-big-data-2.png
         status: Active
@@ -343,7 +350,7 @@ stops:
           - url: https://github.com/prograhammer/countries-regions-cities
 
       - name: People
-        description: Information about people services depends on.
+        description: What people is a service dependent on, requiring coordination, communication, and effort from individuals to move forward, and ensuring the right stakeholders are involved.
         instruction: Details of other people services depends upon.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-people.png
         status: None
@@ -354,7 +361,7 @@ stops:
           - github_user: user
 
       - name: Organizations
-        description: Information about organizations services depends on.
+        description: What other organizations, internally or externally are required to move a service forward, making sure all stakeholders are considered.
         instruction: Details of other organizations services depends on.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: None
@@ -365,7 +372,7 @@ stops:
           - url: http://example.com
 
       - name: Applications
-        description: Information about applications that depend on services.
+        description: Documenting the client applications depeendencies for a service, outlining who depends on the service based upon the applications they are using.
         instruction: Details of other applications that depend on services.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-app-icon.jpg
         status: None
@@ -381,7 +388,7 @@ stops:
   - name: Support
     title: Support
     area: API Discovery
-    description: Ensure that all teams have support when it comes to questions about web service and API discovery, helping the intially, as well as along the way, making sure all their APIs are accounted for.
+    description: Ensure that all teams have support when it comes to questions about web service and API discovery, helping them intially, as well as along the way, making sure all their APIs are accounted for, and indexed as part of discovery efforts.
     header:
     footer:
     instructions: Have a strategy for supporting all groups when it comes to API discovery.
@@ -410,12 +417,16 @@ stops:
           - url: https://github.com/api-evangelist-apis/locations/issues
 
   #-------------
+  # API Design
+  #-------------
+
+  #-------------
   # API Design - Definitions
   #-------------
   - name: Definition
     title: Definitions
     area: API Design
-    description: Using definitions as the center of the API design process, employing an OpenAPI contract for moving things through the design phase.
+    description: Using definitions as the center of the API design process, developing an OpenAPI contract for moving things through the design phase, iterating, evolving, and making sure the definitions drive the business goals behind each service.
     header:
     footer:
     instructions: Define the problem and solution in a human and machine readable way.
@@ -424,7 +435,7 @@ stops:
     items:
 
       - name: Organization
-        description: The over-arching source control organization for this service, providing an umbrella for different development groups and projects.
+        description: The over-arching source control organization for this service, providing an umbrella for different development groups and projects, and governing who has accesss to each design.
         instruction: Define the organization for this service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: Active
@@ -445,7 +456,7 @@ stops:
             url: https://github.com/api-evangelist-apis
 
       - name: Repository
-        description: The source control repository for this service, providing a self-contained, shareable, forkable way to engage with a service. Allowing for EVERYTHING involved with a service to be accessed in a single location.
+        description: Leveeraging source control repository for this service, providing a self-contained, shareable, forkable way to engage with a service. Allowing for EVERYTHING involved with a service to be accessed in a single location.
         instruction: Establish a Github repository.
         status: Active
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-repository.jpg
@@ -535,7 +546,7 @@ stops:
             url: https://github.com/OAI/OpenAPI-Specification
 
       - name: Domain
-        description: Considering the domain that this service fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within. Quantify the service domain, helping decompose from a larger domain, and helping focus what this service does, helping it do one things well.
+        description: Considering the domain that this service fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within, ensuring the the right definitions, vocabulary, and other elements are present at design time.
         instruction: Provide insight into the domain in which this service is operating.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
         status: Active
@@ -555,13 +566,13 @@ stops:
             url: https://en.wikipedia.org/wiki/Restful_Objects
 
       - name: Tags
-        description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.
+        description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations. Ensuring that APIs leave this stage of the lifecycle properly tagged for organization, indexing and discovery.
         instruction: Provide a list of tags that will be used to organize schema, resources, infrastructure, and other elements of this service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tag.png
         status: Active
 
       - name: Assertions
-        description: Human and machine readable assertions of what service does, leveraging the existing JSON schema, and translating that into business objectives, asserting that a service does what it is supposed to.
+        description: Human and machine readable assertions of what service does, leveraging the existing JSON schema, and translating that into business objectives, asserting that a service does what it is supposed to--providing a simple bulleted list explaining what is expected of a service.
         instruction: Craft a set of assertions for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
         status: Active
@@ -570,8 +581,18 @@ stops:
             - title: The title of the assertion
               path: /path/of/the/assertion
 
+      - name: Scenarios
+        description: Providing machine readable definitions that provide the mappings and business rules for orchestrations, scenarios, and other automated processes associated with a service, for use as part of testing, monitoring, security, and other automated functionality.
+        instruction: Craft a set of scenario definitions for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
+        status: Active
+        fields:
+          - assertions:
+            - title: The title of the assertion
+              path: /path/of/the/assertion
+
       - name: Team
-        description: A list of team members for the service, providing a nice list of who is responsible for making a service operate.
+        description: A list of team members for the service, providing a nice list of who is responsible for designing the relevant business contract that will be needed to move a service from design to production.
         instruction: Define the team behind the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-team-working.png
         status: Active
@@ -584,7 +605,7 @@ stops:
               github: kinlane
 
       - name: Export Contract
-        description: The Postman Collection for this service.
+        description: Ensuring that all contracts and artifacts are exported as part of the design area of the lifecycle, making it available for use across development and production stages.
         instruction: Provide URL for all Postman Collections and index in API discovery index.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-postman.png
         status: None
@@ -598,7 +619,7 @@ stops:
   - name: Design
     title: Design
     area: API Design
-    description: The overall design of your API, the design patterns that are in use as part of the delivery of services. Providing a common set of patterns that can be used across services, beginning with REST, but also leverage hypermedia, GraphQL, and other patterns when it comes to the deliver of services.
+    description: Considering the overall approach to design for all APIs, executing upon design patterns that are in use to consistently deliver services across teams. Leveraging a common set of patterns that can be used across services, beginning with REST, but also evetually allowing the leveraging of hypermedia, GraphQL, and other patterns when it comes to the deliver of services.
     header: The API design strategy for use as part of this service.
     footer: Setting a consistent design strategy for all services.
     instructions: Establish a base set of design practices for the service.
@@ -627,7 +648,7 @@ stops:
     items:
 
       - name: Versioning
-        description: Managing the version for the various layers of this service, providing a plan for how data, code, API, and other artifacts will be versioning--having a plan for managing change across a service.
+        description: Managing how versioning will be reflected as part of the design process, in the path, the header, and any other considerations for designing a relevant API contract.
         instruction: Determine how the code, schema, and the API be versioned.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-conversion.png
         status: None
@@ -643,7 +664,7 @@ stops:
             url: http://versioning.apievangelist.com/
 
       - name: Base Path
-        description: The part of the path that goes after the host, and before each path, and is constant across all endpoints for this service.
+        description: Defining the part of the API path that goes after the host, and before each path, and is constant across all endpoints for this service.
         instruction: Set the base path for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/base-path.png
         status: Active
@@ -659,7 +680,7 @@ stops:
           - number_of_paths: 5
 
       - name: Verb(s)
-        description: The HTTP verbs used for this service, including GET, POST, PUT, and DELETE.
+        description: The HTTP verbs used for this service, including GET, POST, PUT, and DELETE, but also leverage other HTTP verbs when relevant.
         instruction: Define which HTTP, and other verbs will be used for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-verbs.png
         status: Active
@@ -673,7 +694,7 @@ stops:
             url: http://journey.apievangelist.com/journey/design/http-request-methods/
 
       - name: Parameters
-        description: The query parameters that are used by this service, as described by the OpenAPI. Providing a list of parameters that can be used to define your API request dimensions.
+        description: The query parameters that are used by this service, as described by the OpenAPI. Providing a list of parameters that can be used to define the API request dimensions that are available for a service.
         instruction: Define a list of query parameters in use to work with service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-parameters.png
         status: Active
@@ -681,7 +702,7 @@ stops:
           - number_of_parameters: 3
 
       - name: Headers
-        description: The headers that are used by this service, as described by the OpenAPI.
+        description: Logically using HTTP headers by each service, as described by the OpenAPI, properly leveraging the web when it comes to the transport of all resources.
         instruction: Define the HTTP Headers that will be used to work with the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-header-content-type.png
         status: Active
@@ -700,7 +721,7 @@ stops:
           - number_of_bodies: 2
 
       - name: Beyond Verbs With Actions
-        description: Consistently defining how actions will be designed beyond the usage of the common HTTP verbs.
+        description: Consistently defining how actions will be designed beyond the usage of the common HTTP verbs, having a set of design patterns for addressing actions made across all resources.
         instruction: Define how actions are being defined as part of this service beyond the usage of common HTTP verbs.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-resource-action.png
         status: Active
@@ -711,7 +732,7 @@ stops:
             url: https://philsturgeon.uk/rest/2014/05/11/restful-urls-actions-need-not-apply/
 
       - name: Media Types
-        description: The media types that are used by this service, as described by the OpenAPI. Providing multiple representations of a resource, allowing consumer to negotiate the type of content.
+        description: Quantifying the media types that are used by this service, as described by the OpenAPI. Providing multiple representations of a resource, allowing consumer to negotiate the type of content.
         instruction: Define whether service will return CSV, JSON, and / or XML responses.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-media-type.png
         status: Active
@@ -733,8 +754,24 @@ stops:
             description: Media types that are defined by IANA.
             url: https://www.iana.org/assignments/media-types/media-types.xhtml
 
+      - name: Hypermedia
+        description: Emulating the patterns present in the web, and leverage existing hypermedia types to make APIs more resilient, evolvable, and flexible when it comes to client integration.
+        instruction: Leverage existing hypermedia media types as part of the design of the API.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-error.png
+        status: Active
+        tools:
+          - name: JSON API
+            description: JSON API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests.
+            url: http://jsonapi.org/
+          - name: HAL
+            description: HAL is a simple format that gives a consistent and easy way to hyperlink between resources in your API.
+            url: http://stateless.co/hal_specification.html
+        links:
+          - title: API Evangelist Hypermedia Research
+            url: http://hypermedia.apievangelist.com/
+
       - name: Status Codes
-        description: The HTTP status codes that are used by this service, as described by the OpenAPI. Leveraging the web to help understand what a service is doing at scale, as part of automated integration and consumption of a service.
+        description: Defining the HTTP status codes that are used by this service, as described by the OpenAPI. Leveraging the web to help understand what a service is doing at scale, as part of automated integration and consumption of a service.
         instruction: Define the available HTTP status code for each responses.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-status-codes.png
         status: Active
@@ -762,7 +799,7 @@ stops:
             url: https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/
 
       - name: Pagination
-        description: The pagination used by this service, providing the ability to break large responses down into smaller more manageable chunks.
+        description: Defining the pagination used by this service, providing the ability to break large responses down into smaller more manageable chunks across al resources in a consistent way by clients.
         instruction: Define how pagination will be handled for requests and responses.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-pagination.png
         status: Active
@@ -812,29 +849,13 @@ stops:
           - title: Best Practices for API Error Handling
             url: https://nordicapis.com/best-practices-api-error-handling/
 
-      - name: Hypermedia
-        description: Emulating the patterns present in the web, and leverage existing hypermedia types to make APIs more resilient, evolvable, and flexible when it comes to client integration.
-        instruction: Leverage existing hypermedia media types as part of the design of the API.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-error.png
-        status: Active
-        tools:
-          - name: JSON API
-            description: JSON API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests.
-            url: http://jsonapi.org/
-          - name: HAL
-            description: HAL is a simple format that gives a consistent and easy way to hyperlink between resources in your API.
-            url: http://stateless.co/hal_specification.html
-        links:
-          - title: API Evangelist Hypermedia Research
-            url: http://hypermedia.apievangelist.com/
-
   #-------------
   # API Design - Versioning
   #-------------
   - name: Versioning
     title: Versioning
     area: API Design
-    description: Managing the definition of each API contract being defined as part of the API design stop for this area of the lifecycle.
+    description: Managing the definition of each API contract being defined as part of the API design stop for this area of the lifecycle, and having a coherent approach to laying out next steps.
     header:
     footer:
     instructions: Have a strategy for versioning the API contract being designed.
@@ -854,13 +875,25 @@ stops:
         image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
         status: Active
 
+      - name: Road Map
+        description: Making sure there is a road map definition for each version of a service.
+        instruction: Adding items to the public and private road maps.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: Active
+
+      - name: Communication
+        description: Ensuring there is a strategy for communicating with all stakeholders around the release.
+        instruction: Make sure there is a communication plan associated with each version.
+        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        status: Active
+
   #----------------
   # API Design - Virtualization
   #----------------
   - name: Virtualization
     title: Virtualization
     area: API Design
-    description: Providing mocked, sandbox, and virtualized instances of APIs and other data for understanding what an API does.
+    description: Providing mocked, sandbox, and virtualized instances of APIs and other data for understanding what an API does, helping provide an instance of an API that reflects exactly how it should behave in a production environment.
     header: Mocked, sandbox, and virtualized instances of APIs and other data for understanding what an API does.
     footer: Helping consumers understand what is possible when it comes to integrating and learning about an API.
     instructions: Provide a mock representation of this service.
@@ -968,8 +1001,14 @@ stops:
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
         status: None
 
-      - name: Results
-        description: The results of assertions tested against this service.
+      - name: Playback
+        description: Allowing requests to be played back, based upon history.
+        instruction: Allowing requests to be played back, based upon history.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-play.jpgg
+        status: None
+
+      - name: Results Archive
+        description: The results of assertions tested against this service, providing a history of all tests.
         instruction: Provide real time details of testing activity.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
         status: None
@@ -988,11 +1027,17 @@ stops:
               date: 1/1/2019
               description: This is a description for the item.
 
+      - name: Reporting
+        description: Having a strategy for reporting from testing that is occuring.
+        instruction: Having a strategy for reporting from testing that is occuring.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-reports.png
+        status: None
+
   #--------
   # API Design - Portal
   #--------
-  - name: Portal / Landing Page
-    title: Portal / Landing Page
+  - name: Landing Page
+    title: Landing Page
     area: API Design
     description: Making sure that each individual service being designed has a landing page for acccessing it's documentation, and other elements during the design phase.
     header:
@@ -1013,6 +1058,9 @@ stops:
           - name: Github Pages
             description: Hosted as a static Jekyll site as part of the GitHub repository for the service.
             url: https://pages.github.com/
+          - name: Stoplight.io
+            description: StopLight, providing engineering teams with the best way to document, test, and build web APIs.
+            url: https://stoplight.io/
 
       - name: Template
         description: Information regarding the UI template used for this portal.
@@ -1026,16 +1074,21 @@ stops:
             description: A HTML, CSS, and JavaScript Jekyll template.
             url: https://html5up.net/
 
+      - name: Discovery
+        description: Ensure that each services landing page is discoverable through the design phase.
+        instruction: Ensure that each services landing page is discoverable through the design phase.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png
+
   #---------------
   # API Design - Documentation
   #---------------
   - name: Documentation
     title: Documentation
     area: API Design
-    description: Ensuring that there is always comprehensive, up to date, and if possible interactive API documentation available for all APIs, providing developers with everything they need to understand what an API does, and successfully integrate APIs into their applications.
-    header: This is the interactive API documentation for this API, and when you are authenticated, will allow you to make API calls, and see the responses for each API path.
-    footer: This documentation is generated from the OpenAPI definition for this API, which you can use to publish, syndicate, and integrate with this API documentation elsewhere.
-    instructions: Provide documentation for this service within portal.
+    description: Ensuring that there is always comprehensive, up to date, and if possible interactive API documentation available for all APIs being designed, allowing all stakeholders to easily understand what an API is going to accomplish.
+    header:
+    footer:
+    instructions: Provide documentation for this service with an accessible landing page.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-documentation-interactive.png
     status: Active
     links:
@@ -1058,8 +1111,8 @@ stops:
 
       - name: Schema
         title: Schema
-        header: These are the schema definitions in use for this service, providing a human, and machine readable listing of the schema used as part of requests and responses for this service.
-        footer: This should provide you with what you need to understand the structure of how you make requests to some of the APIs, and what you can expect with each of the API responses.
+        header:
+        footer:
         description: The descriptive header and footer paragraphs for the documentation schema.
         instruction: Provide some content to introduce and close up the documentation schema.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
@@ -1069,7 +1122,7 @@ stops:
           - url: http://locations.apievangelist.com/#schema
 
       - name: Examples
-        description: Examples of using the API paths for this service.
+        description: Examples of using the API path for this service.
         instruction: Provide as many examples of API requests in a variety of languages.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-example.png
         status: None
@@ -1078,9 +1131,9 @@ stops:
           - url: http://example.com/#examples
 
       - name: Definitions
-        header: We provide machine readable definitions for our APIs, allowing you to import into the service or tooling of your choice.
-        footer: Feel free to submit a pull request for these API definitions using GitHub, or submit an issue when you see something incomplete.
-        description: The machine reaable API definitions for use as part of this service.
+        header:
+        footer:
+        description: Links to the machine reaable API definitions for use as part of this service.
         instruction: Publish a list of schema definitions in use by this service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png
         status: Active
@@ -1090,7 +1143,7 @@ stops:
           - postman: http://example.com/postman/
 
       - name: Errors
-        description: Details about the errors encountered using this service.
+        description: Details about the errors encountered using this service, including status codes, and messages.
         instruction: Provide a list of available errors users will encounter for this service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-error.png
         status: None
@@ -1103,7 +1156,7 @@ stops:
   - name: Support
     title: Support
     area: API Design
-    description: Ensuring there is support channels available for an API, and stakeholders know who to contact when providing feedback and answering questions.
+    description: Ensuring there is support channels available for an API, and stakeholders know who to contact when providing feedback and answering questions in real, or near real time, pushing forward the design process.
     header:
     footer:
     instructions: Establish the support apparatus in place for this service.
@@ -1116,9 +1169,8 @@ stops:
 
       - name: Email
         title: Email
-        description: The email account for supporting this service.
+        description: The email account(s) for supporting this service.
         instruction: Define the email account used to support this service.
-        image: http://locations.apievangelist.com/assets/images/email.png
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email.png
         status: Active
         fields:
@@ -1128,11 +1180,19 @@ stops:
         title: GitHub Issues
         description: Where to submit an issue to get support for this service.
         instruction: Provide a URL to the repository issues to support this service.
-        image: http://locations.apievangelist.com/assets/images/github.png
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github-icon.png
         status: Active
         fields:
           - url: https://github.com/api-evangelist-apis/locations/issues
+
+      - name: Tickets
+        title: Tickets
+        description: Providing a ticketing system for submitting formal support requests as part of the design process.
+        instruction: Provide a URL to the ticketing system that supports this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github-icon.png
+        status: Active
+        fields:
+          - url: https://github.com/api-evangelist-apis/locations/tickets
 
   #---------------
   # API Design - Communication
@@ -1140,7 +1200,7 @@ stops:
   - name: Communication
     title: Staying In Tune
     area: API Design
-    description: Making sure there is a communication strategy for moving an API through the design phase, and making sure stakeholders are engaged as part of the process.
+    description: Making sure there is a communication strategy for moving an API through the design phase, and making sure stakeholders are engaged as part of the process, with regular updates about what is happening.
     header:
     footer:
     instructions: Establish a communication strategy for this service.
@@ -1172,7 +1232,7 @@ stops:
 
       - name: Internal
         title: Internal
-        description: Internal communication channel for this service.
+        description: Internal communication channel for this service, like Slack or other channel.
         instruction: Provide a location where internal communication is available.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-internal.png
         status: None
@@ -1181,12 +1241,19 @@ stops:
 
       - name: External
         title: External
-        description: External communication channels for this service.
+        description: External communication channels for this service, like Slack or other channel.
         instruction: Provide a location where public communication is available.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-external.png
         status: None
         fields:
           - url: http://example.com/communication/
+
+      - name: Workshops
+        title: Workshops
+        description: Conducting workshops to actively develop wider design practices.
+        instruction: Conducting workshops to actively develop wider design practices.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-meeting-rrom.png
+        status: Active
 
   #----------
   # API Design - Road Map
@@ -1194,7 +1261,7 @@ stops:
   - name: Road Map
     title: Road Map
     area: API Design
-    description: Providing a list of what is being worked on with each service being designed.
+    description: Providing a list of what is being worked on with each service being designed, and pushed forward, providing a common list for everyone involved to work from.
     instructions: Provide a road map for the future of this service.
     header:
     footer:
@@ -1207,7 +1274,7 @@ stops:
 
       - name: Private
         title: Private Road Map
-        description: Where you can access the private road map for this service.
+        description: Providing an internal, private road map that design stakeholders can use to understand what is being designed.
         instruction: Publish a private, internal version of entries for the road map.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-privacy.png
         status: None
@@ -1216,7 +1283,7 @@ stops:
 
       - name: Public
         title: Road Map
-        description: Where you can access the public road map for this service.
+        description: Providing an puling road map (when applicable) that design stakeholders can use to understand what is being designed.
         instruction: Publish a publicly available version of entries for the road map.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-revenue-public-data.png
         status: Active
@@ -1238,7 +1305,7 @@ stops:
 
       - name: Suggest
         title: Suggestions For The Road Map
-        description: Consumers are welcome to suggest an addition to the road map.
+        description: Provide a mechanism for users to make suggestions for the road map.
         instruction: Provide a mechanism for users to make suggestions for the road map.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-suggest.png
         status: Active
@@ -1262,7 +1329,7 @@ stops:
     items:
 
       - name: API.json
-        description: The API discovery document for this service.
+        description: Publish an API discovery document for indexing API operations.
         instruction: Publish an API Discovery (APIs.json) index for the project.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-commons-icon.png
         status: None
@@ -1270,7 +1337,7 @@ stops:
           - url: http://example.com/api-discovery.json
 
       - name: OpenAPI
-        description: The complete OpenAPI for this service.
+        description: Provide an OpenAPI definition for each individual service.
         instruction: Provide URL for all OpenAPI definitions and index in API discovery index.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-openapi-spec.png
         status: None
@@ -1278,7 +1345,7 @@ stops:
           - url: http://example.com/openapi.json
 
       - name: Postman Collection
-        description: The Postman Collection for this service.
+        description: The Postman Collection for each individual service.
         instruction: Provide URL for all Postman Collections and index in API discovery index.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-postman.png
         status: None
@@ -1290,6 +1357,9 @@ stops:
         instruction: Publish all updated definitions to the central catalog.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-directory-api.png
         status: None
+
+
+
 
   #-------------
   # API Development
@@ -2225,6 +2295,13 @@ stops:
         status: None
         fields:
           - url: http://example.com/communication/
+
+      - name: Workshops
+        title: Workshops
+        description: Conducting workshops to actively develop wider development practices.
+        instruction: Conducting workshops to actively develop wider development practices.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-meeting-rrom.png
+        status: Active
 
   #----------
   # API Development - Support
@@ -3436,6 +3513,13 @@ stops:
         status: None
         fields:
           - url: http://example.com/communication/
+
+      - name: Workshops
+        title: Workshops
+        description: Conducting workshops to actively develop wider production practices.
+        instruction: Conducting workshops to actively develop wider production practices.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-meeting-rrom.png
+        status: Active
 
   #----------
   # API Production - Road Map
