@@ -1,6 +1,6 @@
 ---
 layout: presentation
-title: Location API - Presentation
+title: Location API - Presentation - Discovery
 ---
 
 {% assign openapi = site.data.openapi %}
@@ -18,11 +18,13 @@ title: Location API - Presentation
       {% assign cutoff = cutoff | plus: 1 %}
       {% assign this_stop = 0 %}
       {% for stop in site.stops %}
-        <li style="font-size: 22px; font-weight: bold; list-style: none; padding: 7px;">&#8594; {{ stop.name }}</li>
-        {% assign this_stop = this_stop | plus: 1 %}
-        {% if this_stop == cutoff %}
-        </div><div style="display: table-cell; text-align: left;"><ul>
-          {% assign this_stop = 0 %}
+        {% if stop.area == 'API Discovery' %}
+          <li style="font-size: 22px; font-weight: bold; list-style: none; padding: 7px;">&#8594; {{ stop.name }}</li>
+          {% assign this_stop = this_stop | plus: 1 %}
+          {% if this_stop == cutoff %}
+          </div><div style="display: table-cell; text-align: left;"><ul>
+            {% assign this_stop = 0 %}
+          {% endif %}
         {% endif %}
       {% endfor %}
     </ul>
