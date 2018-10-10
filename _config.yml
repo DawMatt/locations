@@ -289,6 +289,12 @@ stops:
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-team-working.png
         status: Active
 
+      - name: Catalog
+        description: Establish a central way to track on all API definitions that are being organized.
+        instruction: Have a central catalog for managing all API definitions.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-directory-api.png
+        status: Active
+
   #--------------
   # API Discovery - Dependencies
   #--------------
