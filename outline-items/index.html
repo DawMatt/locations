@@ -88,7 +88,7 @@ title: Location API - Checklist
 <section id="overview">
 	<div class="content">
 		<header>
-			<h3>{{ service_name }} Checklist</h3>
+			<h4>{{ service_name }} Checklist</h4>
 		</header>
 		<p>This is the checklist for guiding this API through the lifecycle, helping this API deliver its resources in alignment with other APIs in operation across this platform.</p>
 	</div>
@@ -103,7 +103,7 @@ title: Location API - Checklist
       <p>Ensuring APIs are known across teams.</p>
       {% for stop in site.stops %}
         {% if stop.area == 'API Discovery' %}
-          <p><strong>{{ stop.name }}</strong></p>
+          <h4>{{ stop.name }}</h4>
           <p>{{ stop.description }}</p>
           <ul>
           {% for item in stop.items %}
@@ -118,7 +118,7 @@ title: Location API - Checklist
       <h2>API Design</h2><p>Defining and designing API contracts.</p>
       {% for stop in site.stops %}
         {% if stop.area == 'API Design' %}
-          <p><strong>{{ stop.name }}</strong></p>
+          <h4>{{ stop.name }}</h4>
           <p>{{ stop.description }}</p>
           <ul>
           {% for item in stop.items %}
@@ -134,7 +134,7 @@ title: Location API - Checklist
       <p>The actual development and delivery.</p>
       {% for stop in site.stops %}
         {% if stop.area == 'API Development' %}
-          <p><strong>{{ stop.name }}</strong></p>
+          <h4>{{ stop.name }}</h4>
           <p>{{ stop.description }}</p>
           <ul>
           {% for item in stop.items %}
@@ -150,7 +150,7 @@ title: Location API - Checklist
       <p>Moving to and operating APIs in production.</p>
       {% for stop in site.stops %}
         {% if stop.area == 'API Production' %}
-          <p><strong>{{ stop.name }}</strong></p>
+          <h4>{{ stop.name }}</h4>
           <p>{{ stop.description }}</p>
           <ul>
           {% for item in stop.items %}
