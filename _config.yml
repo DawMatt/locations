@@ -177,7 +177,7 @@ stops:
   #-------------
   - name: Definition
     title: Definitions
-    area: API Design
+    area: API Discovery
     description: All of the definitions that go into defining this service, from the original schema, the OpenAPI definitions, the Postman Collections, and the assertions that contribute to the testing of the service to ensure it is doing what is expected of it.
     header: All of the definitions available for this service, providing a single way to find everything that drives the project.
     footer: Providing a machine readable core for the entire lifecycle of this service, allowing documentation to be used elsewhere.
@@ -377,6 +377,131 @@ stops:
               twitter: kinlane
               github: kinlane
 
+  #--------------
+  # API Discovery - Dependencies
+  #--------------
+  - name: Dependencies
+    title: Dependencies
+    area: API Discovery
+    description: Defining the dependencies associated with this service, helping quantifying what this service needs to do what it does successfully.
+    header:
+    footer:
+    instructions: Providing details of the dependencies that exist for this service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-depend.png
+    status: None
+    links:
+      - title: Dependencies (API Evangelist)
+        url: http://dependencies.apievangelist.com/
+    items:
+
+      - name: Service
+        description: Information about services this service depends on.
+        instruction: Details of other services this service depends upon.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-request.png
+        status: None
+        fields:
+          - name: Name of Service
+          - description: The description of service.
+          - url: http://example.com/service-information/
+
+      - name: Software
+        description: Information about software this service depends on.
+        instruction: Details of other software this service depends upon.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-software.png
+        status: None
+        fields:
+          - name: Name of Software
+          - description: The description of software.
+          - url: http://example.com/software-information/
+
+      - name: Data
+        description: Information about data this service depends on.
+        instruction: Details of other data this service depends upon.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-big-data-2.png
+        status: Active
+        fields:
+          - name: prograhammer/countries-regions-cities
+          - description: MySQL ready-to-use tables with countries, regions/states and cities of the world.
+          - url: https://github.com/prograhammer/countries-regions-cities
+
+      - name: People
+        description: Information about people this service depends on.
+        instruction: Details of other people this service depends upon.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-people.png
+        status: None
+        fields:
+          - name: Name of Person
+          - description: The description of person / relationship.
+          - email: info@example.com
+          - github_user: user
+
+      - name: Organization
+        description: Information about organization this service depends on.
+        instruction: Details of other organizations this service depends upon.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
+        status: None
+        fields:
+          - name: Name of Organization
+          - description: The description of organization / relationship.
+          - email: info@example.com
+          - url: http://example.com
+
+  #----------
+  # API Discovery - Support
+  #----------
+  - name: Support
+    title: Support
+    area: API Discovery
+    description: Ensuring that each individual API has the necessary support, making sure that the support channels for a service are easy to find, have a responsive and knowledgeable person available to answer questions, and is being measured and audited for quality.
+    header: We provide three ways in which you can receive support for this API, and have your questions answered as you are working to integrate it into your web or mobile application.
+    footer: If your question is of the private nature please email us, for all other inquires please submit as GitHub issue if possible, so that others can learn from your question to.
+    instructions: Establish the support apparatus in place for this service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png
+    status: Active
+    links:
+      - title: Support (API Evangelist)
+        url: http://support.apievangelist.com/
+    items:
+
+      - name: Email
+        title: Email
+        description: The email account for supporting this service.
+        instruction: Define the email account used to support this service.
+        image: http://locations.apievangelist.com/assets/images/email.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email.png
+        status: Active
+        fields:
+          - email: mailto%3A info@apievangelist.com
+
+      - name: GitHub Issues
+        title: GitHub Issues
+        description: Where to submit an issue to get support for this service.
+        instruction: Provide a URL to the repository issues to support this service.
+        image: http://locations.apievangelist.com/assets/images/github.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github-icon.png
+        status: Active
+        fields:
+          - url: https://github.com/api-evangelist-apis/locations/issues
+
+      - name: Twitter
+        title: Twitter
+        description: Where to get support publicly using a supported Twitter account
+        instruction: Provide the URL to the Twitter account supporting the API.
+        image: http://locations.apievangelist.com/assets/images/twitter.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png
+        status: Active
+        fields:
+          - url: https://twitter.com/apievangelist/
+
+      - name: Ticket
+        title: Ticket
+        description: Where to submit a ticket to get support for this service.
+        instruction: Provide a URL to the ticketing system used to support this service.
+        image: http://locations.apievangelist.com/assets/images/twitter.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-ticket-system.png
+        status: None
+        fields:
+          - url: http://example.com/tickets/
 
 
   #-------------
