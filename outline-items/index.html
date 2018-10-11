@@ -102,13 +102,14 @@ title: Location API - Checklist
       <h2>API Discovery</h2>
       <p>Ensuring APIs are known across teams.</p>
       {% assign stop_number = 1 %}
-      {% assign item_number = 2 %}
+      {% assign item_number = 3 %}
       {% for stop in site.stops %}
         {% if stop.area == 'API Discovery' %}
           <a name="{{ stop.name }}"></a>
           <h4>{{ stop.name }}</h4>
           <p>{{ stop.description }}</p>
           <ul>
+          {% assign item_number = item_number | plus: 1 %}
           {% for item in stop.items %}
             <li><strong>{{ item.name }}</strong> (<a href="/presentation-discovery/#/{{ item_number }}" target="_blank">details</a>) - {{ item.description }}</li>
             {% assign item_number = item_number | plus: 1 %}
@@ -122,7 +123,7 @@ title: Location API - Checklist
 
       <h2>API Design</h2><p>Defining and designing API contracts.</p>
       {% assign stop_number = 1 %}
-      {% assign item_number = 2 %}
+      {% assign item_number = 3 %}
       {% for stop in site.stops %}
         {% if stop.area == 'API Design' %}
           <a name="{{ stop.name }}"></a>
@@ -144,7 +145,7 @@ title: Location API - Checklist
       <h2>API Development</h2>
       <p>The actual development and delivery.</p>
       {% assign stop_number = 1 %}
-      {% assign item_number = 2 %}
+      {% assign item_number = 3 %}
       {% for stop in site.stops %}
         {% if stop.area == 'API Development' %}
           <a name="{{ stop.name }}"></a>
@@ -166,7 +167,7 @@ title: Location API - Checklist
       <h2>API Production</h2>
       <p>Moving to and operating APIs in production.</p>
       {% assign stop_number = 1 %}
-      {% assign item_number = 2 %}
+      {% assign item_number = 3 %}
       {% for stop in site.stops %}
         {% if stop.area == 'API Production' %}
           <a name="{{ stop.name }}"></a>
@@ -188,7 +189,7 @@ title: Location API - Checklist
       <h2>API Governance</h2>
       <p>Getting more organized about how API quantified, understood, and reported upon.</p>
       {% assign stop_number = 1 %}
-      {% assign item_number = 2 %}
+      {% assign item_number = 3 %}
       {% for stop in site.stops %}
         {% if stop.area == 'API Governance' %}
           <a name="{{ stop.name }}"></a>
