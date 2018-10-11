@@ -653,22 +653,6 @@ stops:
         url: http://design.apievangelist.com/
     items:
 
-      - name: Versioning
-        description: Managing how versioning will be reflected as part of the design process, in the path, the header, and any other considerations for designing a relevant API contract.
-        instruction: Determine how the code, schema, and the API be versioned.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-conversion.png
-        status: None
-        fields:
-          - versioning:
-            type: semantic
-            format: major.minor.patch
-            server: 1.0.0
-            api: 1.0.0
-            sdk: 1.0.0
-        links:
-          - title: Versioning (API Evangelist)
-            url: http://versioning.apievangelist.com/
-
       - name: Base Path
         description: Defining the part of the API path that goes after the host, and before each path, and is constant across all endpoints for each service.
         instruction: Set the base path for the service.

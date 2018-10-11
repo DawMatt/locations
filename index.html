@@ -1,133 +1,44 @@
 ---
 layout: default
-title: Location API - Checklist
+title: API Evangelist Lifecycle Workshops
 ---
-
-<!--Definitions-->
-{% assign service_name = "" %}
-{% assign service_description = "" %}
-
-<!--Documentation-->
-{% assign documentation_overview_title = "" %}
-{% assign documentation_overview_header = ""  %}
-{% assign documentation_overview_footer = ""  %}
-
-{% for stop in site.stops %}
-
-  <!--Begin Definition-->
-  {% if stop.name == 'Definition' %}
-
-    {% for item in stop.items %}
-
-      {% if item.name == 'Service Name' %}
-        {% assign service_name = item.fields | map: 'service_name' %}
-      {% endif %}
-
-      {% if item.name == 'Service Description' %}
-        {% assign service_description = item.fields | map: 'service_description' %}
-      {% endif %}
-
-    {% endfor %}
-
-  {% endif %}
-  <!--End Definition-->
-
-  <!--Begin Documentation-->
-  {% if stop.name == 'Documentation' %}
-    {% for item in stop.items %}
-
-      {% if item.name == 'Overview' %}
-
-        {% assign documentation_overview_title = item.fields | map: 'title' %}
-        {% assign documentation_overview_header = item.fields | map: 'header' %}
-        {% assign documentation_overview_footer = item.fields | map: 'footer' %}
-
-      {% endif %}
-
-      {% if item.name == 'Schema' %}
-
-        {% assign documentation_schema_title = item.fields | map: 'title' %}
-        {% assign documentation_schema_header = item.fields | map: 'header' %}
-        {% assign documentation_schema_footer = item.fields | map: 'footer' %}
-
-      {% endif %}
-
-    {% endfor %}
-
-  {% endif %}
-  <!--End Documentation-->
-
-  <!--Begin Authentication-->
-  {% if stop.name == 'Authentication' %}
-    {% for item in stop.items %}
-
-      {% if item.name == 'Overview' %}
-
-        {% assign authentication_overview_title = item.fields | map: 'title' %}
-        {% assign authentication_overview_header = item.fields | map: 'header' %}
-        {% assign authentication_overview_footer = item.fields | map: 'footer' %}
-
-      {% endif %}
-
-      {% if item.name == 'SignupLogin' %}
-
-        {% assign authentication_signuplogin_title = item.fields | map: 'title' %}
-        {% assign authentication_signuplogin_header = item.fields | map: 'header' %}
-        {% assign authentication_signuplogin_footer = item.fields | map: 'footer' %}
-
-      {% endif %}
-
-    {% endfor %}
-
-  {% endif %}
-  <!--End Documentation-->
-
-{% endfor %}
 
 <!-- overview -->
 <section id="overview">
 	<div class="content">
 		<header>
-			<h3>API Lifecycle Workshop</h3>
+			<h3>API Evangelist Lifecycle Workshops</h3>
 		</header>
 
-    <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-lifecycle.png" align="right" width="15%" /></p>
+    <p><a href="http://locations.api.lifecycle.workshop.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/workshops/kin-lane-api-days-spain.jpg" width="45%" align="right" style="padding: 15px;" /></a></p>
+    <p>I have been partnering with <a href="http://streamdata.io">Streamdata.io</a> to evolve how I work with enterprise groups on their API lifecycle strategy. After working closely with the Streadata.io sales team, it became clear that many enterprise organizations weren’t quite ready for the event-driven infrastructure Streamdata.io provides. Most groups were in desperate need of stepping back and developing their own formal strategy for delivering APIs across the enterprise, before they could every scale their operations and take advantage of things being more event-driven and real time.</p>
 
-		<p>This is the home page for conducting an API lifecycle workshop using this API demo, providing a single landing page attendees can use when navigating the moving parts of this workshop, and come out the other end with a human, and machine readable strategy for executing on the delivery of APIs across any company, organization, institution, or government agency.</p>
-
-    <p>This API lifecycle blueprint provides guidance in five distinct areas of the API lifecycle, which can be operated individually for a single API, or in unison across many APIs, helping flesh out a standardized approach to thinking about how APIs are delivered across an organization. This isn't meant to be a one size fits all strategy, but a walk through of what is possible, that can be added to, and customized to make fit the specific needs of an organization.</p>
-
-    <ul>
-      <li><strong>Discovery</strong> (<a href="#Discovery">Jump To</a>)  (<a href="/presentation-discovery/" target="_blank">Presentation</a>) - Knowing where all of your APIs and services are across groups.</li>
-      <li><strong>Design</strong> (<a href="#Design">Jump To</a>)  (<a href="/presentation-design/" target="_blank">Presentation</a>) - Focus in on an a design and virtualized API lifecycle before deployment.</li>
-      <li><strong>Development</strong> (<a href="#Development">Jump To</a>)  (<a href="/presentation-development/" target="_blank">Presentation</a>) - Understanding the many ways in which APIs can be deployed.</li>
-      <li><strong>Production</strong> (<a href="#Production">Jump To</a>)  (<a href="/presentation-production/" target="_blank">Presentation</a>) - Thinking critically about properly operating API infrastructure.</li>
-      <li><strong>Governance</strong> (<a href="#Governance">Jump To</a>)  (<a href="/presentation-governance/" target="_blank">Presentation</a>) - Understanding how to measure, report, and evolve API operations.</li>
-    </ul>
-
-    <p>Not all workshops will cover all of these areas. Depending on the time available, the scope of the team participating in a workshop(s), and how far along teams are in their overall API journey, the workshops might head in different directions, and expand or contract the depth in which we dive into each of these area (ie. not everyone is ready for governance). After several workshops this year, we have found these areas of the API lifecycle to be the most meaningful ways to organize a workshop, and help enterprise group think more critically about their API strategy.
-
-    <table width="100%">
-			<tr>
-				<td width="50%" align="center"><img src="https://s3.amazonaws.com/kinlane-productions/workshops/43043431_10156747264069813_2487933138479611904_n.jpg" align="center" width="95%" /></td>
-				<td width="50%" align="center"><img src="https://s3.amazonaws.com/kinlane-productions/workshops/kin-lane-api-days-spain.jpg" align="center" width="95%" /></td>
-			</tr>
-		</table>
-
-    <p><strong>Craft An API Strategy For Your Enterprise</strong></p>
-    The purpose of this API lifecycle workshops is to help enterprise organizations develop their own API strategy. Bring in outside API knowledge, learn more about where an enterprise API group is in their overall API journey, and leave them with a structured artifact that helps them step back and look at the entire lifecycle of their APIs. Moving the API conversation across the enterprise forward in a meaningful way with three distinct actions:</p>
+    <p>In response, I set out to evolve <a href="http://apievangelist.com/">my own API lifecycle research</a>, gathered over the last eight years of studying the API space, and make it more accessible to the enterprise, as self-service short form and long form content, in-person workshops, and forkable blueprints that any enterprise can set in motion on their own. The results is a series of evolvable API projects, that we are using to drive our ongoing workshop engagements with enterprise API groups, focusing in on six critical areas of the API lifecycle:</p>
 
     <ul>
-      <li><strong>Jumpstart Your API Lifecycle Strategy</strong> - This workshop starts with this template API lifecycle strategy in GitHub or GitLab as README, and YAML file. Standing up a framework to consider as you craft your own API strategy, providing a starting point for your journey. Generated from eight years of research on the API space, providing a living document that can be used to execute and evolve the overall API lifecycle strategy for an enterprise organization.</li>
-      <li><strong>API Lifecycle Workshop</strong>  - Conduct a single, or multi-day API lifecycle workshop on-site, with as many enterprise and / or partner stakeholders as possible. We will come on site, and walk teams through each stop along a modern API lifecycle, helping customize, personalize, and make the API strategy better fit the enterprises strategy.</li>
-      <li><strong>Evolve Your API Lifecycle Strategy</strong>  - Coming out of the workshop, you will be given an updated API lifecycle artificat file in YAML, with an outline, and presentation to help navigate. Providing a human and machine readable framework that represents your API lifecycle strategy, helping provide a scaffolding for future discussions. Producing a usable artifact out of the gathering, encapsulating the research and experience we bring to the table, adding what we learned during the workshop, and hopefully continually being used to drive the API strategy road map.</li>
-      <li><strong>Continue Answering Your Questions</strong> - After the workshop is done, and we have an updated API lifecycle, we are here to support. We can answer questions via the repository we leave an API strategy artifact, as well as email. We are happy to conduct virtual meetings to help check in on where you are at, and of course we are happy to always come back and conduct future workshops as you need.</li>
+      <li><strong>Discovery</strong> (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline-items/#Discovery">demo</a>) - Knowing where all of your APIs and services are across groups.</li>
+      <li><strong>Design</strong> (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline-items/#Design">demo</a>) - Focus in on an a design and virtualized API lifecycle before deployment.</li>
+      <li><strong>Development</strong> (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline-items/#Development">demo</a>) - Understanding the many ways in which APIs can be developed &amp; deployed.</li>
+      <li><strong>Production</strong> (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline-items/#Production">demo</a>) - Thinking critically about properly operating API infrastructure.</li>
+      <li><strong>Governance</strong> (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline-items/#Governance">demo</a>) - Understanding how to measure, report, and evolve API operations.</li>
     </ul>
 
-    <p>I am happy to continue the conversation around the API lifecycle artifact we will leave with you. I don’t expect you to use everything we propose. I more more interested in teaching you about what is possible, and continuing to work with you to refine, evolve, and make the API lifecycle your own. We’ve just worked hard to identified many different ways to operating API infrastructure at scale, and continue to help standardize and make it more accessible by large enterprise organizations.</p>
+    <p>Not all of our workshops will cover all of these areas. Depending on the time we have available, the scope of the team participating in a workshop(s), and how far along teams are in their overall API journey, the workshops might head in different directions, and expand or contract the depth in which we dive into each of these area (ie. not everyone is ready for governance). After several workshops this year, we have found these areas of the API lifecycle to be the most meaningful ways to organize a workshop, and help enterprise group think more critically about their API strategy.</p>
 
-    <p><strong>Helping You In Your Journey</strong></p>
-    Ultimately, the API lifecycle strategy we will leave behind, possesses all the knowledge we’ve aggregated across our API research, gathered across leading API providers, and honed by conducting API workshops within enterprise groups. Embedded within this API lifecycle artifact we’ll leave you with some added elements that will help you in your journey, going beyond just advice on process, and helping the rubber meet the road.</p>
+    <p><strong>Craft An API Strategy For Your Enterprise</strong><br />
+    The purpose of our API lifecycle workshops is to help enterprise organizations develop a strategy. Bring in outside API knowledge, learn more about where an enterprise API group is in their overall API journey, and leave them with a structured artifact that helps them step back and look at the entire lifecycle of their APIs. Moving the API conversation across the enterprise forward in a meaningful way with three distinct actions:</p>
+
+    <ul>
+      <li><strong>Starter API Lifecycle Strategy</strong> - Provide a template API lifecycle strategy in GitHub or GitLab as README, and YAML file. Providing a framework to consider as you craft your own API strategy, providing a starting point for your journey. Generated from eight years of research on the API space, providing a living document that can be used to execute and evolve the overall API lifecycle strategy for an enterprise organization.</li>
+      <li><strong>API Lifecycle Workshop</strong> - Schedule and conduct a single, or multi-day API lifecycle workshop on-site, with as many enterprise and / or partner stakeholders as possible. We will come on site, and walk teams through each stop along a modern API lifecycle, helping customize, personalize, and make the API strategy better fit the enterprises strategy.</li>
+      <li><strong>Evolve API Lifecycle Strategy</strong> - Coming out of the workshop, you will be given an updated API lifecycle YAML document. Providing a human and machine readable framework that represents your API lifecycle strategy, helping provide a scaffolding for future discussions. Producing a usable artifact out of the gathering, encapsulating the research and experience we bring to the table, adding what we learned during the workshop, and hopefully continually being used to drive the API strategy road map.</li>
+      <li><strong>Provide Execution &amp; Support</strong> - After the workshop is done, and we have provided an updated API lifecycle, we are still here to support. We can answer questions via the repository we leave an API strategy artifact, as well as email. We are happy to conduct virtual meetings to help check in on where you are at, and of course we are happy to always come back and conduct future workshops as you need.</li>
+    </ul>
+    <p><a href="http://locations.api.lifecycle.workshop.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/workshops/43043431_10156747264069813_2487933138479611904_n.jpg" width="45%" align="right" style="padding: 15px;" /></a></p>
+    <p>We are happy to continue the conversation around the API lifecycle artifact we will leave with you. We don’t expect you to use everything we propose. We are more interested in teaching you about what is possible, and continuing to work with you to refine, evolve, and make the API lifecycle your own. We’ve just worked hard to identified many different ways to operating API infrastructure at scale, and continue to help standardize and make it more accessible by large enterprise organizations.</p>
+
+    <p><strong>Helping You In Your Journey</strong><br />
+    The resulting API lifecycle strategy we leave behind after the workshop is done will possess all the knowledge we’ve aggregated across API research, gathered across leading API providers, and polished by conducting API workshops within the enterprise. Embedded within this API lifecycle artifact we’ll leave you with some added elements that will help you in your journey, going beyond just advice on process, and helping the rubber meet the road.</p>
 
     <ul>
       <li><strong>Links</strong> - Provide a wealth of references to external resources, attached to each stop along the API lifecycle, bring our API research into your organization, allowing you to put to use inline as you are building your API strategy.</li>
@@ -137,114 +48,16 @@ title: Location API - Checklist
 
     <p>While not all organizations will be ready to use a YAML API lifecycle artifact as part of their API orchestration, it helps to have the API lifecycle well defined, even if many steps are still manual. It helps teams think more critically about how they approach the deliver of APIs, while also being something that can be downloaded, forked, and reused by different groups across the enterprise. Eventually it is something that can be further automated, measured, and used to help quantify the maturity level of each APIs, as well as API across distributed teams.</p>
 
-    <p>Let's begin this lifecycle journey with a look at API discovery...</p>
+    <p><strong>Next Steps For Developing A Strategy</strong><br />
+    If you are interested in what we are offering with our API lifecycle workshops, there are few things you can do to get things started, to help us bring an API lifecycle workshop your way:</p>
 
-	</div>
-</section>
-
-{% assign openapi = site.data.openapi %}
-
-<section id="documentation">
-  <div class="content">
-
-      <a name="Discovery"></a>
-      <h2>API Discovery (<a href="/presentation-discovery/" target="_blank">Presentation</a>)</h2>
-      <p>Ensuring APIs are known across all teams, across the entire organization, and are always actively maintained.</p>
-      {% assign stop_number = 1 %}
-      {% for stop in site.stops %}
-        <ul>
-          {% if stop.area == 'API Discovery' %}
-            <li><strong>{{ stop.name }}</strong> (<a href="/outline-items/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
-          {% endif %}
-        </ul>
-        {% assign stop_number = stop_number | plus: 1 %}
-      {% endfor %}
-
-      <hr />
-
-      <a name="Design"></a>
-      <h2>API Design (<a href="/presentation-design/" target="_blank">Presentation</a>)</h2>
-      <p>Defining and designing API contracts that can be used across develop, production, and governance areas of the lifecycle.</p>
-      {% assign stop_number = 1 %}
-      {% for stop in site.stops %}
-        <ul>
-          {% if stop.area == 'API Design' %}
-            <li><strong>{{ stop.name }}</strong> (<a href="/outline-items/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
-          {% endif %}
-        </ul>
-        {% assign stop_number = stop_number | plus: 1 %}
-      {% endfor %}
-
-      <hr />
-
-      <a name="Development"></a>
-      <h2>API Development (<a href="/presentation-development/" target="_blank">Presentation</a>)</h2>
-      <p>Understanding the actual development and delivery of API resources, based upon API contracts defined during design phase.</p>
-      {% assign stop_number = 1 %}
-      {% for stop in site.stops %}
-        <ul>
-          {% if stop.area == 'API Development' %}
-            <li><strong>{{ stop.name }}</strong> (<a href="/outline-items/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
-          {% endif %}
-        </ul>
-        {% assign stop_number = stop_number | plus: 1 %}
-      {% endfor %}
-
-      <hr />
-
-      <a name="Production"></a>
-      <h2>API Production (<a href="/presentation-production/" target="_blank">Presentation</a>)</h2>
-      <p>Moving to and operating APIs in production, and making sure services are consistently delivered across the organization.</p>
-      {% assign stop_number = 1 %}
-      {% for stop in site.stops %}
-        <ul>
-          {% if stop.area == 'API Production' %}
-            <li><strong>{{ stop.name }}</strong> (<a href="/outline-items/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
-          {% endif %}
-        </ul>
-        {% assign stop_number = stop_number | plus: 1 %}
-      {% endfor %}
-
-      <hr />
-
-      <a name="Governance"></a>
-      <h2>API Governance (<a href="/presentation-governance/" target="_blank">Presentation</a>)</h2>
-      <p>Getting more organized about how APIs are quantified, understood, and reported upon across the entire organization.</p>
-      {% assign stop_number = 1 %}
-      {% for stop in site.stops %}
-        <ul>
-          {% if stop.area == 'API Governance' %}
-            <li><strong>{{ stop.name }}</strong> (<a href="/outline-items/#{{ stop.name }}" target="_blank">outline</a>) - {{ stop.description }}</li>
-          {% endif %}
-        </ul>
-        {% assign stop_number = stop_number | plus: 1 %}
-      {% endfor %}
-
-  </div>
-</section>
-
-
-<!-- overview -->
-<section id="overview">
-	<div class="content">
-		<header>
-			<h3>Navigating This Workshop</h3>
-		</header>
-    <p>This workshop centers around a single mock API, and is driven by a central YAML definition which provides a human and machine readable API lifecycle outline. This YAML definition drives the outline of lifecycle stops present on this page, as well as items for each stop, and the other details provided. Providing several core elements for exploring, learning about, and hopefully evolving this API lifecycle blueprint to be your own. There are X core building blocks of this blueprint:</p>
     <ul>
-			<li><strong>API Developer Portal</strong> (<a href="/portal/" target="_blank">view</a>) - A working developer portal to show what is possible.</li>
-			<li><strong>API Lifecycle Presentation(s)</strong>
-        <ul>
-          <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/presentation-discovery/" target="_blank">Discovery</a> - A walk through of the discovery phase.</li>
-          <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/presentation-design/" target="_blank">Design</a> - A walk through of the design phase.</li>
-          <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/presentation-development/" target="_blank">Development</a> - A walk through of the development phase.</li>
-          <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/presentation-production/" target="_blank">Production</a> - A walk through of the production phase.</li>
-          <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/presentation-governance/" target="_blank">Governance</a> - A walk through of the governance layer.</li>
-        </ul>
-      </li>
-			<li><strong>API Lifecycle Config</strong> (<a href="https://github.com/api-lifecycle-workshop/locations/blob/master/_config.yml" target="_blank">view</a>) - The YAML API lifecycle checklist for the locations API.</li>
-			<li><strong>API Lifecycle Checklist</strong> (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline/" target="_blank">view</a>) - A simple checklist of all the stops and items to consider on the checklist.</li>
-		</ul>
-    <p>This lifecycle can be applied to a single API, or many APIs as part of a more holistic strategy. While many stops along this API lifecycle will be manual to begin with, because it exists as a YAML artificact, it introduces the opportunity to think about automation at every stop. Providing a human and machine readable API lifecycle document, that can be used for outlines, presentations, documentation, and eventually driving the API delivery pipeline across an organization.</p>
+      <li><a href="/cdn-cgi/l/email-protection#99f0f7fff6d9f8e9f0fceff8f7fefcf5f0eaedb7faf6f4"><strong>Email Me</strong></a> - Happy to answer any questions, and get you the information you need to sell the workshop to your team, and get you in the calendar.</li>
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfhb9ToanbWHESr4e2_lP3TTvUIifL3YYP6mNy7yUGqS-3kpA/viewform?usp=sf_link">Take Survey</a> - Take a quick survey about your operations, helping us tailor a workshop for your needs.</li>
+      <li><a href="http://locations.api.lifecycle.workshop.apievangelist.com/">Demo Workshop</a> - Take a stroll around one of our demos that we use in our workshop, introducing you to what we’ll be discussing.</li>
+    </ul>
+
+    <p>While I work from a common set of workshop material when designing these workshops, I work to tailor each engagement for the company, organization, institution, or government agency I’m working with. All of my API lifecycle workshop blueprints are meant to be forkable, customizable, and something anyone can turn into their own working API lifecycle strategy.</p>
+
 	</div>
 </section>
