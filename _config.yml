@@ -50,25 +50,31 @@ stops:
       - name: Spreadsheets
         description: Identify all of the XML files that are published across any domains.
         instruction: Index any spreadsheet that is arleady published to the website.
-        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-spreadsheet-icon.png
         status: Active
 
       - name: CSV
         description: Identify all of the CSV files that have been published within any domains.
         instruction: Harvest any CSV files that is published to the website.
-        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-csv.png
         status: Active
 
       - name: XML
         description: Identify all of the XML files that have been published within any domains.
         instruction: Harvest any XML files that is published to the website.
-        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-xml.png
+        status: Active
+
+      - name: JSON
+        description: Identify all of the JSON files that have been published within any domains.
+        instruction: Harvest any JSON files that is published to the website.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-json.png
         status: Active
 
       - name: Tables
         description: Identify all of the HTML tables that have been published within any domains.
         instruction: Harvest any HTML tables that is published to the website.
-        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-table.png
         status: Active
 
   #-----------
@@ -88,7 +94,7 @@ stops:
       - name: WSDL
         description: Looking for WSDL documents across an organization.
         instruction: Crawling, harvesting, and documenting WSDLs.
-        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-wsdl.png
         status: None
 
       - name: API.json
@@ -118,19 +124,19 @@ stops:
       - name: HTML
         description: Looking for HTML service and API documents across an organization.
         instruction: Crawling, harvesting, and documenting HTML documentation that exists.
-        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-html.png
         status: None
 
       - name: .HAR
         description: Looking for evidence of APIs from .HAR files tht are gathered.
         instruction: Aggregating .HAR files from proxies and logs and pull an evidence of APIs.
-        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-har.png
         status: None
 
       - name: Logs
         description: Looking for evidence of APIs from log files tht are gathered.
         instruction: Aggregating log files from proxies and logs and pull an evidence of APIs.
-        image: https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-2.png
         status: None
 
   #---------------
