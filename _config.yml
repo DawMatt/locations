@@ -48,7 +48,7 @@ stops:
     items:
 
       - name: Spreadsheets
-        description: Identify all of the XML files that are published across any domains.
+        description: Identify all of the spreadsheet files that are published across any domains.
         instruction: Index any spreadsheet that is arleady published to the website.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-spreadsheet-icon.png
         status: Active
@@ -128,13 +128,13 @@ stops:
         status: None
 
       - name: .HAR
-        description: Looking for evidence of APIs from .HAR files tht are gathered.
+        description: Looking for evidence of APIs from .HAR files that are gathered.
         instruction: Aggregating .HAR files from proxies and logs and pull an evidence of APIs.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-har.png
         status: None
 
       - name: Logs
-        description: Looking for evidence of APIs from log files tht are gathered.
+        description: Looking for evidence of APIs from log files that are gathered.
         instruction: Aggregating log files from proxies and logs and pull an evidence of APIs.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-2.png
         status: None
@@ -145,7 +145,7 @@ stops:
   - name: Communication
     title: Communication
     area: API Discovery
-    description: Having a strategy for reaching out to teams and engaging with them around API discovery, helping the remember to register and define their APIs as part of wider strategy.
+    description: Having a strategy for reaching out to teams and engaging with them around API discovery, helping them remember to register and define their APIs as part of wider strategy.
     header:
     footer:
     instructions: Have a strategy for reaching out to other team members and talking about APIs.
@@ -183,7 +183,7 @@ stops:
   - name: Definition
     title: Definitions
     area: API Discovery
-    description: Work to make ensure that all definitions are being aggregated as part of the process so that they can be evolved and moved forward into design, development and production--investing in all of the artifacts that will be needed down the road.
+    description: Work to ensure that all definitions are being aggregated as part of the process so that they can be evolved and moved forward into design, development and production--investing in all of the artifacts that will be needed down the road.
     header:
     footer:
     instructions: Making sure definitions are being organized for future use.
@@ -192,7 +192,7 @@ stops:
     items:
 
       - name: Organization
-        description: Defining the organizational structure, group, or other bounded context for organization definitions into.
+        description: Defining the organizational structure, group, or other bounded context for organizing definitions into.
         instruction: Define the organization for each individual service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: Active
@@ -251,9 +251,9 @@ stops:
         status: Active
         elements:
           - title: Context
-            description: Describing the setting and meaning the defines the value of each service.
+            description: Describing the setting and meaning that defines the value of each service.
           - title: Model
-            description: The system of models used to define the elements of the domain each service.
+            description: The system of models used to define the elements of the domain for each service.
           - title: Language
             description: The vocabulary and language used to help articulate the value each service delivers.
           - title: Bounded Context
@@ -275,7 +275,7 @@ stops:
           - title: Command
             description: The trigger for the domain event occurring, setting it into motion.
           - title: Actor
-            description: Defining who executes command to trigger event, and is making things happen.
+            description: Defining who executes the command to trigger an event, and is making things happen.
           - title: Aggregates
             description:  Aggregates logically group various commands, events, and reactions together.
         links:
@@ -291,13 +291,13 @@ stops:
         status: Active
 
       - name: Tags
-        description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.
+        description: Defining what tagging taxonomy will be applied across resources, for use in tagging across definitions, documentation, and infrastructure operations.
         instruction: Provide a list of tags that will be used to organize schema, resources, infrastructure, and other elements of each service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tag.png
         status: Active
 
       - name: Team(s)
-        description: Map out all of the individuals being engaged as part of the service and API discovery process, and grouping them by team, group, or other organizational structure.
+        description: Map out all of the individuals being engaged as part of the service and API discovery process, grouping them by team, group, or other organizational structure.
         instruction: Document all teams across organizations and groups.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-team-working.png
         status: Active
