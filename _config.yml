@@ -3,7 +3,7 @@
 #---------------------
 title: API Evangelist Location API
 description: This is a location API, providing many of the common building blocks of location. Providing the essential location ingredients needed through a variety of applications, without having to reinvent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation.
-url: http://location.apievangelist.com
+url: http://locations.apievangelist.com
 tag: Location, Cities, Regions, Countries
 logo: https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png
 
@@ -512,7 +512,7 @@ stops:
           - service_name: API Evangelist Location API
 
       - name: Service Description
-        description: A simple, descriptive paragraph for each service. Providing less that 250 words about what value each service delivers. Avoid just writing the obvious, and describing what an APIs, and focusing in on describing the value being delivered by each service.
+        description: A simple, descriptive paragraph for each service. Providing less that 250 words about what value each service delivers. Avoid just writing the obvious, and describing what an API is, and focusing in on describing the value being delivered by each service.
         instruction: Provide concise description for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
         status: Active
@@ -558,7 +558,7 @@ stops:
         status: Active
         elements:
           - title: Context
-            description: Describing the setting and meaning the defines the value of each service.
+            description: Describing the setting and meaning that defines the value of each service.
           - title: Model
             description: The system of models used to define the elements of the domain each service.
           - title: Language
@@ -572,7 +572,7 @@ stops:
             url: https://en.wikipedia.org/wiki/Restful_Objects
 
       - name: Tags
-        description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations. Ensuring that APIs leave this stage of the lifecycle properly tagged for organization, indexing and discovery.
+        description: Defining what tagging taxonomy will be applied across resources, for use in tagging across definitions, documentation, and infrastructure operations. Ensuring that APIs leave this stage of the lifecycle properly tagged for organization, indexing and discovery.
         instruction: Provide a list of tags that will be used to organize schema, resources, infrastructure, and other elements of each service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tag.png
         status: Active
@@ -703,7 +703,7 @@ stops:
             url: http://journey.apievangelist.com/journey/design/headers
 
       - name: Body
-        description: Usage of the body as part of API requests as opposed to parameters, or in parallel to. Is the body used for POST, PUT, and other variations to help manage the payload.
+        description: Usage of the body as part of API requests as opposed to parameters, or in parallel to. Is the body used for POST, PUT, and other variations to help manage the payload?
         instruction: Define the details of the body that will be used as part of making request to each service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-body.png
         status: Active
@@ -722,7 +722,7 @@ stops:
             url: https://philsturgeon.uk/rest/2014/05/11/restful-urls-actions-need-not-apply/
 
       - name: Media Types
-        description: Quantifying the media types that are used by each service, as described by the OpenAPI. Providing multiple representations of a resource, allowing consumer to negotiate the type of content.
+        description: Quantifying the media types that are used by each service, as described by the OpenAPI. Provide multiple representations of a resource, allowing the consumer to negotiate the type of content.
         instruction: Define whether service will return CSV, JSON, and / or XML responses.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-media-type.png
         status: Active
@@ -994,7 +994,7 @@ stops:
       - name: Playback
         description: Allowing requests to be played back, based upon history.
         instruction: Allowing requests to be played back, based upon history.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-play.jpgg
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-play.jpg
         status: None
 
       - name: Results Archive
@@ -1146,7 +1146,7 @@ stops:
   - name: Support
     title: Support
     area: API Design
-    description: Ensuring there is support channels available for an API, and stakeholders know who to contact when providing feedback and answering questions in real, or near real time, pushing forward the design process.
+    description: Ensuring there are support channels available for an API, and stakeholders know who to contact when providing feedback and answering questions in real, or near real time, pushing forward the design process.
     header:
     footer:
     instructions: Establish the support apparatus in place for each service.
@@ -1273,7 +1273,7 @@ stops:
 
       - name: Public
         title: Road Map
-        description: Providing an puling road map (when applicable) that design stakeholders can use to understand what is being designed.
+        description: Providing and publishing a road map (when applicable) that design stakeholders can use to understand what is being designed.
         instruction: Publish a publicly available version of entries for the road map.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-revenue-public-data.png
         status: Active
@@ -1520,7 +1520,7 @@ stops:
           - name: Mockable
             description: Mockable is a simple configurable service to mock out RESTful API or SOAP web-services. Reply with static or dynamic JSON or XML Payload.
             url: https://www.mockable.io/
-          - name: Mocklab
+          - name: MockLab
             description: Rapidly simulate APIs for faster parallel development and more comprehensive testing
             url: https://get.mocklab.io/
         tools:
@@ -1532,7 +1532,7 @@ stops:
             url: https://github.com/danielgtaylor/apisprout
 
       - name: Data
-        description: Considering offering synethic data for use by integrators, helping ensure virtualized APIs provide as production like experience in a virtualized way.
+        description: Considering offering synthetic data for use by integrators, helping ensure virtualized APIs provide as production like experience in a virtualized way.
         instruction: Providing synthesized data behind each API response for service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-relational-data.png
         status: None
@@ -1846,7 +1846,7 @@ stops:
         fields:
           - pipeline: none
         services:
-          - name: Jekins
+          - name: Jenkins
             description: Jenkins is a self-contained Java-based program, ready to run out-of-the-box, with packages for Windows, Mac OS X and other Unix-like operating systems.
             url: https://jenkins.io/
 
@@ -2028,7 +2028,7 @@ stops:
     items:
 
       - name: Scenarios
-        description: The sceanrios for testing each service.
+        description: The scenarios for testing each service.
         instruction: Provide details of the scenarios being tested for.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
         status: None
@@ -2157,7 +2157,7 @@ stops:
   - name: Security
     title: Security
     area: API Development
-    description: Going beyond authentication, encryption and other aspects of security, and working to scan the surface area of APIs to ensure that there are no vulnerabilities, and that APIs are not doing anything they should not be doing. Keeping services secure, and operating reliabily.
+    description: Going beyond authentication, encryption and other aspects of security, and working to scan the surface area of APIs to ensure that there are no vulnerabilities, and that APIs are not doing anything they should not be doing. Keeping services secure, and operating reliably.
     header: The definitions for each service.
     footer:
     instructions: Defining the security practices in place for each service.
@@ -2230,8 +2230,8 @@ stops:
     title: Staying In Tune
     area: API Development
     description: Having a comprehensive communication strategy for a service, ensuring that each service is properly communicating with other teams, stakeholders, and API consumers. Providing a regular stream of information regarding what is happening with the service.
-    header: Here are the commmunication channels provided to you, helping you stay in tune with what is changing with each service, and the overall platform behind it.
-    footer: These channels should provide you with a regular hearbeat of the changes being made, and what is being planned as part of this platform's operations.
+    header: Here are the communication channels provided to you, helping you stay in tune with what is changing with each service, and the overall platform behind it.
+    footer: These channels should provide you with a regular heartbeat of the changes being made, and what is being planned as part of this platform's operations.
     instructions: Establish a communication strategy for each service.
     image: http://locations.apievangelist.com/assets/images/communication.png
     status: Active
@@ -2434,7 +2434,7 @@ stops:
             url: https://github.com/api-evangelist-apis/locations/blob/master/README.md
 
       - name: OpenAPI
-        description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what each service delivers, that can be used across the API lifecycle, guiding everying aspect of delivering each service.
+        description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what each service delivers, that can be used across the API lifecycle, guiding every aspect of delivering each service.
         instruction: Establish an OpenAPI for the service.
         image: https://s3.amazonaws.com/kinlane-productions/openapi/openapi-icon.png
         status: None
@@ -2446,7 +2446,7 @@ stops:
             url: https://github.com/OAI/OpenAPI-Specification
 
       - name: Tags
-        description: Using the common tags and taxonomy for operating infrastructure and other resources, allowing for easy discovery, measurement and reporting of what it taks to operate each service.
+        description: Using the common tags and taxonomy for operating infrastructure and other resources, allowing for easy discovery, measurement and reporting of what it takes to operate each service.
         instruction: Provide a list of tags that will be used to organize schema, resources, infrastructure, and other elements of each service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tag.png
         status: Active
@@ -2534,7 +2534,7 @@ stops:
           - name: Mockable
             description: Mockable is a simple configurable service to mock out RESTful API or SOAP web-services. Reply with static or dynamic JSON or XML Payload.
             url: https://www.mockable.io/
-          - name: Mocklab
+          - name: MockLab
             description: Rapidly simulate APIs for faster parallel development and more comprehensive testing
             url: https://get.mocklab.io/
         tools:
@@ -2546,7 +2546,7 @@ stops:
             url: https://github.com/danielgtaylor/apisprout
 
       - name: Data
-        description: Considering offering synethic data for use by integrators, helping ensure virtualized APIs provide as production like experience in a virtualized way.
+        description: Considering offering synthetic data for use by integrators, helping ensure virtualized APIs provide as production like experience in a virtualized way.
         instruction: Providing synthesized data behind each API response for service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-relational-data.png
         status: None
@@ -2561,7 +2561,7 @@ stops:
   - name: Authentication
     title: Authentication
     area: API Production
-    description: Providing a standardized approach to authenticating with the service, allowing consumers to successfuly, and securely access a service.
+    description: Providing a standardized approach to authenticating with the service, allowing consumers to successfully, and securely access a service.
     header:
     footer:
     instructions: Details regarding authentication in use for each service.
@@ -2607,7 +2607,7 @@ stops:
           - footer: We try to keep API authentication as simple as possible, while also ensuring the data we provide is securely accessed.
           - url: http://public.companies.apievangelist.com#authentication
 
-      - name: Signup / Login
+      - name: Sign up / Login
         description: An overview for the authentication of each service.
         instruction: Provide a location of the page that delivers an overview of each services authentication.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-signup.png
@@ -2615,7 +2615,7 @@ stops:
         fields:
           - title: Signing Up / Logging In For The API
           - header: I don't make you sign up for yet another account, we just use your OAuth from your GitHub, Twitter, or LinkedIn.
-          - footer: I'm not interested in your data, and do not pull any other data from your accounts beyond the scaope requested.
+          - footer: I'm not interested in your data, and do not pull any other data from your accounts beyond the scope requested.
           - url: http://public.companies.apievangelist.com#sign-up-login
 
   #------------
@@ -2665,9 +2665,9 @@ stops:
         fields:
           - url: https://console.aws.amazon.com/apigateway/home?region=us-east-1
 
-      - name: Signup
+      - name: Sign up
         description: Where you can sign up for access to each service.
-        instruction: Provide a location for users to signup for access to each service.
+        instruction: Provide a location for users to sign up for access to each service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-signup.png
         status: Active
         fields:
@@ -2682,7 +2682,7 @@ stops:
           - url: http://locations.apievangelist.com/
 
       - name: Account
-        description: Where you can access accouint information when using service.
+        description: Where you can access account information when using service.
         instruction: Provide a location for users to access a dashboard for each service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-account-settings.png
         status: None
@@ -2874,7 +2874,7 @@ stops:
   - name: Portal / Landing Page
     title: Portal / Landing Page
     area: API Production
-    description: Providing one, or many public or private portals, providing a single known location for API proviers and API consumers to find what they are looking for when it comes to API integration with services being made available.
+    description: Providing one, or many public or private portals, providing a single known location for API providers and API consumers to find what they are looking for when it comes to API integration with services being made available.
     header: The portal landing page for each service, providing a single location to access the service.
     footer: Providing a single known location discovery and return when information about service is needed.
     instructions: Define the public or private portal in use to present each service.
@@ -2941,7 +2941,7 @@ stops:
   - name: Getting Started
     title: Getting Started
     area: API Production
-    description: Providing basic getting started information for dvelopers to use when on-boarding.
+    description: Providing basic getting started information for developers to use when on-boarding.
     header: These are the steps you need to take when getting started using each service.
     footer: If you have any questions, feel free to reach out, and I'll do my best to help.
     instructions: Provide a getting started page for each service within portal.
@@ -2952,10 +2952,10 @@ stops:
         url: http://getting-started.apievangelist.com/
     items:
 
-      - name: Signup
-        title: Signup
-        description: Where you can signup for each service.
-        instruction: Provide a link to where users can signup for each service.
+      - name: Sign up
+        title: Sign up
+        description: Where you can sign up for each service.
+        instruction: Provide a link to where users can sign up for each service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-signup.png
         status: None
         fields:
@@ -3028,7 +3028,7 @@ stops:
     items:
 
       - name: Paths
-        description: Documentng the API paths that are available for each service.
+        description: Documenting the API paths that are available for each service.
         instruction: Publish an interactive list of API paths available for service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-path-2.png
         status: Active
@@ -3060,7 +3060,7 @@ stops:
       - name: Definitions
         header: We provide machine readable definitions for our APIs, allowing you to import into the service or tooling of your choice.
         footer: Feel free to submit a pull request for these API definitions using GitHub, or submit an issue when you see something incomplete.
-        description: The machine reaable API definitions for use as part of each service.
+        description: The machine readable API definitions for use as part of each service.
         instruction: Publish a list of schema definitions in use by each service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png
         status: Active
@@ -3359,8 +3359,8 @@ stops:
     title: Staying In Tune
     area: API Production
     description: Having a comprehensive communication strategy for a service, ensuring that each service is properly communicating with other teams, stakeholders, and API consumers. Providing a regular stream of information regarding what is happening with the service.
-    header: Here are the commmunication channels provided to you, helping you stay in tune with what is changing with each service, and the overall platform behind it.
-    footer: These channels should provide you with a regular hearbeat of the changes being made, and what is being planned as part of this platform's operations.
+    header: Here are the communication channels provided to you, helping you stay in tune with what is changing with each service, and the overall platform behind it.
+    footer: These channels should provide you with a regular heartbeat of the changes being made, and what is being planned as part of this platform's operations.
     instructions: Establish a communication strategy for each service.
     image: http://locations.apievangelist.com/assets/images/communication.png
     status: Active
@@ -3781,7 +3781,7 @@ stops:
   - name: Security
     title: Security
     area: API Production
-    description: Going beyond authentication, encryption and other aspects of security, and working to scan the surface area of APIs to ensure that there are no vulnerabilities, and that APIs are not doing anything they should not be doing. Keeping services secure, and operating reliabily.
+    description: Going beyond authentication, encryption and other aspects of security, and working to scan the surface area of APIs to ensure that there are no vulnerabilities, and that APIs are not doing anything they should not be doing. Keeping services secure, and operating reliably.
     header: The definitions for each service.
     footer:
     instructions: Defining the security practices in place for each service.
@@ -3882,7 +3882,7 @@ stops:
         fields:
           - url: http://example.com/usage/
 
-      - name: Appliction Usage
+      - name: Application Usage
         description: The application usage across service.
         instruction: Document how much each application uses.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-usage.png
@@ -4100,23 +4100,23 @@ stops:
     items:
 
       - name: Monitoring
-        description: Ensure tessting results are observable.
-        instruction: Ensure tessting results are observable.
+        description: Ensure testing results are observable.
+        instruction: Ensure testing results are observable.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-heart-monitor.png
 
       - name: Testing
-        description: Ensure tessting results are observable.
-        instruction: Ensure tessting results are observable.
+        description: Ensure testing results are observable.
+        instruction: Ensure testing results are observable.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-results.png
 
       - name: Performance
-        description: Ensure tessting results are observable.
-        instruction: Ensure tessting results are observable.
+        description: Ensure testing results are observable.
+        instruction: Ensure testing results are observable.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-performance.png
 
       - name: Security
-        description: Ensure tessting results are observable.
-        instruction: Ensure tessting results are observable.
+        description: Ensure testing results are observable.
+        instruction: Ensure testing results are observable.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-security.png
 
   - name: Discovery
