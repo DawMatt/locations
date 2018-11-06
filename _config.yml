@@ -462,7 +462,7 @@ stops:
             url: https://github.com/api-evangelist-apis
 
       - name: Repository
-        description: Leveeraging source control repository for each service, providing a self-contained, shareable, forkable way to engage with a service. Allowing for EVERYTHING involved with a service to be accessed in a single location.
+        description: Leveraging source control repository for each service, providing a self-contained, shareable, forkable way to engage with a service. Allowing for EVERYTHING involved with a service to be accessed in a single location.
         instruction: Establish a Github repository.
         status: Active
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-repository.jpg
