@@ -49,7 +49,7 @@ stops:
 
       - name: Spreadsheets
         description: Identify all of the spreadsheet files that are published across any domains.
-        instruction: Index any spreadsheet that is arleady published to the website.
+        instruction: Index any spreadsheet that is already published to the website.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-spreadsheet-icon.png
         status: Active
 
@@ -86,7 +86,7 @@ stops:
     description: Actively looking for web services and APIs that exist across an organization, industry, or any other defined landscape. Documenting, aggregating, and evolving what is available about each API, while also publishing back out and making available relevant teams.
     header:
     footer:
-    instructions: Looking for web services and APIs across an organiation, industry, or other landsacpe.
+    instructions: Looking for web services and APIs across an organization, industry, or other landscape.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png
     status: None
     items:
@@ -213,7 +213,7 @@ stops:
             url: https://github.com/api-evangelist-apis
 
       - name: Schema
-        description: Organizing individual schema assocated with a service, while also including it as part of the OpenAPI.
+        description: Organizing individual schema associated with a service, while also including it as part of the OpenAPI.
         instruction: Organize loose, and JSON schema for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
         status: Active
@@ -378,7 +378,7 @@ stops:
           - url: http://example.com
 
       - name: Applications
-        description: Documenting the client applications depeendencies for a service, outlining who depends on the service based upon the applications they are using.
+        description: Documenting the client applications dependencies for a service, outlining who depends on the service based upon the applications they are using.
         instruction: Details of other applications that depend on services.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-app-icon.jpg
         status: None
@@ -394,7 +394,7 @@ stops:
   - name: Support
     title: Support
     area: API Discovery
-    description: Ensure that all teams have support when it comes to questions about web service and API discovery, helping them intially, as well as along the way, making sure all their APIs are accounted for, and indexed as part of discovery efforts.
+    description: Ensure that all teams have support when it comes to questions about web service and API discovery, helping them initially, as well as along the way, making sure all their APIs are accounted for, and indexed as part of discovery efforts.
     header:
     footer:
     instructions: Have a strategy for supporting all groups when it comes to API discovery.
@@ -441,7 +441,7 @@ stops:
     items:
 
       - name: Organization
-        description: The over-arching source control organization for each service, providing an umbrella for different development groups and projects, and governing who has accesss to each design.
+        description: The over-arching source control organization for each service, providing an umbrella for different development groups and projects, and governing who has access to each design.
         instruction: Define the organization for each service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: Active
@@ -517,10 +517,10 @@ stops:
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
         status: Active
         fields:
-          - service_description: This is a location API, providing many of the common building blocks of location for use in any application. Providing the essential location ingredients needed through a variety of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
+          - service_description: This is a location API, providing many of the common building blocks of location for use in any application. Providing the essential location ingredients needed through a variety of applications, without having to reinvent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
 
       - name: Schema
-        description: JSON schema for the data behind service, providing a stanalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind each service.
+        description: JSON schema for the data behind service, providing a standalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind each service.
         instruction: Organize loose, and JSON schema for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
         status: Active
@@ -540,7 +540,7 @@ stops:
             url: https://www.jsonschema.net/
 
       - name: OpenAPI
-        description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what each service delivers, that can be used across the API lifecycle, guiding everying aspect of delivering each service.
+        description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what each service delivers, that can be used across the API lifecycle, guiding every aspect of delivering each service.
         instruction: Establish an OpenAPI for the service.
         image: https://s3.amazonaws.com/kinlane-productions/openapi/openapi-icon.png
         status: None
@@ -625,7 +625,7 @@ stops:
   - name: Design
     title: Design
     area: API Design
-    description: Considering the overall approach to design for all APIs, executing upon design patterns that are in use to consistently deliver services across teams. Leveraging a common set of patterns that can be used across services, beginning with REST, but also evetually allowing the leveraging of hypermedia, GraphQL, and other patterns when it comes to the deliver of services.
+    description: Considering the overall approach to design for all APIs, executing upon design patterns that are in use to consistently deliver services across teams. Leveraging a common set of patterns that can be used across services, beginning with REST, but also eventually allowing the leveraging of hypermedia, GraphQL, and other patterns when it comes to the deliver of services.
     header: The API design strategy for use as part of each service.
     footer: Setting a consistent design strategy for all services.
     instructions: Establish a base set of design practices for the service.
@@ -662,7 +662,7 @@ stops:
           - url: /v1
 
       - name: Path(s)
-        description: The paths that are used to define each individual API resource, providing a plain language descrption of a resource, with a meaningful, logical, structured path for accessing each individual resource.
+        description: The paths that are used to define each individual API resource, providing a plain language description of a resource, with a meaningful, logical, structured path for accessing each individual resource.
         instruction: Define a set of resource paths for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-path-resource.png
         status: Active
@@ -903,7 +903,7 @@ stops:
           - name: Mockable
             description: Mockable is a simple configurable service to mock out RESTful API or SOAP web-services. Reply with static or dynamic JSON or XML Payload.
             url: https://www.mockable.io/
-          - name: Mocklab
+          - name: MockLab
             description: Rapidly simulate APIs for faster parallel development and more comprehensive testing
             url: https://get.mocklab.io/
         tools:
@@ -915,7 +915,7 @@ stops:
             url: https://github.com/danielgtaylor/apisprout
 
       - name: Data
-        description: Considering offering synethic data for use by integrators, helping ensure virtualized APIs provide as production like experience in a virtualized way.
+        description: Considering offering synthetic data for use by integrators, helping ensure virtualized APIs provide as production like experience in a virtualized way.
         instruction: Providing synthesized data behind each API response for service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-relational-data.png
         status: None
@@ -946,7 +946,7 @@ stops:
     items:
 
       - name: Scenarios
-        description: The sceanrios for testing each service.
+        description: The scenarios for testing each service.
         instruction: Provide details of the scenarios being tested for.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
         status: None
@@ -1018,8 +1018,8 @@ stops:
               description: This is a description for the item.
 
       - name: Reporting
-        description: Having a strategy for reporting from testing that is occuring.
-        instruction: Having a strategy for reporting from testing that is occuring.
+        description: Having a strategy for reporting from testing that is occurring.
+        instruction: Having a strategy for reporting from testing that is occurring.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-reports.png
         status: None
 
@@ -1029,7 +1029,7 @@ stops:
   - name: Landing Page
     title: Landing Page
     area: API Design
-    description: Making sure that each individual service being designed has a landing page for acccessing it's documentation, and other elements during the design phase.
+    description: Making sure that each individual service being designed has a landing page for accessing it's documentation, and other elements during the design phase.
     header:
     footer:
     instructions: Define the public or private portal in use to present each service.
@@ -1091,7 +1091,7 @@ stops:
     items:
 
       - name: Paths
-        description: Documentng the API paths that are available for each service.
+        description: Documenting the API paths that are available for each service.
         instruction: Publish an interactive list of API paths available for service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-path-2.png
         status: Active
@@ -1123,7 +1123,7 @@ stops:
       - name: Definitions
         header:
         footer:
-        description: Links to the machine reaable API definitions for use as part of each service.
+        description: Links to the machine readable API definitions for use as part of each service.
         instruction: Publish a list of schema definitions in use by each service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png
         status: Active
@@ -1412,7 +1412,7 @@ stops:
             url: https://github.com/api-evangelist-apis/locations/blob/master/README.md
 
       - name: Schema
-        description: JSON schema for the data behind service, providing a stanalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind each service.
+        description: JSON schema for the data behind service, providing a standalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind each service.
         instruction: Organize loose, and JSON schema for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
         status: Active
@@ -1432,7 +1432,7 @@ stops:
             url: https://www.jsonschema.net/
 
       - name: OpenAPI
-        description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what each service delivers, that can be used across the API lifecycle, guiding everying aspect of delivering each service.
+        description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what each service delivers, that can be used across the API lifecycle, guiding every aspect of delivering each service.
         instruction: Establish an OpenAPI for the service.
         image: https://s3.amazonaws.com/kinlane-productions/openapi/openapi-icon.png
         status: None
